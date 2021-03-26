@@ -112,7 +112,7 @@ features:
     - title: <b>Cloud-based computing</b>
       description: <a href="https://discourse.slicer.org/t/how-to-run-slicer-on-the-cloud-and-access-in-a-web-browser/16401">3D Slicer in web browser</a>, <a href="https://github.com/Slicer/SlicerDocker">Docker container</a>, or <a href="https://discourse.slicer.org/t/run-slicer-in-your-web-browser-as-a-jupyter-notebook-or-as-a-full-application/11569">Jupyter notebook kernel</a>. <b><a href="https://mybinder.org/v2/gh/Slicer/SlicerNotebooks/master?filepath=SlicerWeb.ipynb">Click here to run Slicer in your web browser now</a></b> (using free Binder service, may take 1-2 minutes to start).
     - title: <b>Extensions</b>
-      description: Over 150 extensions that can be installed and used with the application using the <a href="https://www.slicer.org/wiki/Documentation/Nightly/SlicerApplication/ExtensionsManager">3D Slicer App Store</a>.
+      description: Over 150 extensions that can be installed and used with the application using the <a href="https://slicer.readthedocs.io/en/latest/user_guide/extensions_manager.html">3D Slicer App Store</a>.
     - title: <b>Python scripting</b>
       description: Live introspection, interface scripting, any Python 3 packages can be installed. <a href="https://www.slicer.org/wiki/Documentation/Nightly/Training#PerkLab.27s_Slicer_bootcamp_training_materials">Tutorials.</a>
     - title: <b>3D printing friendly</b>
