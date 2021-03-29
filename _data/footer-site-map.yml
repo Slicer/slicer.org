@@ -46,7 +46,7 @@ About:
   - name: Citing
     link: https://slicer.readthedocs.io/en/latest/user_guide/about.html#how-to-cite
   - name: Commercial Use
-    link: https://slicer.readthedocs.io/en/latest/user_guide/about.html#commercial-use
+    link: /Commercial-use
   - name: 3D Slicer Enabled Research
     link: https://www.slicer.org/wiki/Main_Page/SlicerCommunity
   - name: Acknowledgments
