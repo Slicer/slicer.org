@@ -125,7 +125,7 @@ Learn more at https://jekyllrb.com/docs/step-by-step/05-includes/
 
 * Commercial Use
 
-See [Commercial-use.markdown](./Commercial-use.markdown)
+See [commercial-use.markdown](./commercial-use.markdown)
 
 ## Useful links
 
@@ -137,7 +137,7 @@ See [Commercial-use.markdown](./Commercial-use.markdown)
 
 To add an internal site pages, create a markdown file with a front matter.
 
-For example, see [Commercial-use.markdown](./Commercial-use.markdown)
+For example, see [commercial-use.markdown](./commercial-use.markdown)
 
 * Use page layout in you markdown header:
 ```
