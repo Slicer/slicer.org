@@ -33,7 +33,14 @@ google_analytics: UA-97117718-1
 # See https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 twitter:
   username: 3DSlicerApp
-  card: summary
+  card: summary_large_image
+
+# See https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md#setting-a-default-image
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/3D-Slicer-Mark.svg
 
 # Build settings
 theme: bulma-clean-theme
