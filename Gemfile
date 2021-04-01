@@ -32,4 +32,5 @@ end
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # Plugins
+gem 'jekyll-seo-tag'
 gem 'jekyll-target-blank'
