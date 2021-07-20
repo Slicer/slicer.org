@@ -1,7 +1,6 @@
 ---
 title: Commercial Use
 subtitle: We invite commercial entities to use 3D Slicer
-description:
 layout: page
 permalink:
 show_sidebar: false
