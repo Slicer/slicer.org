@@ -9,7 +9,7 @@ The site is implemented using [jekyll static site generator](https://jekyllrb.co
    * [Overview](#overview)
    * [Infrastructure](#infrastructure)
       * [Synchronization](#synchronization)
-      * [Pull Request preview](#pull-request-preview)
+      * [Preview](#preview)
    * [Development](#development)
       * [Local Development](#local-development)
       * [Source Files](#source-files)
@@ -29,16 +29,35 @@ The site is implemented using [jekyll static site generator](https://jekyllrb.co
 
 ## Synchronization
 
-Every 5 minutes, the branch [slicer-org](https://github.com/Slicer/slicer.org/tree/slicer-org) is automatically pulled into the live site. There is no need to
+These branches are automatically pulled into their respective live sites. There is no need to
 connect to the server in order to make changes.
 
-Each time the sources of the static site organized in the [main](https://github.com/Slicer/slicer.org/tree/main) branch are updated, the branch `slicer-org` is then automatically updated using the GitHub Action workflow described in [.github/workflows/build-website.yml](.github/workflows/build-website.yml).
+| Branch | Site | Frequency | Jekyll build configuration |
+|--------|------|-----------|---------------|
+| [slicer-org][branch-slicer-org] | Deployed to https://slicer.org | 5 mins | `--config _config.yml` |
+| [download-slicer-org][branch-download-slicer-org] | Deployed to https://download.slicer.org | 5 mins | `--config _config.yml,_config_download.yml` |
 
-## Pull Request preview
+[branch-slicer-org]: https://github.com/Slicer/slicer.org/tree/slicer-org
+[branch-download-slicer-org]: https://github.com/Slicer/slicer.org/tree/download-slicer-org
 
-A preview deployement of the site will automatically be setup using [netlify](https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/).
+Each time the sources of the static site organized in the [main](https://github.com/Slicer/slicer.org/tree/main) branch are updated, the branches `slicer-org` and `download-slicer-org` are then automatically updated using the GitHub Action workflow described in [.github/workflows/build-website.yml](.github/workflows/build-website.yml).
 
-The netlify deployment has been configured by [@jcfr](https://github.com/jcfr) and since the [free plan](https://www.netlify.com/pricing/) is being used, only one user can update its configuration.
+## Preview
+
+| Link | Description |
+|------|-------------|
+| [Deploy Previews for slicer.org][netlify-slicer-org-preview] | Preview of `slicer.org` site automatically associated with pull requests. |
+| [Preview for download.slicer.org][netlify-download-slicer-org-preview] | Preview of `download.slicer.org` associated with target branch [deploy-download-preview][branch-deploy-download-preview] |
+
+To learn more about Netlify preview, see [here][netlify-preview-doc].
+
+[netlify-slicer-org-preview]: https://app.netlify.com/sites/slicer-org/deploys?filter=deploy%20previews
+[netlify-download-slicer-org-preview]: https://deploy-download-preview--slicer-org.netlify.app/download.html
+
+[netlify-preview-doc]: https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/
+[branch-deploy-download-preview]: https://github.com/Slicer/slicer.org/tree/deploy-download-preview
+
+_The netlify deployment has been configured by [@jcfr](https://github.com/jcfr) and since the [free plan](https://www.netlify.com/pricing/) is being used, only one user can update its configuration._
 
 # Development
 
