@@ -2,7 +2,7 @@
     <h4>{{ title }}</h4>
     {% for item in items %}
     <div>
-        <a href="{{ item.link | absolute_url }}" class="sitemap-item">
+        <a href="{{ item.link | liquify | absolute_url }}" class="sitemap-item">
             {% if item.icon %}
             <i class="{{ item.icon }}"></i>
             {% endif %}

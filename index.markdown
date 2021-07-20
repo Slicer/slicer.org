@@ -9,7 +9,7 @@ title: <b> 3D Slicer </b> image computing platform
 subtitle: 3D Slicer is a <span class="highlight-text"><b>free</b></span>, <span class="highlight-text"><b>open source</b></span> and <span class="highlight-text"><b>multi-platform</b></span> software package widely used for medical, biomedical, and related imaging research.
 hero_buttons:
   - text: Download
-    link: https://download.slicer.org
+    link: "{{ site.slicer_download_url }}"
     icon: fa fa-download
     color: logo-blue
 

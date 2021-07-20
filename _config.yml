@@ -26,6 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://slicer.org" # the base hostname & protocol for your site, e.g. http://example.com
 logo_image: /assets/img/3D-Slicer-Mark.svg
 # favicons are directly specified in _includes/head.html
+slicer_download_url: "https://download.slicer.org"
 
 # Google services
 google_analytics: UA-97117718-1

@@ -4,7 +4,7 @@ Application:
     link: https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html
     icon: fa fa-rocket
   - name: Download
-    link: https://download.slicer.org
+    link: "{{ site.slicer_download_url }}"
     icon: fa fa-download
 
 Support:
