@@ -49,6 +49,7 @@ plugins:
 #  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-target-blank
+  - jekyll_version_plugin
 
 # Exclude from processing.
 # The following items will not be processed, by default.

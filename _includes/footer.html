@@ -3,6 +3,7 @@
       <div class="content is-small has-text-centered">
           Content of this site is Copyright {{ site.time | date: "%Y" }} BWH and 3D Slicer contributors, unless otherwise noted.
           <br>For questions about the use of this site's content, please see <a href="https://www.slicer.org/wiki/Contact">Contact</a>.
+          <br>Last update {{ site.time | date: "%Y-%m-%d" }}. Revision <a id="revision" href="https://github.com/Slicer/slicer.org/commit/{% project_version commit short %}">{% project_version commit short %}</a>.
       </div>
   </div>
 </footer>
