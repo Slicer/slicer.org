@@ -30,7 +30,8 @@ download_mock:
 
     <!-- This section is a flask template intended to be used https://github.com/Slicer/slicer_download -->
     <h2>Installers</h2>
-    <table class="installers">
+    <div class="columns is-mobile is-centered">
+    <table class="installers column is-three-quarters">
         <thead>
             <tr>
                 <th width="200"></th>
@@ -78,4 +79,5 @@ download_mock:
         </tr>
     </tbody>
     </table>
+    </div>
 </div>
