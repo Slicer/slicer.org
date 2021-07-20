@@ -1,0 +1,37 @@
+slicer_download_mock_enabled: false
+
+exclude:
+  #
+  # Important: if you update this list, consider updating _config.yml
+  #
+  # Default
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # This project
+  - assets/favicons/README.md
+  - README.md
+  - favicon.json
+  - faviconData.json
+  - netlify.toml
+  # Exclude regular regular pages from download site
+  - 404.html
+  - assets/img/hero-images/
+  - assets/img/features-bullets.svg
+  - assets/img/image-carousel/
+  - assets/img/slicer-solutions/
+  - commercial-use.markdown
+  - copyright/
+  - index.markdown
+  - LICENSE
+
+include:
+  - download.markdown
+  - download_40x.markdown

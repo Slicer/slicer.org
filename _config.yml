@@ -60,6 +60,9 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 exclude:
+  #
+  # Important: if you update this list, consider updating _config_download.yml
+  #
   # Default
   - .sass-cache/
   - .jekyll-cache/
@@ -77,6 +80,9 @@ exclude:
   - favicon.json
   - faviconData.json
   - netlify.toml
+  # Exclude download page from regular website
+  - download.markdown
+  - download_40x.markdown
 
 footer_menu: footer-site-map
 

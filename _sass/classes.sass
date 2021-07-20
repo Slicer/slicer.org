@@ -313,4 +313,82 @@
     display: flex
     align-self: flex-end
 
+// download ====================================
+.download
+  .callout
+    background: rgba(200,200,200,0.25)
+    border-color: rgba(100,100,100,0.25)
+    margin: 0 0 1rem 0
+    padding: 1rem
+    border: 1px solid rgba(10, 10, 10, 0.25)
+  .installers
+    border-color: #fff
+    width: auto
+    .nightly-build
+      background: #ff973e
+    .stable-release
+      background: #2fbb01
+    a
+      color: #0069AD
+      font-weight: 450
+      &:hover
+        text-decoration: underline
+    .table-subheader
+      a
+        font-weight: normal
+        font-size: 90%
+        font-style: oblique
+    thead, tbody
+      border-color: #fff
+      text-align: center
+    th, td
+      border: none
+    .button-download
+      display: inline-block
+      text-align: center
+      line-height: 1
+      cursor: pointer
+      -webkit-appearance: none
+      transition: all 0.25s ease-out
+      vertical-align: middle
+      border: 1px solid transparent
+      border-radius: 0
+      padding: 0.85em 1em
+      margin: 0 1rem 1rem 0
+      font-size: 0.8rem
+      background: #2199e8
+      color: #fff
+      &:hover, &:focus
+        background: #1583cc
+        color: #fff
+        text-decoration: none
+      &.expanded
+        display: block
+        width: 100%
+        margin-left: 0
+        margin-right: 0
+      &.warning
+        background: #ffae00
+        color: #fff
+        &:hover, &:focus
+          background: #cc8b00
+          color: #fff
+      &.hollow
+        border: 1px solid #2199e8
+        color: #2199e8
+        background: transparent
+        &:hover, &:focus
+          background: transparent
+          border-color: #0c4d78
+          color: #0c4d78
+        &.warning
+          border: 1px solid #ffae00
+          color: #ffae00
+          &:hover, &:focus
+            border-color: #805700
+            color: #805700
+      .header
+        font-size: 1.1rem
+        line-height: 1.2
+        font-weight: 600
 
