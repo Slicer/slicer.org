@@ -5,3 +5,4 @@ _site
 assets/favicons/README.md
 faviconData.json
 vendor
+_config_dev.yml
