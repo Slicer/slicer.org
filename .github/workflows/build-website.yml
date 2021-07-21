@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 jobs:
   jekyll:
     runs-on: ubuntu-16.04
@@ -30,6 +33,7 @@ jobs:
 
     # See https://github.com/marketplace/actions/github-pages-action
     - name: 🚀 deploy
+      if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3
       with:
         force_orphan: true
