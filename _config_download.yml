@@ -1,3 +1,8 @@
+
+# Set the flask template used in https://github.com/Slicer/slicer_download/blob/main/slicer_download_server/__init__.py
+slicer_download_stats_url: "{{ download_stats_url }}"
+
+# Toggle use of "download_mock" specified in download.markdown
 slicer_download_mock_enabled: false
 
 exclude:

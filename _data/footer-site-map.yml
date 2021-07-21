@@ -31,7 +31,7 @@ Developers:
   - name: Quality Dashboard
     link: http://slicer.cdash.org/viewProjects.php
   - name: Download Statistics
-    link: https://download.slicer.org/download-stats/
+    link: "{{ site.slicer_download_stats_url }}"
   - name: Extensions
     link: https://slicer.readthedocs.io/en/latest/developer_guide/extensions.html
   - name: Contribute

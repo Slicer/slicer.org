@@ -27,6 +27,7 @@ url: "https://slicer.org" # the base hostname & protocol for your site, e.g. htt
 logo_image: /assets/img/3D-Slicer-Mark.svg
 # favicons are directly specified in _includes/head.html
 slicer_download_url: "https://download.slicer.org"
+slicer_download_stats_url: "https://download.slicer.org/download-stats"
 
 # Google services
 google_analytics: UA-97117718-1

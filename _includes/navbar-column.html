@@ -2,7 +2,13 @@
     <a href="{{ item.link | absolute_url }}" class="navbar-link {% if item.link == page.url %}is-active{% endif %}">{{ title }}</a>
     <div class="navbar-dropdown">
         {% for item in items %}
+
+        {% assign item_link_prefix = item.link | liquify | slice: 0, 2 %}
+        {% if item_link_prefix != "{{" %}
         <a href="{{ item.link | liquify | absolute_url }}" class="navbar-item {% if item.link == page.url %}is-active{% endif %}">
+        {% else %}
+        <a href="{{ item.link | liquify }}" class="navbar-item" class="navbar-item {% if item.link == page.url %}is-active{% endif %}">
+        {% endif %}
             {% if item.icon %}
             <i class="{{ item.icon }}"></i>&nbsp;
             {% endif %}
