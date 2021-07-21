@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-16.04
     strategy:
       matrix:
-        branch: [slicer-org, slicer-download-org]
+        branch: [slicer-org, download-slicer-org]
         include:
-          - branch: slicer-download-org
+          - branch: download-slicer-org
             custom_opts: '--config _config.yml,_config_download.yml'
     steps:
     - name: 📂 setup
