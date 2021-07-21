@@ -4,10 +4,15 @@ on:
     branches:
       - main
 jobs:
-  jekyll-slicer-org:
+  jekyll:
     runs-on: ubuntu-16.04
+    strategy:
+      matrix:
+        branch: [slicer-org, slicer-download-org]
+        include:
+          - branch: slicer-download-org
+            custom_opts: '--config _config.yml,_config_download.yml'
     steps:
-
     - name: 📂 setup
       uses: actions/checkout@v2
 
@@ -21,6 +26,7 @@ jobs:
       uses: limjh16/jekyll-action-ts@v2
       with:
         enable_cache: true
+        custom_opts: ${{ matrix.custom_opts }}
 
     # See https://github.com/marketplace/actions/github-pages-action
     - name: 🚀 deploy
@@ -29,36 +35,7 @@ jobs:
         force_orphan: true
         github_token: ${{ secrets.SLICERBOT_GITHUB_TOKEN }}
         publish_dir: ./_site
-        publish_branch: slicer-org
+        publish_branch: ${{ matrix.branch }}
         user_name: 'Slicer Bot'
         user_email: 'slicerbot@users.noreply.github.com'
 
-  jekyll-download-slicer-org:
-    runs-on: ubuntu-16.04
-    steps:
-
-    - name: 📂 setup
-      uses: actions/checkout@v2
-
-    - name: 💎 setup ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.6 # can change this to 2.7 or whatever version you prefer
-
-    # See https://github.com/marketplace/actions/jekyll-action-ts
-    - name: 🔨 install dependencies & build site
-      uses: limjh16/jekyll-action-ts@v2
-      with:
-        enable_cache: true
-        custom_opts: '--config _config.yml,_config_download.yml'
-
-    # See https://github.com/marketplace/actions/github-pages-action
-    - name: 🚀 deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        force_orphan: true
-        github_token: ${{ secrets.SLICERBOT_GITHUB_TOKEN }}
-        publish_dir: ./_site
-        publish_branch: download-slicer-org
-        user_name: 'Slicer Bot'
-        user_email: 'slicerbot@users.noreply.github.com'
