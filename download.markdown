@@ -28,7 +28,7 @@ download_mock:
     Read about <a href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html#system-requirements">system requirements</a>.
     </div>
 
-    <!-- This section is a flask template intended to be used https://github.com/Slicer/slicer_download -->
+    <!-- This section contains jinja2 templates intended to be used in https://github.com/Slicer/slicer_download -->
     <h2>Installers</h2>
     <div class="columns is-mobile is-centered">
     <table class="installers column is-three-quarters">
