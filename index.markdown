@@ -135,7 +135,7 @@ solutions:
 # Commercial Use ======================================================
 commercial_use:
   title: Commercial Use
-  description: We invite commercial entities to use 3D Slicer. 3D Slicer is a Free Open Source Software distributed under a BSD style license.<br> The license does not impose restrictions on the use of the software. For details, please see the <a href="https://www.slicer.org/wiki/License">3D Slicer Software License Agreement</a>.<br> Learn more about our commercial partners and 3D Slicer based products and product prototypes.
+  description: We invite commercial entities to use 3D Slicer. 3D Slicer is a Free Open Source Software distributed under a BSD style license.<br> The license does not impose restrictions on the use of the software. For details, please see the <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#license">3D Slicer Software License Agreement</a>.<br> Learn more about our commercial partners and 3D Slicer based products and product prototypes.
   button_text: Learn More
   page_url: /commercial-use.html
 
