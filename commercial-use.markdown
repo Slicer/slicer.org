@@ -68,7 +68,7 @@ Many companies prefer not to disclose what software components they use in their
 [xoran-icon]: https://blog.kitware.com/wp-content/uploads/2018/06/Xoran.png "Xoran Technologies"
 [xoran-kitware-blog]: https://blog.kitware.com/xoran-technologies-and-kitware-collaborate-on-image-guided-platform-for-deep-brain-stimulation-surgery/
 
-[xstrahl-icon]: https://xstrahl-9f3e.kxcdn.com/wp-content/uploads/2017/03/logo-top.svg "XStrahl"
+[xstrahl-icon]: https://blog.kitware.com/wp-content/uploads/2017/02/Xstrahl_LF_Logo_Fnl_RGB-250x95.jpg "XStrahl"
 [xstrahl-kitware-blog]: https://blog.kitware.com/kitware-customer-highlight-muriplan-from-xstrahl-a-3d-slicer-based-radiotherapy-treatment-planning-system/
 
 </div>
