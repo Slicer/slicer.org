@@ -49,7 +49,7 @@ Many companies prefer not to disclose what software components they use in their
 
 |  | |
 |--|-|
-| ![][allen-icon]{: .commercial-products-logo} | Allen Institute for Brain Science is developing Cell Locator, a Desktop application for manually aligning specimens to annotated 3D spaces. |
+| ![][allen-icon]{: .commercial-products-logo} | Allen Institute for Brain Science is developing Cell Locator, a Desktop application for manually aligning specimens to annotated 3D spaces. See more information on [Kitware blog][allen-kitware-blog]. |
 | ![][rapid-icon]{: .commercial-products-logo} | Radiopharmaceutical Imaging and Dosimetry, LLC (RAPID) is developing RPTDose, a 3D Slicer-based application that streamlines and integrates quantitative imaging analysis and dose estimation techniques to guide and optimize the use of radiopharmaceutical therapy agents in clinical trials. See more information on [Kitware blog][rapid-kitware-blog]. |
 | ![][sonovol-icon]{: .commercial-products-logo} | SonoVol is developing a whole-body ultrasound imaging system for small animals. This start-up company arose from research in the Department of Biomedical Engineering at the University of North Carolina at Chapel Hill. See more information on [Kitware blog][sonovol-kitware-blog]. |
 | ![][xoran-icon]{: .commercial-products-logo} | Xoran Technologies, Image-guided Platform for Deep Brain Stimulation Surgery 1. See more information on [Kitware blog][xoran-kitware-blog]. |
@@ -58,6 +58,7 @@ Many companies prefer not to disclose what software components they use in their
 
 
 [allen-icon]: https://alleninstitute.org/media/filer_public_thumbnails/filer_public/2e/6e/2e6e35a2-a82e-4e1c-af3d-4e95e43d3baf/logo_bs_header.png__220x220_q85_subsampling-2.png
+[allen-kitware-blog]: https://blog.kitware.com/cell-locator-a-3d-slicer-based-desktop-application-that-manually-aligns-specimens-to-annotated-3d-spaces-developed-for-the-allen-institute-for-brain-science/
 
 [rapid-icon]: https://blog.kitware.com/wp-content/uploads/2018/03/xRAPID.png.pagespeed.ic.2MtGQ3iXNo.png "Radiopharmaceutical Imaging and Dosimetry, LLC"
 [rapid-kitware-blog]: https://blog.kitware.com/kitware-customer-highlight-radiopharmaceutical-imaging-and-dosimetry-llc-rapid/
