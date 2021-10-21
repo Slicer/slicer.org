@@ -142,7 +142,7 @@ commercial_use:
 # Community ======================================================
 community:
   title: Community
-  description: 3D Slicer is supported by a growing international user and developer community. <br> Visit the <a href="https://discourse.slicer.org">3D Slicer Forum</a> to connect with community members.<br> To acknowledge 3D Slicer as a platform, please see <a href="https://www.slicer.org/wiki/CitingSlicer">Citing Slicer</a>.
+  description: 3D Slicer is supported by a growing international user and developer community. <br> Visit the <a href="https://discourse.slicer.org">3D Slicer Forum</a> to connect with community members.<br> To acknowledge 3D Slicer as a platform, please see <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#how-to-cite">Citing Slicer</a>.
   button_text: Learn more about 3D Slicer Community
   button_link: https://www.slicer.org/wiki/Main_Page/SlicerCommunity
 ---
