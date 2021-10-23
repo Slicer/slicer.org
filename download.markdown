@@ -29,7 +29,6 @@ download_mock:
     </div>
 
     <!-- This section contains jinja2 templates intended to be used in https://github.com/Slicer/slicer_download -->
-    <h2>Installers</h2>
     <div class="columns is-mobile is-centered">
     <table class="installers column is-three-quarters">
         <thead>
