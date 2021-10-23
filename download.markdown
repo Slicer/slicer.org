@@ -35,9 +35,18 @@ download_mock:
         <thead>
             <tr>
                 <th width="200"></th>
-                <th width="225">Windows</th>
-                <th width="225">macOS</th>
-                <th width="225">Linux</th>
+                <th width="225">
+                    <img src="assets/img/platforms/windows-logo.svg" alt="Windows" height=100>
+                    <p>Windows</p>
+                </th>
+                <th width="225">
+                    <img src="assets/img/platforms/apple-logo.svg" alt="macOS" height=100>
+                    <p>macOS</p>
+                </th>
+                <th width="225">
+                    <img src="assets/img/platforms/linux-logo.svg" alt="Linux" height=100>
+                    <p>Linux</p>
+                </th>
             </tr>
         </thead>
         <tbody>
