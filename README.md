@@ -44,6 +44,8 @@ Each time the sources of the static site organized in the [main](https://github.
 
 ## Preview
 
+### Netlify
+
 | Link | Description |
 |------|-------------|
 | [Deploy Previews for slicer.org][netlify-slicer-org-preview] | Preview of `slicer.org` site automatically associated with pull requests. |
@@ -58,6 +60,11 @@ To learn more about Netlify preview, see [here][netlify-preview-doc].
 [branch-deploy-download-preview]: https://github.com/Slicer/slicer.org/tree/deploy-download-preview
 
 _The netlify deployment has been configured by [@jcfr](https://github.com/jcfr) and since the [free plan](https://www.netlify.com/pricing/) is being used, only one user can update its configuration._
+
+### Website build
+
+The website builds associated with both [slicer-org][branch-slicer-org] and [download-slicer-org][branch-download-slicer-org]
+are also uploaded as GitHub action artifacts.
 
 # Development
 
