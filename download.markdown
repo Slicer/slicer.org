@@ -44,7 +44,7 @@ download_mock:
                 </th>
                 <th width="225">
                     <img src="assets/img/platforms/linux-logo.svg" alt="Linux">
-                    <p>Linux</p>
+                    <p>Linux<br><span class="table-subheader"><a href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html#linux" target="_blank" rel="noopener noreferrer">prerequisites</a></span></p>
                 </th>
             </tr>
         </thead>
