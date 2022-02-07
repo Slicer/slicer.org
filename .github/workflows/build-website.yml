@@ -78,7 +78,7 @@ jobs:
 
     - name: Wait for Netlify to deploy 'deploy-download-preview' branch
       if: env.deploy_download_preview == 'true'
-      run: sleep 5s
+      run: sleep 30s
       shell: bash
 
     # See https://github.com/swinton/screenshot-website
