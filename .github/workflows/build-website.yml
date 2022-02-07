@@ -85,8 +85,53 @@ jobs:
     - name: Capture deploy-download-preview screenshot
       if: env.deploy_download_preview == 'true'
       uses: swinton/screenshot-website@v1.x
+      id: capture_step
       with:
         source: https://deploy-download-preview--slicer-org.netlify.app/download.html
         destination: ${{ matrix.branch }}-screenshot.png
         full-page: true
+
+    # See https://github.com/devicons/public-upload-to-imgur
+    - name: Upload screenshot to imgur
+      if: env.deploy_download_preview == 'true'
+      uses: devicons/public-upload-to-imgur@v2.2.2
+      id: imgur_step
+      with:
+        path: ${{ steps.capture_step.outputs.path }}
+        client_id: ${{secrets.SLICER_IMGUR_CLIENT_ID}}
+
+    # See https://github.com/actions/github-script
+    - name: Extract imgur URL
+      if: env.deploy_download_preview == 'true'
+      uses: actions/github-script@v5
+      id: extract_imgur_url_step
+      env:
+        IMGUR_URLS: ${{ steps.imgur_step.outputs.imgur_urls }}
+      with:
+        script: |
+          const { IMGUR_URLS } = process.env
+          if (IMGUR_URLS) {
+            const imgur_url = JSON.parse(IMGUR_URLS)[0]
+            console.log(imgur_url)
+            return imgur_url
+          }
+        result-encoding: string
+
+    # See https://github.com/thollander/actions-comment-pull-request
+    - name: Add Pull Request comment including screenshot
+      if: env.deploy_download_preview == 'true'
+      uses: thollander/actions-comment-pull-request@v1.0.4
+      env:
+        IMG_URL: ${{ steps.extract_imgur_url_step.outputs.result }}
+        MESSAGE: |
+          ### download.slicer.org preview
+          _:warning: The download preview is a static website generated using mock data [^1], is temporary and may be updated at anytime [^2]_
+          | Screenshot from https://deploy-download-preview--slicer-org.netlify.app/download.html|
+          |--|
+          | ![Screenshot]({0}) |
+          [^1]: See [front matter](https://jekyllrb.com/docs/front-matter/) variable `download_mock` associated with https://raw.githubusercontent.com/Slicer/slicer.org/main/download.markdown
+          [^2]: Due to limitation of Netlify preventing us from having multiple [deploy previews](https://docs.netlify.com/site-deploys/deploy-previews/) associated with a single pull request and the [impossibility](https://github.community/t/make-secrets-available-to-builds-of-forks/16166) of using repository secret in a workflow associated with a pull-request originating from forks, the `deploy-download-preview` site is only updated for pull request originating from this repository and will be overriden after another pull request is pushed or updated.
+      with:
+        message: ${{ format(env.MESSAGE, env.IMG_URL) }}
+        GITHUB_TOKEN: ${{ secrets.SLICERBOT_GITHUB_TOKEN }}
 
