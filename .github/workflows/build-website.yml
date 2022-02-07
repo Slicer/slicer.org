@@ -87,3 +87,25 @@ jobs:
         url: https://deploy-download-preview--slicer-org.netlify.app/download.html
         description: 'Deploy Preview ready!'
 
+    - name: Wait for Netlify to deploy 'deploy-download-preview' branch
+      if: |
+        matrix.branch == 'deploy-download-preview'
+        && github.event_name == 'pull_request'
+        && github.event.pull_request.head.repo.full_name == github.repository
+        && github.actor != 'dependabot[bot]'
+      run: sleep 5s
+      shell: bash
+
+    # See https://github.com/swinton/screenshot-website
+    - name: Capture deploy-download-preview screenshot
+      if: |
+        matrix.branch == 'deploy-download-preview'
+        && github.event_name == 'pull_request'
+        && github.event.pull_request.head.repo.full_name == github.repository
+        && github.actor != 'dependabot[bot]'
+      uses: swinton/screenshot-website@v1.x
+      with:
+        source: https://deploy-download-preview--slicer-org.netlify.app/download.html
+        destination: ${{ matrix.branch }}-screenshot.png
+        full-page: true
+
