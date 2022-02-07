@@ -49,7 +49,7 @@ Each time the sources of the static site organized in the [main](https://github.
 | Link | Description |
 |------|-------------|
 | [Deploy Previews for slicer.org][netlify-slicer-org-preview] | Preview of `slicer.org` site automatically associated with pull requests. |
-| [Preview for download.slicer.org][netlify-download-slicer-org-preview] | Preview of `download.slicer.org` associated with target branch [deploy-download-preview][branch-deploy-download-preview] |
+| [Preview for download.slicer.org][netlify-download-slicer-org-preview] | Preview of `download.slicer.org` automatically associated with target branch [deploy-download-preview][branch-deploy-download-preview] |
 
 To learn more about Netlify preview, see [here][netlify-preview-doc].
 

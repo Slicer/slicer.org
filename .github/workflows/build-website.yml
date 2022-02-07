@@ -11,10 +11,13 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        branch: [slicer-org, download-slicer-org]
+        branch: [slicer-org, download-slicer-org, deploy-download-preview]
         include:
           - branch: download-slicer-org
             custom_opts: '--config _config.yml,_config_download.yml'
+          - branch: deploy-download-preview
+            custom_opts: '--config _config.yml,_config_download.yml,_config_netlify_deploy_download_preview.yml'
+
     steps:
     - name: 📂 setup
       uses: actions/checkout@v2
@@ -24,6 +27,20 @@ jobs:
       with:
         ruby-version: 2.6 # can change this to 2.7 or whatever version you prefer
 
+    # See https://github.com/ouzi-dev/commit-status-updater
+    - name: Update status check for deploy-download-preview to pending
+      if: |
+        matrix.branch == 'deploy-download-preview'
+        && github.ref != 'refs/heads/slicer-org'
+        && github.ref != 'refs/heads/download-slicer-org'
+        && github.ref != 'refs/heads/deploy-download-preview'
+      uses: ouzi-dev/commit-status-updater@v1.1.2
+      with:
+        name: 'netlify/deploy-download-preview'
+        status: 'pending'
+        url: https://app.netlify.com/sites/slicer-org/deploys?filter=deploy-download-preview
+        description: 'Deploy Preview processing.'
+
     # See https://github.com/marketplace/actions/jekyll-action-ts
     - name: 🔨 install dependencies & build site
       uses: limjh16/jekyll-action-ts@v2
@@ -32,6 +49,7 @@ jobs:
         custom_opts: ${{ matrix.custom_opts }}
 
     - name: 'Upload website build'
+      if: matrix.branch != 'deploy-download-preview'
       uses: actions/upload-artifact@v2
       with:
         name: ${{ matrix.branch }}-website-build
@@ -40,7 +58,9 @@ jobs:
 
     # See https://github.com/marketplace/actions/github-pages-action
     - name: 🚀 deploy
-      if: github.ref == 'refs/heads/main'
+      if: |
+        github.ref == 'refs/heads/main'
+        || matrix.branch == 'deploy-download-preview'
       uses: peaceiris/actions-gh-pages@v3
       with:
         force_orphan: true
@@ -49,4 +69,18 @@ jobs:
         publish_branch: ${{ matrix.branch }}
         user_name: 'Slicer Bot'
         user_email: 'slicerbot@users.noreply.github.com'
+
+    # See https://github.com/ouzi-dev/commit-status-updater
+    - name: Update status check for deploy-download-preview
+      if: |
+        matrix.branch == 'deploy-download-preview'
+        && github.ref != 'refs/heads/slicer-org'
+        && github.ref != 'refs/heads/download-slicer-org'
+        && github.ref != 'refs/heads/deploy-download-preview'
+      uses: ouzi-dev/commit-status-updater@v1.1.2
+      with:
+        name: 'netlify/deploy-download-preview'
+        status: 'success'
+        url: https://deploy-download-preview--slicer-org.netlify.app/download.html
+        description: 'Deploy Preview ready!'
 

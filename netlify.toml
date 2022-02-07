@@ -8,4 +8,4 @@
   command = "printf \"url: %s\" \"$DEPLOY_PRIME_URL\" > _config_netlify.yml; jekyll build --config _config.yml,_config_netlify.yml"
 
 [context.deploy-download-preview]
-  command = "printf \"slicer_download_url: %s\" \"$DEPLOY_PRIME_URL/download.html\nslicer_download_mock_enabled: true\" > _config_netlify.yml; jekyll build --config _config.yml,_config_download.yml,_config_netlify.yml"
+  command = "true"
