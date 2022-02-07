@@ -31,9 +31,9 @@ jobs:
     - name: Update status check for deploy-download-preview to pending
       if: |
         matrix.branch == 'deploy-download-preview'
-        && github.ref != 'refs/heads/slicer-org'
-        && github.ref != 'refs/heads/download-slicer-org'
-        && github.ref != 'refs/heads/deploy-download-preview'
+        && github.event_name == 'pull_request'
+        && github.event.pull_request.head.repo.full_name == github.repository
+        && github.actor != 'dependabot[bot]'
       uses: ouzi-dev/commit-status-updater@v1.1.2
       with:
         name: 'netlify/deploy-download-preview'
@@ -60,7 +60,10 @@ jobs:
     - name: 🚀 deploy
       if: |
         github.ref == 'refs/heads/main'
-        || matrix.branch == 'deploy-download-preview'
+        || (matrix.branch == 'deploy-download-preview'
+            && github.event_name == 'pull_request'
+            && github.event.pull_request.head.repo.full_name == github.repository
+            && github.actor != 'dependabot[bot]')
       uses: peaceiris/actions-gh-pages@v3
       with:
         force_orphan: true
@@ -74,9 +77,9 @@ jobs:
     - name: Update status check for deploy-download-preview
       if: |
         matrix.branch == 'deploy-download-preview'
-        && github.ref != 'refs/heads/slicer-org'
-        && github.ref != 'refs/heads/download-slicer-org'
-        && github.ref != 'refs/heads/deploy-download-preview'
+        && github.event_name == 'pull_request'
+        && github.event.pull_request.head.repo.full_name == github.repository
+        && github.actor != 'dependabot[bot]'
       uses: ouzi-dev/commit-status-updater@v1.1.2
       with:
         name: 'netlify/deploy-download-preview'
