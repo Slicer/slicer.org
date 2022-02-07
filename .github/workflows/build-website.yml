@@ -17,7 +17,8 @@ jobs:
             custom_opts: '--config _config.yml,_config_download.yml'
           - branch: deploy-download-preview
             custom_opts: '--config _config.yml,_config_download.yml,_config_netlify_deploy_download_preview.yml'
-
+    env:
+      deploy_download_preview: ${{ matrix.branch == 'deploy-download-preview' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' }}
     steps:
     - name: 📂 setup
       uses: actions/checkout@v2
@@ -29,11 +30,7 @@ jobs:
 
     # See https://github.com/ouzi-dev/commit-status-updater
     - name: Update status check for deploy-download-preview to pending
-      if: |
-        matrix.branch == 'deploy-download-preview'
-        && github.event_name == 'pull_request'
-        && github.event.pull_request.head.repo.full_name == github.repository
-        && github.actor != 'dependabot[bot]'
+      if: env.deploy_download_preview == 'true'
       uses: ouzi-dev/commit-status-updater@v1.1.2
       with:
         name: 'netlify/deploy-download-preview'
@@ -59,11 +56,7 @@ jobs:
     # See https://github.com/marketplace/actions/github-pages-action
     - name: 🚀 deploy
       if: |
-        github.ref == 'refs/heads/main'
-        || (matrix.branch == 'deploy-download-preview'
-            && github.event_name == 'pull_request'
-            && github.event.pull_request.head.repo.full_name == github.repository
-            && github.actor != 'dependabot[bot]')
+        github.ref == 'refs/heads/main' || env.deploy_download_preview == 'true'
       uses: peaceiris/actions-gh-pages@v3
       with:
         force_orphan: true
@@ -75,11 +68,7 @@ jobs:
 
     # See https://github.com/ouzi-dev/commit-status-updater
     - name: Update status check for deploy-download-preview
-      if: |
-        matrix.branch == 'deploy-download-preview'
-        && github.event_name == 'pull_request'
-        && github.event.pull_request.head.repo.full_name == github.repository
-        && github.actor != 'dependabot[bot]'
+      if: env.deploy_download_preview == 'true'
       uses: ouzi-dev/commit-status-updater@v1.1.2
       with:
         name: 'netlify/deploy-download-preview'
@@ -88,21 +77,13 @@ jobs:
         description: 'Deploy Preview ready!'
 
     - name: Wait for Netlify to deploy 'deploy-download-preview' branch
-      if: |
-        matrix.branch == 'deploy-download-preview'
-        && github.event_name == 'pull_request'
-        && github.event.pull_request.head.repo.full_name == github.repository
-        && github.actor != 'dependabot[bot]'
+      if: env.deploy_download_preview == 'true'
       run: sleep 5s
       shell: bash
 
     # See https://github.com/swinton/screenshot-website
     - name: Capture deploy-download-preview screenshot
-      if: |
-        matrix.branch == 'deploy-download-preview'
-        && github.event_name == 'pull_request'
-        && github.event.pull_request.head.repo.full_name == github.repository
-        && github.actor != 'dependabot[bot]'
+      if: env.deploy_download_preview == 'true'
       uses: swinton/screenshot-website@v1.x
       with:
         source: https://deploy-download-preview--slicer-org.netlify.app/download.html
