@@ -7,15 +7,15 @@ show_sidebar: false
 animated_navbar: false
 download_mock:
   stable:
-    version: 4.11.20210226
-    revision: 29738
-    built: 2021-02-27
-    url: "javascript: alert('download stable package');"
+    version: 4.2.20420101
+    revision: 12345
+    built: 2042-01-01
+    url: "javascript: alert('download frontend preview - stable package download button clicked');"
   preview:
-    version: 4.13.0
-    revision: 30057
-    built: 2021-07-18
-    url: "javascript: alert('download preview package');"
+    version: 7.4.0
+    revision: 78910
+    built: 2074-01-01
+    url: "javascript: alert('download frontend preview - preview package download button clicked');"
 ---
 <div class="download" markdown="0">
 
