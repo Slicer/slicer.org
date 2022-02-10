@@ -52,51 +52,31 @@ download_mock:
         <tr>
             <th>Stable Release<br /><span class="table-subheader"><a href="https://www.slicer.org/wiki/Documentation/Nightly/FAQ/General#Where_can_I_download_Slicer.3F">access older releases</a></span></th>
 
-            <!-- Windows -->
-            <td><a href="{% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.url }}{% else %}{% raw %}{{R.win.release.download_url}}{% endraw %}{% endif %}" class="button-download expanded hollow">
-                    <span class="header">version {% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.version }}{% else %}{% raw %}{{R.win.release.version}}{% endraw %}{% endif %}</span>
-                    <br/>revision {% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.revision }}{% else %}{% raw %}{{R.win.release.revision}}{% endraw %}{% endif %}
-                    <br/>built {% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.built }}{% else %}{% raw %}{{R.win.release.build_date_ymd}}{% endraw %}{% endif %}
-                </a>
-            </td>
+            {% assign release_type = "stable" %}
 
-            <!-- macOS -->
-            <td><a href="{% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.url }}{% else %}{% raw %}{{R.macosx.release.download_url}}{% endraw %}{% endif %}" class="button-download expanded hollow">
-                    <span class="header">version {% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.version }}{% else %}{% raw %}{{R.macosx.release.version}}{% endraw %}{% endif %}</span>
-                    <br/>revision {% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.revision }}{% else %}{% raw %}{{R.macosx.release.revision}}{% endraw %}{% endif %}
-                    <br/>built {% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.built }}{% else %}{% raw %}{{R.macosx.release.build_date_ymd}}{% endraw %}{% endif %}
-                </a>
-            </td>
+            {% assign operating_system = "win" %}
+            {% include download_table_td.html %}
 
-            <!-- Linux -->
-            <td><a href="{% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.url }}{% else %}{% raw %}{{R.linux.release.download_url}}{% endraw %}{% endif %}" class="button-download expanded hollow">
-                    <span class="header">version {% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.version }}{% else %}{% raw %}{{R.linux.release.version}}{% endraw %}{% endif %}</span>
-                    <br/>revision {% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.revision }}{% else %}{% raw %}{{R.linux.release.revision}}{% endraw %}{% endif %}
-                    <br/>built {% if site.slicer_download_mock_enabled %}{{ page.download_mock.stable.built }}{% else %}{% raw %}{{R.linux.release.build_date_ymd}}{% endraw %}{% endif %}
-                </a>
-            </td>
+            {% assign operating_system = "macos" %}
+            {% include download_table_td.html %}
+
+            {% assign operating_system = "linux" %}
+            {% include download_table_td.html %}
 
         </tr>
         <tr>
             <th>Preview Release</th>
 
-            <!-- Windows -->
-            <td><a href="{% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.url }}{% else %}{% raw %}{{R.win.nightly.download_url}}{% endraw %}{% endif %}" class="button-download expanded hollow warning">
-                    <span class="header">version {% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.version }}{% else %}{% raw %}{{R.win.nightly.version}}{% endraw %}{% endif %}</span>
-                    <br/>revision {% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.revision }}{% else %}{% raw %}{{R.win.nightly.revision}}{% endraw %}{% endif %}
-                    <br/>built {% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.built }}{% else %}{% raw %}{{R.win.nightly.build_date_ymd}}{% endraw %}{% endif %}</a></td>
+            {% assign release_type = "preview" %}
 
-            <!-- macOS -->
-            <td><a href="{% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.url }}{% else %}{% raw %}{{R.macosx.nightly.download_url}}{% endraw %}{% endif %}" class="button-download expanded hollow warning">
-                    <span class="header">version {% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.version }}{% else %}{% raw %}{{R.macosx.nightly.version}}{% endraw %}{% endif %}</span>
-                    <br/>revision {% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.revision }}{% else %}{% raw %}{{R.macosx.nightly.revision}}{% endraw %}{% endif %}
-                    <br/>built {% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.built }}{% else %}{% raw %}{{R.macosx.nightly.build_date_ymd}}{% endraw %}{% endif %}</a></td>
+            {% assign operating_system = "win" %}
+            {% include download_table_td.html %}
 
-            <!-- Linux -->
-            <td><a href="{% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.url }}{% else %}{% raw %}{{R.linux.nightly.download_url}}{% endraw %}{% endif %}" class="button-download expanded hollow warning">
-                    <span class="header">version {% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.version }}{% else %}{% raw %}{{R.linux.nightly.version}}{% endraw %}{% endif %}</span>
-                    <br/>revision {% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.revision }}{% else %}{% raw %}{{R.linux.nightly.revision}}{% endraw %}{% endif %}
-                    <br/>built {% if site.slicer_download_mock_enabled %}{{ page.download_mock.preview.built }}{% else %}{% raw %}{{R.linux.nightly.build_date_ymd}}{% endraw %}{% endif %}</a></td>
+            {% assign operating_system = "macos" %}
+            {% include download_table_td.html %}
+
+            {% assign operating_system = "linux" %}
+            {% include download_table_td.html %}
 
         </tr>
     </tbody>
