@@ -93,6 +93,10 @@ carousel_images:
     title: FreeSurfer support
     description: Import volumes, segmentations, surfaces from FreeSurfer then edit and analyze them. <a href="https://youtu.be/v0rGbno4h2M?t=27"> video > </a> <a href="https://discourse.slicer.org/t/12751"> learn more > </a>
     button_text: learn more
+  - image: assets/img/image-carousel/2022.02_SlicerDownloads-1M.png
+    title: 1 million downloads
+    description: 3D Slicer application installers have been downloaded over 1 million times in the past 10 years. <a href="https://www.slicer.org/wiki/Main_Page/SlicerCommunity"> learn more > </a>
+    button_text: learn more
 
 # Features ======================================================
 features:
@@ -146,3 +150,4 @@ community:
   button_text: Learn more about 3D Slicer Community
   button_link: https://www.slicer.org/wiki/Main_Page/SlicerCommunity
 ---
+
