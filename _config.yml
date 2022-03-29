@@ -29,6 +29,10 @@ logo_image: /assets/img/3D-Slicer-Mark.svg
 slicer_download_url: "https://download.slicer.org"
 slicer_download_stats_url: "https://download.slicer.org/download-stats"
 
+# Cause a build to fail if there is a YAML syntax error in a page's front matter.
+# See https://jekyllrb.com/docs/configuration/options/#build-command-options
+strict_front_matter: true
+
 # Google services
 google_analytics: UA-97117718-1
 
