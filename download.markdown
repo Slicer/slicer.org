@@ -10,12 +10,10 @@ download_mock:
     version: 4.2.20420101
     revision: 12345
     built: 2042-01-01
-    url: "javascript: alert('download frontend preview - stable package download button clicked');"
   preview:
     version: 7.4.0
     revision: 78910
     built: 2074-01-01
-    url: "javascript: alert('download frontend preview - preview package download button clicked');"
 ---
 <div class="download" markdown="0">
 
