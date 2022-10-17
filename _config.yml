@@ -21,7 +21,7 @@
 title: 3D Slicer
 tagline: 3D Slicer image computing platform
 description: >- # this means to ignore newlines until "baseurl:"
-  3D Slicer is a free, open source and multi-platform software package widely used for medical, biomedical, and related imaging research.
+  3D Slicer is a free, open source software for visualization, processing, segmentation, registration, and analysis of medical, biomedical, and other 3D images and meshes; and planning and navigating image-guided procedures.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://slicer.org" # the base hostname & protocol for your site, e.g. http://example.com
 logo_image: /assets/img/3D-Slicer-Mark.svg
