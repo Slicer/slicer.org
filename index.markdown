@@ -6,7 +6,7 @@ animated_navbar: true
 # Hero ======================================================
 logo_mark: /assets/img/3D-Slicer-Mark.svg
 title: <b> 3D Slicer </b> image computing platform
-subtitle: 3D Slicer is a <span class="highlight-text"><b>free</b></span>, <span class="highlight-text"><b>open source</b></span> and <span class="highlight-text"><b>multi-platform</b></span> software package widely used for medical, biomedical, and related imaging research.
+subtitle: 3D Slicer is a <span class="highlight-text"><b>free</b></span>, <span class="highlight-text"><b>open source</b></span> software for visualization, processing, segmentation, registration, and analysis of medical, biomedical, and other 3D images and meshes; and planning and navigating image-guided procedures.
 hero_buttons:
   - text: Download
     link: "{{ site.slicer_download_url }}"
