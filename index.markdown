@@ -24,7 +24,7 @@ hero_buttons:
     color: logo-red
 
   - text: Training
-    link: https://www.slicer.org/wiki/Documentation/4.10/Training
+    link: https://www.slicer.org/wiki/Documentation/Nightly/Training
     icon: fa fa-graduation-cap
     color: logo-orange
 
