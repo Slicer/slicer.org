@@ -34,12 +34,10 @@ page_path:
 * [Ebatinca SL][ebatinca] is an international technology company in Las Palmas, Spain focused on technology for sustainable development.
 * [Isomics][isomics] uses 3D Slicer in a variety of academic and commercial research partnerships in fields such as planning and guidance for neurosurgery, quantitative imaging for clinical trials, clinical image informatics.
 * [Kitware][kitware] focuses on solving the world’s most complex scientific challenges through customized software solutions. The company has a long history of contributing to open source platforms that serve as the foundation of many medical visualization and data processing applications. Kitware helps  customers develop commercial products based on 3D Slicer and has used the platform to rapidly prototype solutions in nearly every aspect of medical imaging.
-* [Pixel Medical][pixel-medical] builds on and contributes to 3D Slicer to develop innovative medical software from idea to clinical prototype to finished product, and to support academic research projects. Areas of expertise include radiation therapy, image guided therapy, virtual & augmented reality, hardware & device support, and machine learning & artificial intelligence.
 
 [ebatinca]: https://ebatinca.com/
 [isomics]: https://isomics.com/
 [kitware]: https://www.kitware.com/platforms/#3d-slicer
-[pixel-medical]: http://pixelmedical.ca/
 
 ## 3D Slicer Based Products and Product Prototypes
 {: .heading}
