@@ -31,7 +31,7 @@ page_path:
 ## Commercial Partners
 {: .heading}
 
-* [Ebatinca SL][ebatinca] is an international technology company in Las Palmas, Spain focused on technology for sustainable development.
+* [Ebatinca SL][ebatinca] is an international technology company in Las Palmas, Spain focused on technology for sustainable development. Primary areas: ultrasound navigation and training, collaborative VR, research support, custom Slicer-based solutions.
 * [Isomics][isomics] uses 3D Slicer in a variety of academic and commercial research partnerships in fields such as planning and guidance for neurosurgery, quantitative imaging for clinical trials, clinical image informatics.
 * [Kitware][kitware] focuses on solving the world’s most complex scientific challenges through customized software solutions. The company has a long history of contributing to open source platforms that serve as the foundation of many medical visualization and data processing applications. Kitware helps  customers develop commercial products based on 3D Slicer and has used the platform to rapidly prototype solutions in nearly every aspect of medical imaging.
 
