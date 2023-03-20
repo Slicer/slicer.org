@@ -24,7 +24,7 @@ jobs:
       uses: actions/checkout@24cb9080177205b6e8c946b17badbe402adc938f # v3.4.0
 
     - name: 💎 setup ruby
-      uses: ruby/setup-ruby@319066216501fbd5e2d568f14b7d68c19fb67a5d # v1
+      uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1 # v1
       with:
         ruby-version: 2.6 # can change this to 2.7 or whatever version you prefer
 
