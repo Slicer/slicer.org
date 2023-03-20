@@ -21,17 +21,17 @@ jobs:
       deploy_download_preview: ${{ matrix.branch == 'deploy-download-preview' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]' }}
     steps:
     - name: 📂 setup
-      uses: actions/checkout@v2
+      uses: actions/checkout@dc323e67f16fb5f7663d20ff7941f27f5809e9b6 # v2.6.0
 
     - name: 💎 setup ruby
-      uses: ruby/setup-ruby@v1
+      uses: ruby/setup-ruby@319066216501fbd5e2d568f14b7d68c19fb67a5d # v1
       with:
         ruby-version: 2.6 # can change this to 2.7 or whatever version you prefer
 
     # See https://github.com/ouzi-dev/commit-status-updater
     - name: Update status check for deploy-download-preview to pending
       if: env.deploy_download_preview == 'true'
-      uses: ouzi-dev/commit-status-updater@v1.1.2
+      uses: ouzi-dev/commit-status-updater@ce8553fad082977ceadd109fdcbd8ff2fcaf5547 # v1.1.2
       with:
         name: 'netlify/deploy-download-preview'
         status: 'pending'
@@ -40,14 +40,14 @@ jobs:
 
     # See https://github.com/marketplace/actions/jekyll-action-ts
     - name: 🔨 install dependencies & build site
-      uses: limjh16/jekyll-action-ts@v2
+      uses: limjh16/jekyll-action-ts@9edf74e2e5aaa10d272c427efb8702a45a70a0b2 # v2
       with:
         enable_cache: true
         custom_opts: ${{ matrix.custom_opts }}
 
     - name: 'Upload website build'
       if: matrix.branch != 'deploy-download-preview'
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # v2
       with:
         name: ${{ matrix.branch }}-website-build
         path: ./_site
@@ -57,7 +57,7 @@ jobs:
     - name: 🚀 deploy
       if: |
         github.ref == 'refs/heads/main' || env.deploy_download_preview == 'true'
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@64b46b4226a4a12da2239ba3ea5aa73e3163c75b # v3
       with:
         force_orphan: true
         github_token: ${{ secrets.SLICERBOT_GITHUB_TOKEN }}
@@ -69,7 +69,7 @@ jobs:
     # See https://github.com/ouzi-dev/commit-status-updater
     - name: Update status check for deploy-download-preview
       if: env.deploy_download_preview == 'true'
-      uses: ouzi-dev/commit-status-updater@v1.1.2
+      uses: ouzi-dev/commit-status-updater@ce8553fad082977ceadd109fdcbd8ff2fcaf5547 # v1.1.2
       with:
         name: 'netlify/deploy-download-preview'
         status: 'success'
@@ -84,7 +84,7 @@ jobs:
     # See https://github.com/swinton/screenshot-website
     - name: Capture deploy-download-preview screenshot
       if: env.deploy_download_preview == 'true'
-      uses: swinton/screenshot-website@v1.x
+      uses: swinton/screenshot-website@5fcf4889015d277ef5e9635eba1fd1c2304a0d3e # v1.x
       id: capture_step
       with:
         source: https://deploy-download-preview--slicer-org.netlify.app/download.html
@@ -94,7 +94,7 @@ jobs:
     # See https://github.com/devicons/public-upload-to-imgur
     - name: Upload screenshot to imgur
       if: env.deploy_download_preview == 'true'
-      uses: devicons/public-upload-to-imgur@v2.2.2
+      uses: devicons/public-upload-to-imgur@352cf5f2805c692539a96cfe49a09669e6fca88e # v2.2.2
       id: imgur_step
       with:
         path: ${{ steps.capture_step.outputs.path }}
@@ -103,7 +103,7 @@ jobs:
     # See https://github.com/actions/github-script
     - name: Extract imgur URL
       if: env.deploy_download_preview == 'true'
-      uses: actions/github-script@v5
+      uses: actions/github-script@9b7ebbb458768465bb03f28bbef5aa6b5d9d5baf # v5
       id: extract_imgur_url_step
       env:
         IMGUR_URLS: ${{ steps.imgur_step.outputs.imgur_urls }}
@@ -120,7 +120,7 @@ jobs:
     # See https://github.com/thollander/actions-comment-pull-request
     - name: Add Pull Request comment including screenshot
       if: env.deploy_download_preview == 'true'
-      uses: thollander/actions-comment-pull-request@v1.0.4
+      uses: thollander/actions-comment-pull-request@675cdfe1695d33e816e060460a72feafee079d3f # v1.0.4
       env:
         IMG_URL: ${{ steps.extract_imgur_url_step.outputs.result }}
         MESSAGE: |
