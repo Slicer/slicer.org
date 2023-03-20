@@ -57,7 +57,7 @@ jobs:
     - name: 🚀 deploy
       if: |
         github.ref == 'refs/heads/main' || env.deploy_download_preview == 'true'
-      uses: peaceiris/actions-gh-pages@64b46b4226a4a12da2239ba3ea5aa73e3163c75b # v3
+      uses: peaceiris/actions-gh-pages@bd8c6b06eba6b3d25d72b7a1767993c0aeee42e7 # v3
       with:
         force_orphan: true
         github_token: ${{ secrets.SLICERBOT_GITHUB_TOKEN }}
