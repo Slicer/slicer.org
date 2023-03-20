@@ -103,7 +103,7 @@ jobs:
     # See https://github.com/actions/github-script
     - name: Extract imgur URL
       if: env.deploy_download_preview == 'true'
-      uses: actions/github-script@9b7ebbb458768465bb03f28bbef5aa6b5d9d5baf # v5
+      uses: actions/github-script@98814c53be79b1d30f795b907e553d8679345975 # v5
       id: extract_imgur_url_step
       env:
         IMGUR_URLS: ${{ steps.imgur_step.outputs.imgur_urls }}
