@@ -8,7 +8,9 @@ The site is implemented using [jekyll static site generator](https://jekyllrb.co
 
    * [Overview](#overview)
    * [Infrastructure](#infrastructure)
-      * [Synchronization](#synchronization)
+      * [Production](#production)
+        * [Automatic Deployment](#automatic-deployment)
+        * [Maintenance](#maintenance)
       * [Preview](#preview)
    * [Development](#development)
       * [Local Development](#local-development)
@@ -27,7 +29,18 @@ The site is implemented using [jekyll static site generator](https://jekyllrb.co
 
 The site is implemented using [jekyll static site generator](https://jekyllrb.com/) and uses the [Bulma clean theme](https://github.com/chrisrhymes/bulma-clean-theme).
 
-## Synchronization
+## Production
+
+Each time the sources of the static site organized in the [main](https://github.com/Slicer/slicer.org/tree/main) branch are updated, the following branches are automatically updated using the GitHub Action workflow described in [.github/workflows/build-website.yml](.github/workflows/build-website.yml):
+* [slicer-org][branch-slicer-org]
+* [download-slicer-org][branch-download-slicer-org]
+* [download-maintenance-slicer-org][branch-download-maintenance-slicer-org]
+
+[branch-slicer-org]: https://github.com/Slicer/slicer.org/tree/slicer-org
+[branch-download-slicer-org]: https://github.com/Slicer/slicer.org/tree/download-slicer-org
+[branch-download-maintenance-slicer-org]: https://github.com/Slicer/slicer.org/tree/download-maintenance-slicer-org
+
+### Automatic Deployment
 
 These branches are automatically pulled into their respective live sites. There is no need to
 connect to the server in order to make changes.
@@ -37,10 +50,13 @@ connect to the server in order to make changes.
 | [slicer-org][branch-slicer-org] | Deployed to https://slicer.org | 5 mins | `--config _config.yml` |
 | [download-slicer-org][branch-download-slicer-org] | Deployed to https://download.slicer.org | 5 mins | `--config _config.yml,_config_download.yml` |
 
-[branch-slicer-org]: https://github.com/Slicer/slicer.org/tree/slicer-org
-[branch-download-slicer-org]: https://github.com/Slicer/slicer.org/tree/download-slicer-org
+### Maintenance
 
-Each time the sources of the static site organized in the [main](https://github.com/Slicer/slicer.org/tree/main) branch are updated, the branches `slicer-org` and `download-slicer-org` are then automatically updated using the GitHub Action workflow described in [.github/workflows/build-website.yml](.github/workflows/build-website.yml).
+This branch is expected to be manually pulled into the download server.
+
+| Branch | Jekyll build configuration |
+|--------|----------------------------|
+| [download-maintenance-slicer-org][branch-download-maintenance-slicer-org] | `--config _config.yml,_config_download.yml,_config_download_maintenance.yml` |
 
 ## Preview
 
@@ -50,21 +66,26 @@ Each time the sources of the static site organized in the [main](https://github.
 |------|-------------|
 | [Deploy Previews for slicer.org][netlify-slicer-org-preview] | Preview of `slicer.org` site automatically associated with pull requests. |
 | [Preview for download.slicer.org][netlify-download-slicer-org-preview] | Preview of `download.slicer.org` automatically associated with target branch [deploy-download-preview][branch-deploy-download-preview].<br>:warning: Preview is only available for pull request originating from this repository. |
+| [Preview for download.slicer.org maintenance page][netlify-download-maintenance-slicer-org-preview] | Preview of `download.slicer.org` automatically associated with target branch [deploy-download-maintenance-preview][branch-deploy-download-maintenance-preview].<br>:warning: Preview is only available for pull request originating from this repository. |
 
 To learn more about Netlify preview, see [here][netlify-preview-doc].
 
 [netlify-slicer-org-preview]: https://app.netlify.com/sites/slicer-org/deploys?filter=deploy%20previews
 [netlify-download-slicer-org-preview]: https://deploy-download-preview--slicer-org.netlify.app/download.html
+[netlify-download-maintenance-slicer-org-preview]: https://deploy-download-maintenance-preview--slicer-org.netlify.app/download.html
 
 [netlify-preview-doc]: https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/
 [branch-deploy-download-preview]: https://github.com/Slicer/slicer.org/tree/deploy-download-preview
+[branch-deploy-download-maintenance-preview]: https://github.com/Slicer/slicer.org/tree/deploy-download-maintenance-preview
 
 _The netlify deployment has been configured by [@jcfr](https://github.com/jcfr) and since the [free plan](https://www.netlify.com/pricing/) is being used, only one user can update its configuration._
 
 ### Website build
 
-The website builds associated with both [slicer-org][branch-slicer-org] and [download-slicer-org][branch-download-slicer-org]
-are also uploaded as GitHub action artifacts.
+The website builds associated with these branches are also uploaded as GitHub Action artifacts:
+* [slicer-org][branch-slicer-org]
+* [download-slicer-org][branch-download-slicer-org]
+* [download-maintenance-slicer-org][branch-download-maintenance-slicer-org]
 
 # Development
 
