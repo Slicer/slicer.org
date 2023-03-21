@@ -6,11 +6,11 @@ permalink:
 show_sidebar: false
 animated_navbar: false
 download_mock:
-  stable:
+  release:
     version: 4.2.20420101
     revision: 12345
     built: 2042-01-01
-  preview:
+  nightly:
     version: 7.4.0
     revision: 78910
     built: 2074-01-01
@@ -50,12 +50,12 @@ download_mock:
         <tr>
             <th>Stable Release<br /><span class="table-subheader"><a href="https://www.slicer.org/wiki/Documentation/Nightly/FAQ/General#Where_can_I_download_Slicer.3F">access older releases</a></span></th>
 
-            {% assign release_type = "stable" %}
+            {% assign release_type = "release" %}
 
             {% assign operating_system = "win" %}
             {% include download_table_td.html %}
 
-            {% assign operating_system = "macos" %}
+            {% assign operating_system = "macosx" %}
             {% include download_table_td.html %}
 
             {% assign operating_system = "linux" %}
@@ -65,12 +65,12 @@ download_mock:
         <tr>
             <th>Preview Release</th>
 
-            {% assign release_type = "preview" %}
+            {% assign release_type = "nightly" %}
 
             {% assign operating_system = "win" %}
             {% include download_table_td.html %}
 
-            {% assign operating_system = "macos" %}
+            {% assign operating_system = "macosx" %}
             {% include download_table_td.html %}
 
             {% assign operating_system = "linux" %}
