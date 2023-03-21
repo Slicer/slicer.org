@@ -15,7 +15,7 @@
   {% capture download_url %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.download_url{% raw %}}}{% endraw %}{% endcapture %}
 {% endif %}
 
-{% if release_type == "preview" %}
+{% if release_type == "nightly" %}
   {% assign css_class = "warning" %}
 {% else %}
   {% assign css_class = "" %}
