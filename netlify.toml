@@ -12,3 +12,6 @@
 
 [context.deploy-download-preview]
   command = "true"
+
+[context.deploy-download-maintenance-preview]
+  command = "true"
