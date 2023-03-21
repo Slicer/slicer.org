@@ -50,14 +50,17 @@ Each time the sources of the static site organized in the [main](https://github.
 |------|-------------|
 | [Deploy Previews for slicer.org][netlify-slicer-org-preview] | Preview of `slicer.org` site automatically associated with pull requests. |
 | [Preview for download.slicer.org][netlify-download-slicer-org-preview] | Preview of `download.slicer.org` automatically associated with target branch [deploy-download-preview][branch-deploy-download-preview].<br>:warning: Preview is only available for pull request originating from this repository. |
+| [Preview for download.slicer.org maintenance page][netlify-download-maintenance-slicer-org-preview] | Preview of `download.slicer.org` automatically associated with target branch [deploy-download-maintenance-preview][branch-deploy-download-maintenance-preview].<br>:warning: Preview is only available for pull request originating from this repository. |
 
 To learn more about Netlify preview, see [here][netlify-preview-doc].
 
 [netlify-slicer-org-preview]: https://app.netlify.com/sites/slicer-org/deploys?filter=deploy%20previews
 [netlify-download-slicer-org-preview]: https://deploy-download-preview--slicer-org.netlify.app/download.html
+[netlify-download-maintenance-slicer-org-preview]: https://deploy-download-maintenance-preview--slicer-org.netlify.app/download.html
 
 [netlify-preview-doc]: https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/
 [branch-deploy-download-preview]: https://github.com/Slicer/slicer.org/tree/deploy-download-preview
+[branch-deploy-download-maintenance-preview]: https://github.com/Slicer/slicer.org/tree/deploy-download-maintenance-preview
 
 _The netlify deployment has been configured by [@jcfr](https://github.com/jcfr) and since the [free plan](https://www.netlify.com/pricing/) is being used, only one user can update its configuration._
 

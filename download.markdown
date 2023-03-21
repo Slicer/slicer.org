@@ -16,6 +16,22 @@ animated_navbar: false
     Read about <a href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html#system-requirements">system requirements</a>.
     </div>
 
+{% if site.slicer_download_maintenance_enabled %}
+    <div class="columns is-mobile is-centered has-text-centered">
+
+      <div class="column is-12">
+        <h1 class="title is-2">
+          We&rsquo;ll be back very soon! Scheduled maintenance happening on June 27th, 2023.
+        </h1>
+        <h2 class="subtitle is-4">
+          Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment.
+          If you have questions or would like to learn more, see <a href="https://discourse.slicer.org/t/maintenance-of-download-slicer-org-slicer-kitware-com-and-slicer-packages-kitware-com-planned-for-june-27th-2023-2-00pm-to-4-00pm-et/30250">here</a>, otherwise we anticipate the maintenance to last for approximately two hours, from 2:00 PM to 4:00 PM ET on June 27th, 2023.
+
+          In the meantime, explore our <a href="https://slicer.readthedocs.io/">documentation</a> for tips on how to use Slicer or join our <a href="https://discourse.slicer.org/">Forum</a> to connect with other users.
+        </h2>
+      </div>
+    </div>
+{% else %}
     <!-- This section contains jinja2 templates intended to be used in https://github.com/Slicer/slicer_download -->
     <div class="columns is-mobile is-centered">
         <table class="installers column is-three-quarters">
@@ -193,4 +209,5 @@ animated_navbar: false
             </table>
         </div>
     </div>
+{% endif %}
 </div>
