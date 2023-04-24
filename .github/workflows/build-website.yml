@@ -26,7 +26,7 @@ jobs:
     - name: 💎 setup ruby
       uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
       with:
-        ruby-version: 2.6 # can change this to 2.7 or whatever version you prefer
+        ruby-version: 2.7 # can change this to 2.7 or whatever version you prefer
 
     # See https://github.com/ouzi-dev/commit-status-updater
     - name: Update status check for deploy-download-preview to pending
