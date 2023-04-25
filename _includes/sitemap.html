@@ -1,24 +1,24 @@
 <div class="container">
     {% if site.footer_menu %}
     <div class="columns is-multiline">
-        {% assign title = 'Application' %}
-        {% assign items = site.data[site.footer_menu][title].items %}
+        {%- assign title = 'Application' -%}
+        {%- assign items = site.data[site.footer_menu][title].items -%}
         {% include sitemap-column.html %}
 
-        {% assign title = 'Support' %}
-        {% assign items = site.data[site.footer_menu][title].items %}
+        {%- assign title = 'Support' -%}
+        {%- assign items = site.data[site.footer_menu][title].items -%}
         {% include sitemap-column.html %}
 
-        {% assign title = 'Solutions' %}
-        {% assign items = site.data.solutions %}
+        {%- assign title = 'Solutions' -%}
+        {%- assign items = site.data.solutions -%}
         {% include sitemap-column.html %}
 
-        {% assign title = 'Developers' %}
-        {% assign items = site.data[site.footer_menu][title].items %}
+        {%- assign title = 'Developers' -%}
+        {%- assign items = site.data[site.footer_menu][title].items -%}
         {% include sitemap-column.html %}
 
-        {% assign title = 'About' %}
-        {% assign items = site.data[site.footer_menu][title].items %}
+        {%- assign title = 'About' -%}
+        {%- assign items = site.data[site.footer_menu][title].items -%}
         {% include sitemap-column.html %}
     </div>
     {% endif %}
