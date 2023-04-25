@@ -45,6 +45,14 @@ jobs:
         enable_cache: true
         custom_opts: ${{ matrix.custom_opts }}
 
+    - name: 'Evaluate download template [release_and_nightly]'
+      if: env.deploy_download_preview == 'true'
+      uses: cuchi/jinja2-action@3fa06acb38601d3caea4c5ce0416e268a8799d71 # v1.2.1
+      with:
+        template: _site/download.html
+        data_file: _data/template_test_data/download_release_and_nightly.json
+        output_file: _site/download_release_and_nightly.html
+
     - name: 'Upload website build'
       if: matrix.branch != 'deploy-download-preview'
       uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
@@ -81,12 +89,12 @@ jobs:
       run: sleep 30s
       shell: bash
 
-    - name: Capture deploy-download-preview screenshot
+    - name: Capture deploy-download-preview screenshot [release_and_nightly]
       if: env.deploy_download_preview == 'true'
       uses: ./.github/actions/screenshot-website-imgur-upload
-      id: capture_deploy_download_preview
+      id: capture_deploy_download_preview_release_and_nightly
       with:
-        source_url: https://deploy-download-preview--slicer-org.netlify.app/download.html
+        source_url: https://deploy-download-preview--slicer-org.netlify.app/download_release_and_nightly.html
         imgur_client_id: ${{secrets.SLICER_IMGUR_CLIENT_ID}}
 
     # See https://github.com/thollander/actions-comment-pull-request
@@ -94,7 +102,7 @@ jobs:
       if: env.deploy_download_preview == 'true'
       uses: thollander/actions-comment-pull-request@632cf9ce90574d125be56b5f3405cda41a84e2fd # v2.3.1
       env:
-        IMG_URL: ${{ steps.capture_deploy_download_preview.outputs.imgur_url }}
+        IMG_URL: ${{ steps.capture_deploy_download_preview_release_and_nightly.outputs.imgur_url }}
         MESSAGE: |
           ### download.slicer.org preview
           _:warning: The download preview is a static website generated using mock data [^1], is temporary and may be updated at anytime [^2]_

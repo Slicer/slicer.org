@@ -2,9 +2,6 @@
 # Set the jinja2 template intended to be used in https://github.com/Slicer/slicer_download
 slicer_download_stats_url: "{{download_stats_url}}"
 
-# Toggle use of "download_mock" specified in download.markdown
-slicer_download_mock_enabled: false
-
 exclude:
   #
   # Important: if you update this list, consider updating _config.yml
