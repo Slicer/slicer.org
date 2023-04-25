@@ -1,4 +1,3 @@
-
 {%- if site.slicer_download_mock_enabled -%}
 
   {%- assign version = page.download_mock.[release_type].version -%}
@@ -22,6 +21,7 @@
   {%- assign css_class = "" -%}
 {%- endif -%}
 
+<!-- _includes/download_table_td.html -->
 <td>
     <a href="{{ download_url }}" class="button-download expanded hollow {{ css_class }}">
         <span class="header">{{ version }}</span>
