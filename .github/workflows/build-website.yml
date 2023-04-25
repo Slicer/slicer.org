@@ -53,6 +53,22 @@ jobs:
         data_file: _data/template_test_data/download_release_and_nightly.json
         output_file: _site/download_release_and_nightly.html
 
+    - name: 'Evaluate download template [only_release]'
+      if: env.deploy_download_preview == 'true'
+      uses: cuchi/jinja2-action@3fa06acb38601d3caea4c5ce0416e268a8799d71 # v1.2.1
+      with:
+        template: _site/download.html
+        data_file: _data/template_test_data/download_only_release.json
+        output_file: _site/download_only_release.html
+
+    - name: 'Evaluate download template [only_nightly]'
+      if: env.deploy_download_preview == 'true'
+      uses: cuchi/jinja2-action@3fa06acb38601d3caea4c5ce0416e268a8799d71 # v1.2.1
+      with:
+        template: _site/download.html
+        data_file: _data/template_test_data/download_only_nightly.json
+        output_file: _site/download_only_nightly.html
+
     - name: 'Upload website build'
       if: matrix.branch != 'deploy-download-preview'
       uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
@@ -97,21 +113,39 @@ jobs:
         source_url: https://deploy-download-preview--slicer-org.netlify.app/download_release_and_nightly.html
         imgur_client_id: ${{secrets.SLICER_IMGUR_CLIENT_ID}}
 
+    - name: Capture deploy-download-preview screenshot [only_release]
+      if: env.deploy_download_preview == 'true'
+      uses: ./.github/actions/screenshot-website-imgur-upload
+      id: capture_deploy_download_preview_only_release
+      with:
+        source_url: https://deploy-download-preview--slicer-org.netlify.app/download_only_release.html
+        imgur_client_id: ${{secrets.SLICER_IMGUR_CLIENT_ID}}
+
+    - name: Capture deploy-download-preview screenshot [only_nightly]
+      if: env.deploy_download_preview == 'true'
+      uses: ./.github/actions/screenshot-website-imgur-upload
+      id: capture_deploy_download_preview_only_nightly
+      with:
+        source_url: https://deploy-download-preview--slicer-org.netlify.app/download_only_nightly.html
+        imgur_client_id: ${{secrets.SLICER_IMGUR_CLIENT_ID}}
+
     # See https://github.com/thollander/actions-comment-pull-request
     - name: Add Pull Request comment including screenshot
       if: env.deploy_download_preview == 'true'
       uses: thollander/actions-comment-pull-request@632cf9ce90574d125be56b5f3405cda41a84e2fd # v2.3.1
       env:
-        IMG_URL: ${{ steps.capture_deploy_download_preview_release_and_nightly.outputs.imgur_url }}
+        IMG_URL_0: ${{ steps.capture_deploy_download_preview_release_and_nightly.outputs.imgur_url }}
+        IMG_URL_1: ${{ steps.capture_deploy_download_preview_only_release.outputs.imgur_url }}
+        IMG_URL_2: ${{ steps.capture_deploy_download_preview_only_nightly.outputs.imgur_url }}
         MESSAGE: |
           ### download.slicer.org preview
           _:warning: The download preview is a static website generated using mock data [^1], is temporary and may be updated at anytime [^2]_
-          | Screenshot from https://deploy-download-preview--slicer-org.netlify.app/download.html|
-          |--|
-          | ![Screenshot]({0}) |
+          | Screenshot from https://deploy-download-preview--slicer-org.netlify.app/download_release_and_nightly.html | Screenshot from https://deploy-download-preview--slicer-org.netlify.app/download_only_release.html | Screenshot from https://deploy-download-preview--slicer-org.netlify.app/download_only_nightly.html |
+          |--|--|--|
+          | ![Screenshot]({0}) | ![Screenshot]({1}) | ![Screenshot]({2}) |
           [^1]: See [front matter](https://jekyllrb.com/docs/front-matter/) variable `download_mock` associated with https://raw.githubusercontent.com/Slicer/slicer.org/main/download.markdown
           [^2]: Due to limitation of Netlify preventing us from having multiple [deploy previews](https://docs.netlify.com/site-deploys/deploy-previews/) associated with a single pull request and the [impossibility](https://github.community/t/make-secrets-available-to-builds-of-forks/16166) of using repository secret in a workflow associated with a pull-request originating from forks, the `deploy-download-preview` site is only updated for pull request originating from this repository and will be overriden after another pull request is pushed or updated.
       with:
-        message: ${{ format(env.MESSAGE, env.IMG_URL) }}
+        message: ${{ format(env.MESSAGE, env.IMG_URL_0, env.IMG_URL_1, env.IMG_URL_2) }}
         GITHUB_TOKEN: ${{ secrets.SLICERBOT_GITHUB_TOKEN }}
 

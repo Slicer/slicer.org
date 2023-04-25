@@ -1,4 +1,5 @@
 
+  {%- capture release_type_obj %}R.{{ operating_system }}.{{ release_type }}{% endcapture -%}
   {%- capture version %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.version{% raw %}}}{% endraw %}{% endcapture -%}
   {%- capture revision %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.revision{% raw %}}}{% endraw %}{% endcapture -%}
   {%- capture build_date_ymd %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.build_date_ymd{% raw %}}}{% endraw %}{% endcapture -%}
@@ -13,9 +14,13 @@
 
 <!-- _includes/download_table_td.html -->
 <td>
+{% raw %}{% if {% endraw %}{{ release_type_obj }}{% raw %} %}{% endraw %}
     <a href="{{ download_url }}" class="button-download expanded hollow {{ css_class }}">
         <span class="header">{{ version }}</span>
         <br/>revision {{ revision }}
         <br/>built {{ build_date_ymd }}
     </a>
+{% raw %}{% else %}{% endraw %}
+    <i>Not available</i>
+{% raw %}{% endif %}{% endraw %}
 </td>
