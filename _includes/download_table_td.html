@@ -1,19 +1,9 @@
-{%- if site.slicer_download_mock_enabled -%}
-
-  {%- assign version = page.download_mock.[release_type].version -%}
-  {%- assign revision = page.download_mock.[release_type].revision -%}
-  {%- assign build_date_ymd = page.download_mock.[release_type].built -%}
-
-  {%- capture download_url %}javascript: alert('download {{ operating_system }} {{ release_type }} package');{% endcapture -%}
-
-{%- else -%}
 
   {%- capture version %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.version{% raw %}}}{% endraw %}{% endcapture -%}
   {%- capture revision %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.revision{% raw %}}}{% endraw %}{% endcapture -%}
   {%- capture build_date_ymd %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.build_date_ymd{% raw %}}}{% endraw %}{% endcapture -%}
 
   {%- capture download_url %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.download_url{% raw %}}}{% endraw %}{% endcapture -%}
-{%- endif -%}
 
 {%- if release_type == "nightly" -%}
   {%- assign css_class = "warning" -%}

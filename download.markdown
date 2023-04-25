@@ -5,15 +5,6 @@ layout: page
 permalink:
 show_sidebar: false
 animated_navbar: false
-download_mock:
-  release:
-    version: 4.2.20420101
-    revision: 12345
-    built: 2042-01-01
-  nightly:
-    version: 7.4.0
-    revision: 78910
-    built: 2074-01-01
 ---
 <div class="download" markdown="0">
 
