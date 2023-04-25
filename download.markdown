@@ -50,30 +50,30 @@ download_mock:
         <tr>
             <th>Stable Release<br /><span class="table-subheader"><a href="https://www.slicer.org/wiki/Documentation/Nightly/FAQ/General#Where_can_I_download_Slicer.3F">access older releases</a></span></th>
 
-            {% assign release_type = "release" %}
+            {%- assign release_type = "release" -%}
 
-            {% assign operating_system = "win" %}
+            {%- assign operating_system = "win" -%}
             {% include download_table_td.html %}
 
-            {% assign operating_system = "macosx" %}
+            {%- assign operating_system = "macosx" -%}
             {% include download_table_td.html %}
 
-            {% assign operating_system = "linux" %}
+            {%- assign operating_system = "linux" -%}
             {% include download_table_td.html %}
 
         </tr>
         <tr>
             <th>Preview Release</th>
 
-            {% assign release_type = "nightly" %}
+            {%- assign release_type = "nightly" -%}
 
-            {% assign operating_system = "win" %}
+            {%- assign operating_system = "win" -%}
             {% include download_table_td.html %}
 
-            {% assign operating_system = "macosx" %}
+            {%- assign operating_system = "macosx" -%}
             {% include download_table_td.html %}
 
-            {% assign operating_system = "linux" %}
+            {%- assign operating_system = "linux" -%}
             {% include download_table_td.html %}
 
         </tr>

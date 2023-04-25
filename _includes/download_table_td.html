@@ -1,27 +1,29 @@
 
-{% if site.slicer_download_mock_enabled %}
+{%- if site.slicer_download_mock_enabled -%}
 
-  {% assign version = page.download_mock.[release_type].version %}
-  {% assign revision = page.download_mock.[release_type].revision %}
-  {% assign build_date_ymd = page.download_mock.[release_type].built %}
-  {% capture download_url %}javascript: alert('download {{ operating_system }} {{ release_type }} package');{% endcapture %}
+  {%- assign version = page.download_mock.[release_type].version -%}
+  {%- assign revision = page.download_mock.[release_type].revision -%}
+  {%- assign build_date_ymd = page.download_mock.[release_type].built -%}
 
-{% else %}
+  {%- capture download_url %}javascript: alert('download {{ operating_system }} {{ release_type }} package');{% endcapture -%}
 
-  {% capture version %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.version{% raw %}}}{% endraw %}{% endcapture %}
-  {% capture revision %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.revision{% raw %}}}{% endraw %}{% endcapture %}
-  {% capture build_date_ymd %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.build_date_ymd{% raw %}}}{% endraw %}{% endcapture %}
+{%- else -%}
 
-  {% capture download_url %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.download_url{% raw %}}}{% endraw %}{% endcapture %}
-{% endif %}
+  {%- capture version %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.version{% raw %}}}{% endraw %}{% endcapture -%}
+  {%- capture revision %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.revision{% raw %}}}{% endraw %}{% endcapture -%}
+  {%- capture build_date_ymd %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.build_date_ymd{% raw %}}}{% endraw %}{% endcapture -%}
 
-{% if release_type == "nightly" %}
-  {% assign css_class = "warning" %}
-{% else %}
-  {% assign css_class = "" %}
-{% endif %}
+  {%- capture download_url %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.download_url{% raw %}}}{% endraw %}{% endcapture -%}
+{%- endif -%}
 
-<td><a href="{{ download_url }}" class="button-download expanded hollow {{ css_class }}">
+{%- if release_type == "nightly" -%}
+  {%- assign css_class = "warning" -%}
+{%- else -%}
+  {%- assign css_class = "" -%}
+{%- endif -%}
+
+<td>
+    <a href="{{ download_url }}" class="button-download expanded hollow {{ css_class }}">
         <span class="header">{{ version }}</span>
         <br/>revision {{ revision }}
         <br/>built {{ build_date_ymd }}

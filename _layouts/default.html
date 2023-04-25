@@ -1,10 +1,10 @@
-{% if page.menubar and page.show_sidebar %}
-    {% assign content_width = 'is-4' %}
-{% elsif page.menubar or page.show_sidebar %}
-    {% assign content_width = 'is-8' %}
-{% else %}
-    {% assign content_width = 'is-12' %}
-{% endif %}
+{%- if page.menubar and page.show_sidebar -%}
+    {%- assign content_width = 'is-4' -%}
+{%- elsif page.menubar or page.show_sidebar -%}
+    {%- assign content_width = 'is-8' -%}
+{%- else -%}
+    {%- assign content_width = 'is-12' -%}
+{%- endif -%}
 <!DOCTYPE html>
 <html>
   {% include head.html %}
