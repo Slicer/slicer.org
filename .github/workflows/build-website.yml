@@ -81,48 +81,20 @@ jobs:
       run: sleep 30s
       shell: bash
 
-    # See https://github.com/swinton/screenshot-website
     - name: Capture deploy-download-preview screenshot
       if: env.deploy_download_preview == 'true'
-      uses: swinton/screenshot-website@5fcf4889015d277ef5e9635eba1fd1c2304a0d3e # v1.x
-      id: capture_step
+      uses: ./.github/actions/screenshot-website-imgur-upload
+      id: capture_deploy_download_preview
       with:
-        source: https://deploy-download-preview--slicer-org.netlify.app/download.html
-        destination: ${{ matrix.branch }}-screenshot.png
-        full-page: true
-
-    # See https://github.com/devicons/public-upload-to-imgur
-    - name: Upload screenshot to imgur
-      if: env.deploy_download_preview == 'true'
-      uses: devicons/public-upload-to-imgur@352cf5f2805c692539a96cfe49a09669e6fca88e # v2.2.2
-      id: imgur_step
-      with:
-        path: ${{ steps.capture_step.outputs.path }}
-        client_id: ${{secrets.SLICER_IMGUR_CLIENT_ID}}
-
-    # See https://github.com/actions/github-script
-    - name: Extract imgur URL
-      if: env.deploy_download_preview == 'true'
-      uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6.4.1
-      id: extract_imgur_url_step
-      env:
-        IMGUR_URLS: ${{ steps.imgur_step.outputs.imgur_urls }}
-      with:
-        script: |
-          const { IMGUR_URLS } = process.env
-          if (IMGUR_URLS) {
-            const imgur_url = JSON.parse(IMGUR_URLS)[0]
-            console.log(imgur_url)
-            return imgur_url
-          }
-        result-encoding: string
+        source_url: https://deploy-download-preview--slicer-org.netlify.app/download.html
+        imgur_client_id: ${{secrets.SLICER_IMGUR_CLIENT_ID}}
 
     # See https://github.com/thollander/actions-comment-pull-request
     - name: Add Pull Request comment including screenshot
       if: env.deploy_download_preview == 'true'
       uses: thollander/actions-comment-pull-request@632cf9ce90574d125be56b5f3405cda41a84e2fd # v2.3.1
       env:
-        IMG_URL: ${{ steps.extract_imgur_url_step.outputs.result }}
+        IMG_URL: ${{ steps.capture_deploy_download_preview.outputs.imgur_url }}
         MESSAGE: |
           ### download.slicer.org preview
           _:warning: The download preview is a static website generated using mock data [^1], is temporary and may be updated at anytime [^2]_

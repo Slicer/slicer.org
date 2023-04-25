@@ -1,0 +1,49 @@
+# action.yml
+name: 'Screenshot Website Imgur Upload'
+description: 'Capture a website screenshot, upload it to imgur and return the screenshot URL'
+inputs:
+  source_url:
+    description: 'URL of the website to capture the screenshot from'
+    required: true
+  imgur_client_id:
+    description: 'The CLIENT_ID of your Imgur app'
+    required: true
+outputs:
+  imgur_url:
+    description: 'URL of the screenshot uploaded to imgur website'
+    value: ${{ steps.extract_imgur_url_step.outputs.result }}
+runs:
+  using: "composite"
+  steps:
+    # See https://github.com/swinton/screenshot-website
+    - name: Capture screenshot
+      uses: swinton/screenshot-website@5fcf4889015d277ef5e9635eba1fd1c2304a0d3e # v1.x
+      id: capture_step
+      with:
+        source: ${{ inputs.source_url }}
+        destination: screenshot.png
+        full-page: true
+
+    # See https://github.com/devicons/public-upload-to-imgur
+    - name: Upload screenshot to imgur
+      uses: devicons/public-upload-to-imgur@352cf5f2805c692539a96cfe49a09669e6fca88e # v2.2.2
+      id: imgur_step
+      with:
+        path: ${{ steps.capture_step.outputs.path }}
+        client_id: ${{ inputs.imgur_client_id }}
+
+    # See https://github.com/actions/github-script
+    - name: Extract imgur URL
+      uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6.4.1
+      id: extract_imgur_url_step
+      env:
+        IMGUR_URLS: ${{ steps.imgur_step.outputs.imgur_urls }}
+      with:
+        script: |
+          const { IMGUR_URLS } = process.env
+          if (IMGUR_URLS) {
+            const imgur_url = JSON.parse(IMGUR_URLS)[0]
+            console.log(imgur_url)
+            return imgur_url
+          }
+        result-encoding: string
