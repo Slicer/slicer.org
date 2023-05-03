@@ -19,56 +19,56 @@ animated_navbar: false
 
     <!-- This section contains jinja2 templates intended to be used in https://github.com/Slicer/slicer_download -->
     <div class="columns is-mobile is-centered">
-    <table class="installers column is-three-quarters">
-        <thead>
-            <tr>
-                <th width="200"></th>
-                <th width="225">
-                    <img src="assets/img/platforms/windows-logo.svg" alt="Windows">
-                    <p>Windows</p>
-                </th>
-                <th width="225">
-                    <img src="assets/img/platforms/apple-logo.svg" alt="macOS">
-                    <p>macOS</p>
-                </th>
-                <th width="225">
-                    <img src="assets/img/platforms/linux-logo.svg" alt="Linux">
-                    <p>Linux<br><span class="table-subheader"><a href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html#linux" target="_blank" rel="noopener noreferrer">prerequisites</a></span></p>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th>Stable Release<br /><span class="table-subheader"><a href="https://www.slicer.org/wiki/Documentation/Nightly/FAQ/General#Where_can_I_download_Slicer.3F">access older releases</a></span></th>
+        <table class="installers column is-three-quarters">
+            <thead>
+                <tr>
+                    <th width="200"></th>
+                    <th width="225">
+                        <img src="assets/img/platforms/windows-logo.svg" alt="Windows">
+                        <p>Windows</p>
+                    </th>
+                    <th width="225">
+                        <img src="assets/img/platforms/apple-logo.svg" alt="macOS">
+                        <p>macOS</p>
+                    </th>
+                    <th width="225">
+                        <img src="assets/img/platforms/linux-logo.svg" alt="Linux">
+                        <p>Linux<br><span class="table-subheader"><a href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html#linux" target="_blank" rel="noopener noreferrer">prerequisites</a></span></p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Stable Release<br /><span class="table-subheader"><a href="https://www.slicer.org/wiki/Documentation/Nightly/FAQ/General#Where_can_I_download_Slicer.3F">access older releases</a></span></th>
 
-            {%- assign release_type = "release" -%}
+                    {%- assign release_type = "release" -%}
 
-            {%- assign operating_system = "win" -%}
-            {% include download_table_td.html %}
+                    {%- assign operating_system = "win" -%}
+                    {% include download_table_td.html %}
 
-            {%- assign operating_system = "macosx" -%}
-            {% include download_table_td.html %}
+                    {%- assign operating_system = "macosx" -%}
+                    {% include download_table_td.html %}
 
-            {%- assign operating_system = "linux" -%}
-            {% include download_table_td.html %}
+                    {%- assign operating_system = "linux" -%}
+                    {% include download_table_td.html %}
 
-        </tr>
-        <tr>
-            <th>Preview Release</th>
+                </tr>
+                <tr>
+                    <th>Preview Release</th>
 
-            {%- assign release_type = "nightly" -%}
+                    {%- assign release_type = "nightly" -%}
 
-            {%- assign operating_system = "win" -%}
-            {% include download_table_td.html %}
+                    {%- assign operating_system = "win" -%}
+                    {% include download_table_td.html %}
 
-            {%- assign operating_system = "macosx" -%}
-            {% include download_table_td.html %}
+                    {%- assign operating_system = "macosx" -%}
+                    {% include download_table_td.html %}
 
-            {%- assign operating_system = "linux" -%}
-            {% include download_table_td.html %}
+                    {%- assign operating_system = "linux" -%}
+                    {% include download_table_td.html %}
 
-        </tr>
-    </tbody>
-    </table>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
