@@ -6,7 +6,8 @@
         "download_url": "javascript: alert('download linux nightly package');",
         "version": "5.3.0",
         "revision": "31717",
-        "build_date_ymd": "2023-04-17"
+        "build_date_ymd": "2023-04-17",
+        "sha512": "6c067d1dd6a474b78fd66e5632ea5ece0e08f055f5532ccef89f43a82f023a521f263a5b1a3b36921e0d314bcba8a1993be4b71efa6bd7bd2fc8fbb9eff475b9"
       }
     },
     "macosx": {
@@ -14,7 +15,8 @@
         "download_url": "javascript: alert('download macosx nightly package');",
         "version": "5.3.0",
         "revision": "31718",
-        "build_date_ymd": "2023-04-18"
+        "build_date_ymd": "2023-04-18",
+        "sha512": "048ef7f5c14d986527c2fa2cad668ffc12a43d1a41fb6e7cc4f96323644176db41bf66b50ea0d82b3cb7b28f105c2471535518f29441e615abf16bb494c38fdb"
       }
     },
     "win": {
@@ -22,7 +24,8 @@
         "download_url": "javascript: alert('download win nightly package');",
         "version": "5.3.0",
         "revision": "31719",
-        "build_date_ymd": "2023-04-19"
+        "build_date_ymd": "2023-04-19",
+        "sha512": "f687ca8178891b7fe997499441fc6154639d41c49dd62925918c827bbdcbd068d30e58232743893b1c86bdc692c596d1334571b0ab5313f4e60ee72aeb5b0311"
       }
     }
   }

@@ -6,7 +6,8 @@
         "download_url": "javascript: alert('download linux release package');",
         "version": "5.2.0",
         "revision": "31314",
-        "build_date_ymd": "2022-11-22"
+        "build_date_ymd": "2022-11-22",
+        "sha512": "d899dcc8078b79752d2530b5b7221d9d44cca3d9de038732a0e1ffea4e62731eeb9071989254f7e56cdbf5056fb52eb81c8e9eff5ee42597f074e3f7d2f5ff3a"
       },
     },
     "macosx": {
@@ -14,7 +15,8 @@
         "download_url": "javascript: alert('download macosx release package');",
         "version": "5.2.0",
         "revision": "31314",
-        "build_date_ymd": "2022-11-23"
+        "build_date_ymd": "2022-11-23",
+        "sha512": "f482e92d1e00860e31b95ac74eeb3300ff5c141051deab6b1fa8de23c910e35d7b9d5a1b11f804781e4da8455a4d7a98ee8c9839a8db2a0fc59533906ad933b4"
       },
     },
     "win": {
@@ -22,7 +24,8 @@
         "download_url": "javascript: alert('download win release package');",
         "version": "5.2.0",
         "revision": "31314",
-        "build_date_ymd": "2022-11-24"
+        "build_date_ymd": "2022-11-24",
+        "sha512": "429bed7f03fb65addebe817d0a6cd03535a0a134391b870c79d4e940c1ba0cdfb03110c9bc698f70930dcc8a3198dded7ccc9a07a9351e3a4f06dcfcf7d72f7c"
       },
     }
   }
