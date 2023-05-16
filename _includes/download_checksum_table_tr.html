@@ -1,0 +1,15 @@
+{%- capture operating_system_obj %}R.{{ operating_system }}{% endcapture -%}
+{%- capture release_type_obj %}R.{{ operating_system }}.{{ release_type }}{% endcapture -%}
+{%- capture sha512 %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.sha512{% raw %}}}{% endraw %}{% endcapture -%}
+
+<!-- _includes/download_checksum_table_tr.html -->
+<tr>
+    <td><tt>{{ package }}</tt></td>
+    <td>
+    {% raw %}{% if {% endraw %}{{ operating_system_obj }} and {{ release_type_obj }}{% raw %} %}{% endraw %}
+        <tt>{{ sha512 }}</tt>
+    {% raw %}{% else %}{% endraw %}
+        <i>Not available</i>
+    {% raw %}{% endif %}{% endraw %}
+    </td>
+</tr>
