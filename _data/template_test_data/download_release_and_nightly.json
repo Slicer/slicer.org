@@ -6,13 +6,15 @@
         "download_url": "javascript: alert('download linux release package');",
         "version": "5.2.0",
         "revision": "31322",
-        "build_date_ymd": "2022-11-22"
+        "build_date_ymd": "2022-11-22",
+        "sha512": "d899dcc8078b79752d2530b5b7221d9d44cca3d9de038732a0e1ffea4e62731eeb9071989254f7e56cdbf5056fb52eb81c8e9eff5ee42597f074e3f7d2f5ff3a"
       },
       "nightly": {
         "download_url": "javascript: alert('download linux nightly package');",
         "version": "5.3.0",
         "revision": "31717",
-        "build_date_ymd": "2023-04-17"
+        "build_date_ymd": "2023-04-17",
+        "sha512": "6c067d1dd6a474b78fd66e5632ea5ece0e08f055f5532ccef89f43a82f023a521f263a5b1a3b36921e0d314bcba8a1993be4b71efa6bd7bd2fc8fbb9eff475b9"
       }
     },
     "macosx": {
@@ -20,13 +22,15 @@
         "download_url": "javascript: alert('download macosx release package');",
         "version": "5.2.0",
         "revision": "31323",
-        "build_date_ymd": "2022-11-23"
+        "build_date_ymd": "2022-11-23",
+        "sha512": "f482e92d1e00860e31b95ac74eeb3300ff5c141051deab6b1fa8de23c910e35d7b9d5a1b11f804781e4da8455a4d7a98ee8c9839a8db2a0fc59533906ad933b4"
       },
       "nightly": {
         "download_url": "javascript: alert('download macosx nightly package');",
         "version": "5.3.0",
         "revision": "31718",
-        "build_date_ymd": "2023-04-18"
+        "build_date_ymd": "2023-04-18",
+        "sha512": "048ef7f5c14d986527c2fa2cad668ffc12a43d1a41fb6e7cc4f96323644176db41bf66b50ea0d82b3cb7b28f105c2471535518f29441e615abf16bb494c38fdb"
       }
     },
     "win": {
@@ -34,13 +38,15 @@
         "download_url": "javascript: alert('download win release package');",
         "version": "5.2.0",
         "revision": "31324",
-        "build_date_ymd": "2022-11-24"
+        "build_date_ymd": "2022-11-24",
+        "sha512": "429bed7f03fb65addebe817d0a6cd03535a0a134391b870c79d4e940c1ba0cdfb03110c9bc698f70930dcc8a3198dded7ccc9a07a9351e3a4f06dcfcf7d72f7c"
       },
       "nightly": {
         "download_url": "javascript: alert('download win nightly package');",
         "version": "5.3.0",
         "revision": "31719",
-        "build_date_ymd": "2023-04-19"
+        "build_date_ymd": "2023-04-19",
+        "sha512": "f687ca8178891b7fe997499441fc6154639d41c49dd62925918c827bbdcbd068d30e58232743893b1c86bdc692c596d1334571b0ab5313f4e60ee72aeb5b0311"
       }
     }
   }

@@ -6,7 +6,8 @@
         "download_url": "javascript: alert('download linux release package');",
         "version": "5.2.0",
         "revision": "31322",
-        "build_date_ymd": "2022-11-22"
+        "build_date_ymd": "2022-11-22",
+        "sha512": "d899dcc8078b79752d2530b5b7221d9d44cca3d9de038732a0e1ffea4e62731eeb9071989254f7e56cdbf5056fb52eb81c8e9eff5ee42597f074e3f7d2f5ff3a",
       }
     },
     "win": {
@@ -14,7 +15,8 @@
         "download_url": "javascript: alert('download win nightly package');",
         "version": "5.3.0",
         "revision": "31719",
-        "build_date_ymd": "2023-04-19"
+        "build_date_ymd": "2023-04-19",
+        "sha512": "57d583f507be1a2fb1e14336ba00ee6674fa44a72aa6a8f3172238be0474a7a975d0f46b43c746f3aa0795aa4d8bf20000366be140267837f8d58c65d724179c"
       }
     }
   }
