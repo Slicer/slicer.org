@@ -91,6 +91,9 @@ animated_navbar: false
     </div>
     <div id="tab-content" class="is-size-7">
         <div id="tab-checksums">
+
+            <p>It is a good practice to verify the integrity of your downloaded Slicer package by checking its checksum against the expected values.</p>
+
             <table class="table">
                 <thead>
                     <tr>
@@ -128,8 +131,6 @@ animated_navbar: false
                     {% include download_checksum_table_tr.html %}
                 </tbody>
             </table>
-
-            <p>It is a good practice to verify the integrity of your downloaded Slicer package by checking its checksum against the expected values.</p>
 
             <p>For each Slicer package listed above, we provide a SHA512 checksum. You can use this checksum to validate that your downloaded file has not been tampered with or corrupted during the download process.</p>
 
