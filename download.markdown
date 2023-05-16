@@ -91,10 +91,6 @@ animated_navbar: false
     </div>
     <div id="tab-content" class="is-size-7">
         <div id="tab-checksums">
-            <p>For security reasons, it is recommended that you verify the integrity of your downloaded Slicer package by checking its checksum against the expected values.</p>
-
-            <p>The checksums for the Slicer packages presented above are the following:</p>
-
             <table class="table">
                 <thead>
                     <tr>
@@ -133,6 +129,10 @@ animated_navbar: false
                 </tbody>
             </table>
 
+            <p>It is a good practice to verify the integrity of your downloaded Slicer package by checking its checksum against the expected values.</p>
+
+            <p>For each Slicer package listed above, we provide a SHA512 checksum. You can use this checksum to validate that your downloaded file has not been tampered with or corrupted during the download process.</p>
+
             <p>To verify the integrity of your downloaded package using the checksum, follow these general steps:</p>
 
             <ol>
@@ -147,7 +147,6 @@ animated_navbar: false
             </li>
             <li>Compare the calculated checksum to the expected checksum listed above to ensure they match.</li>
             </ol>
-
             <p>By verifying the checksum of your downloaded package, you can ensure that it has not been tampered with during the download process or otherwise corrupted.</p>
         </div>
         <div id="tab-package-naming-convention" class="is-hidden">
