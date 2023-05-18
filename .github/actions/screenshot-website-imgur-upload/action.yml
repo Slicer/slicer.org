@@ -17,7 +17,7 @@ runs:
   steps:
     # See https://github.com/swinton/screenshot-website
     - name: Capture screenshot
-      uses: swinton/screenshot-website@5fcf4889015d277ef5e9635eba1fd1c2304a0d3e # v1.x
+      uses: jcfr/screenshot-website@f28f624498a41bcadbae7a09931fdd1a4e4d2617
       id: capture_step
       with:
         source: ${{ inputs.source_url }}
