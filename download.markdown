@@ -70,9 +70,7 @@ animated_navbar: false
             </tbody>
         </table>
     </div>
-</div>
 
-<div markdown="0">
     <div class="tabs boxed is-centered is-4">
         <ul>
             <li data-target="tab-checksums" id="checksums">

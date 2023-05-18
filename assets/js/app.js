@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         window.location.hash = '#' + tab.id;
       }
-      document.querySelector('div.download').scrollIntoView({behavior: 'smooth'});
+      document.querySelector('div.tabs').scrollIntoView({behavior: 'smooth'});
     })
   });
 
