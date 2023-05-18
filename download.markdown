@@ -75,13 +75,13 @@ animated_navbar: false
 <div markdown="0">
     <div class="tabs boxed is-centered is-4">
         <ul>
-            <li class="is-active" data-target="tab-checksums" id="checksums">
+            <li data-target="tab-checksums" id="checksums">
                 <a>
                     <span class="icon is-small"><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
                     <span>Checksums</span>
                 </a>
             </li>
-            <li data-target="tab-package-naming-convention" id="package-naming-convention">
+            <li class="is-active" data-target="tab-package-naming-convention" id="package-naming-convention">
                 <a>
                     <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
                     <span>Package Naming Convention</span>
@@ -90,7 +90,7 @@ animated_navbar: false
         </ul>
     </div>
     <div id="tab-content" class="is-size-7">
-        <div id="tab-checksums">
+        <div id="tab-checksums" class="is-hidden">
 
             <p>It is a good practice to verify the integrity of your downloaded Slicer package by checking its checksum against the expected values.</p>
 
@@ -150,7 +150,7 @@ animated_navbar: false
             </ol>
             <p>By verifying the checksum of your downloaded package, you can ensure that it has not been tampered with during the download process or otherwise corrupted.</p>
         </div>
-        <div id="tab-package-naming-convention" class="is-hidden">
+        <div id="tab-package-naming-convention">
             <p class="">Slicer packages are named based on the following naming convention:</p>
 
             <p class=""><strong>For Stable Builds:</strong></p>
