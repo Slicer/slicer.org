@@ -134,21 +134,25 @@ animated_navbar: false
 
             <p>For each Slicer package listed above, we provide a SHA512 checksum. You can use this checksum to validate that your downloaded file has not been tampered with or corrupted during the download process.</p>
 
-            <p>To verify the integrity of your downloaded package using the checksum, follow these general steps:</p>
+            <details>
+                <summary title="Click to display per-platform instructions for verifying the integrity of your downloaded package">How to verify the integrity of your downloaded package?</summary>
 
-            <ol>
-            <li>Open a terminal window or command prompt.</li>
-            <li>Navigate to the directory where your downloaded package is located.</li>
-            <li>Calculate the checksum of your downloaded package by running the appropriate command for your operating system:
-                <ul>
-                <li>Windows (using PowerShell): <code>Get-FileHash {package filename} -Algorithm SHA512</code></li>
-                <li>macOS: <code>shasum -a 512 {package filename}</code></li>
-                <li>Linux: <code>sha512sum {package filename}</code></li>
-                </ul>
-            </li>
-            <li>Compare the calculated checksum to the expected checksum listed above to ensure they match.</li>
-            </ol>
-            <p>By verifying the checksum of your downloaded package, you can ensure that it has not been tampered with during the download process or otherwise corrupted.</p>
+                <p>To verify the integrity of your downloaded package using the checksum, follow these general steps:</p>
+                <ol>
+                    <li>Open a terminal window or command prompt.</li>
+                    <li>Navigate to the directory where your downloaded package is located.</li>
+                    <li>Calculate the checksum of your downloaded package by running the appropriate command for your operating system:
+                        <ul>
+                        <li>Windows (using PowerShell): <code>Get-FileHash {package filename} -Algorithm SHA512</code></li>
+                        <li>macOS: <code>shasum -a 512 {package filename}</code></li>
+                        <li>Linux: <code>sha512sum {package filename}</code></li>
+                        </ul>
+                    </li>
+                    <li>Compare the calculated checksum to the expected checksum listed above to ensure they match.</li>
+                </ol>
+
+                <p>By verifying the checksum of your downloaded package, you can ensure that it has not been tampered with during the download process or otherwise corrupted.</p>
+            </details>
         </div>
         <div id="tab-package-naming-convention">
             <p class="">Slicer packages are named based on the following naming convention:</p>
