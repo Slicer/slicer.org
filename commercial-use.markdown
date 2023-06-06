@@ -49,7 +49,7 @@ Many companies prefer not to disclose what software components they use in their
 |--|-|
 | ![][allen-icon]{: .commercial-products-logo} | Allen Institute for Brain Science is developing Cell Locator, a Desktop application for manually aligning specimens to annotated 3D spaces. See more information on [Kitware blog][allen-kitware-blog]. |
 | ![][rapid-icon]{: .commercial-products-logo} | Radiopharmaceutical Imaging and Dosimetry, LLC (RAPID) is developing RPTDose, a 3D Slicer-based application that streamlines and integrates quantitative imaging analysis and dose estimation techniques to guide and optimize the use of radiopharmaceutical therapy agents in clinical trials. See more information on [Kitware blog][rapid-kitware-blog]. |
-| ![][sonovol-icon]{: .commercial-products-logo} | SonoVol is developing a whole-body ultrasound imaging system for small animals. This start-up company arose from research in the Department of Biomedical Engineering at the University of North Carolina at Chapel Hill. See more information on [Kitware blog][sonovol-kitware-blog]. |
+| ![][sonovol-icon]{: .commercial-products-logo} | SonoVol developed a whole-body ultrasound imaging system for small animals. This start-up company arose from research in the Department of Biomedical Engineering at the University of North Carolina at Chapel Hill. Their team is now part of Revvity, Inc. See more information on [Kitware blog][sonovol-kitware-blog] and on their [product website][sonovol-product-website]. |
 | ![][xoran-icon]{: .commercial-products-logo} | Xoran Technologies, Image-guided Platform for Deep Brain Stimulation Surgery 1. See more information on [Kitware blog][xoran-kitware-blog]. |
 | ![][xstrahl-icon]{: .commercial-products-logo} | Xstrahl is developing a Small Animal Radiation Research Platform (SARRP) that uses 3D Slicer as its front-end application for radiation therapy beam placement and system control. See more information on [Kitware blog][xstrahl-kitware-blog]. |
 {: .hide-table-header}
@@ -63,6 +63,7 @@ Many companies prefer not to disclose what software components they use in their
 
 [sonovol-icon]: https://sonovol.com/wp-content/uploads/2019/03/sonovol.logo_.png "SonoVol"
 [sonovol-kitware-blog]: https://blog.kitware.com/kitware-customer-highlight-sonovol/
+[sonovol-product-website]: https://www.perkinelmer.com/category/ultrasound-imaging
 
 [xoran-icon]: https://blog.kitware.com/wp-content/uploads/2018/06/Xoran.png "Xoran Technologies"
 [xoran-kitware-blog]: https://blog.kitware.com/xoran-technologies-and-kitware-collaborate-on-image-guided-platform-for-deep-brain-stimulation-surgery/
