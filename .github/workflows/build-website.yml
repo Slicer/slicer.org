@@ -148,7 +148,7 @@ jobs:
     # See https://github.com/thollander/actions-comment-pull-request
     - name: Add Pull Request comment including screenshot
       if: env.deploy_download_preview == 'true'
-      uses: thollander/actions-comment-pull-request@632cf9ce90574d125be56b5f3405cda41a84e2fd # v2.3.1
+      uses: thollander/actions-comment-pull-request@dadb7667129e23f12ca3925c90dc5cd7121ab57e # v2.4.0
       env:
         IMG_URL_0: ${{ steps.capture_deploy_download_preview_release_and_nightly.outputs.imgur_url }}
         IMG_URL_1: ${{ steps.capture_deploy_download_preview_only_release.outputs.imgur_url }}
