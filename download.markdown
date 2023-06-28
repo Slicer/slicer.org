@@ -25,11 +25,11 @@ animated_navbar: false
             We&rsquo;ll be back very soon! Scheduled maintenance happening on June 27th, 2023.
             </p>
             <p class="content">
-            Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment.
+            Sorry for the inconvenience, but we are performing some maintenance at the moment.
             If you have questions or would like to learn more, see <a href="https://discourse.slicer.org/t/maintenance-of-download-slicer-org-slicer-kitware-com-and-slicer-packages-kitware-com-planned-for-june-27th-2023-2-00pm-to-4-00pm-et/30250">here</a>, otherwise we anticipate the maintenance to last for approximately two hours, from 2:00 PM to 4:00 PM ET on June 27th, 2023.
             </p>
             <p class="content">
-            In the meantime, explore our <a href="https://slicer.readthedocs.io/">documentation</a> for tips on how to use Slicer or join our <a href="https://discourse.slicer.org/">Forum</a> to connect with other users.
+            In the meantime, explore our <a href="https://slicer.readthedocs.io/">documentation</a> for tips on how to use Slicer or join our <a href="https://discourse.slicer.org/">forum</a> to connect with other users.
             </p>
         </div>
       </div>
