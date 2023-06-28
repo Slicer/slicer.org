@@ -16,17 +16,17 @@ animated_navbar: false
     Read about <a href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html#system-requirements">system requirements</a>.
     </div>
 
-{% if site.slicer_download_maintenance_enabled %}
+{% if site.slicer_download_maintenance.enabled %}
     <div class="columns is-mobile is-centered has-text-centered">
 
       <div class="column is-12">
         <div class="notification is-warning">
             <p class="title is-4">
-            We&rsquo;ll be back very soon! Scheduled maintenance happening on June 27th, 2023.
+            We&rsquo;ll be back very soon! Scheduled maintenance happening on {{ site.slicer_download_maintenance.date }}.
             </p>
             <p class="content">
             Sorry for the inconvenience, but we are performing some maintenance at the moment.
-            If you have questions or would like to learn more, see <a href="https://discourse.slicer.org/t/maintenance-of-download-slicer-org-slicer-kitware-com-and-slicer-packages-kitware-com-planned-for-june-27th-2023-2-00pm-to-4-00pm-et/30250">here</a>, otherwise we anticipate the maintenance to last for approximately two hours, from 2:00 PM to 4:00 PM ET on June 27th, 2023.
+            If you have questions or would like to learn more, see <a href="{{ site.slicer_download_maintenance.info_url }}">here</a>, otherwise we anticipate the maintenance to last for approximately {{ site.slicer_download_maintenance.duration }}, from {{ site.slicer_download_maintenance.start_time }} to {{ site.slicer_download_maintenance.end_time }} {{ site.slicer_download_maintenance.timezone }} on {{ site.slicer_download_maintenance.date }}.
             </p>
             <p class="content">
             In the meantime, explore our <a href="https://slicer.readthedocs.io/">documentation</a> for tips on how to use Slicer or join our <a href="https://discourse.slicer.org/">forum</a> to connect with other users.
