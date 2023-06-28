@@ -13,6 +13,7 @@ The site is implemented using [jekyll static site generator](https://jekyllrb.co
         * [Maintenance](#maintenance)
       * [Preview](#preview)
    * [Development](#development)
+      * [Development Using GitHub UI](#development-using-github-ui)
       * [Local Development](#local-development)
       * [Source Files](#source-files)
       * [Useful links](#useful-links)
@@ -88,6 +89,14 @@ The website builds associated with these branches are also uploaded as GitHub Ac
 * [download-maintenance-slicer-org][branch-download-maintenance-slicer-org]
 
 # Development
+
+## Development Using GitHub UI
+
+1. Go to https://github.com/slicer/slicer.org
+
+2. Edit file and create a pull request directly from your browser. See [details][gh-editing-files].
+
+[gh-editing-files]: https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files
 
 ## Local Development
 
