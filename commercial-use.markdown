@@ -55,20 +55,25 @@ Many companies prefer not to disclose what software components they use in their
 {: .hide-table-header}
 
 
-[allen-icon]: https://alleninstitute.org/media/filer_public_thumbnails/filer_public/2e/6e/2e6e35a2-a82e-4e1c-af3d-4e95e43d3baf/logo_bs_header.png__220x220_q85_subsampling-2.png
+<!-- https://alleninstitute.org/media/filer_public_thumbnails/filer_public/2e/6e/2e6e35a2-a82e-4e1c-af3d-4e95e43d3baf/logo_bs_header.png__220x220_q85_subsampling-2.png -->
+[allen-icon]: assets/img/logo-allen-institute-for-brain-science.png "Allen Institute for Brain Science"
 [allen-kitware-blog]: https://blog.kitware.com/cell-locator-a-3d-slicer-based-desktop-application-that-manually-aligns-specimens-to-annotated-3d-spaces-developed-for-the-allen-institute-for-brain-science/
 
-[rapid-icon]: https://blog.kitware.com/wp-content/uploads/2018/03/xRAPID.png.pagespeed.ic.2MtGQ3iXNo.png "Radiopharmaceutical Imaging and Dosimetry, LLC"
+<!-- https://blog.kitware.com/wp-content/uploads/2018/03/xRAPID.png.pagespeed.ic.2MtGQ3iXNo.png -->
+[rapid-icon]: assets/img/logo-rapid.png "Radiopharmaceutical Imaging and Dosimetry, LLC"
 [rapid-kitware-blog]: https://blog.kitware.com/kitware-customer-highlight-radiopharmaceutical-imaging-and-dosimetry-llc-rapid/
 
-[sonovol-icon]: https://sonovol.com/wp-content/uploads/2019/03/sonovol.logo_.png "SonoVol"
+<!-- https://sonovol.com/wp-content/uploads/2019/03/sonovol.logo_.png -->
+[sonovol-icon]: assets/img/logo-sonovol.png "SonoVol"
 [sonovol-kitware-blog]: https://blog.kitware.com/kitware-customer-highlight-sonovol/
 [sonovol-product-website]: https://www.perkinelmer.com/category/ultrasound-imaging
 
-[xoran-icon]: https://blog.kitware.com/wp-content/uploads/2018/06/Xoran.png "Xoran Technologies"
+<!-- https://blog.kitware.com/wp-content/uploads/2018/06/Xoran.png -->
+[xoran-icon]: assets/img/logo-xoran.jpg "Xoran Technologies"
 [xoran-kitware-blog]: https://blog.kitware.com/xoran-technologies-and-kitware-collaborate-on-image-guided-platform-for-deep-brain-stimulation-surgery/
 
-[xstrahl-icon]: https://blog.kitware.com/wp-content/uploads/2017/02/Xstrahl_LF_Logo_Fnl_RGB-250x95.jpg "XStrahl"
+<!-- https://blog.kitware.com/wp-content/uploads/2017/02/Xstrahl_LF_Logo_Fnl_RGB-250x95.jpg -->
+[xstrahl-icon]: assets/img/logo-xstrahl.jpg "XStrahl"
 [xstrahl-kitware-blog]: https://blog.kitware.com/kitware-customer-highlight-muriplan-from-xstrahl-a-3d-slicer-based-radiotherapy-treatment-planning-system/
 
 </div>
