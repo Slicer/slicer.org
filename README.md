@@ -100,19 +100,60 @@ The website builds associated with these branches are also uploaded as GitHub Ac
 
 ## Local Development
 
+_The following instructions assumes you have docker installed. On Windows, you may use Git Bash._
+
 1. [Fork][fork] this repository. We will assume your GitHub account is **yourname**.
 
 2. Download the static content (Make sure to replace **yourname**):
 
-```
-git clone git@github.com:yourname/slicer.org
-```
+    ```
+    git clone git@github.com:yourname/slicer.org
+    ```
 
 3. Update files in the directory `slicer.org` with you proposed changes.
 
-4. Open `index.html` with your favorite browser. Go back to Step 3 until your are satisfied with the result.
+4. Prepare the build environment creating the `gh-pages` docker image
 
-5. Publish your branch and create a [pull request][pr]
+    ```
+    git clone git@github.com:github/pages-gem.git
+    cd pages-gem
+    make image
+    ```
+
+    _For more details, see https://github.com/github/pages-gem#docker_
+
+5. "Run" the build environment by shelling into the the `gh-pages` docker image.
+
+    ```
+    cd /path/to/slicer.org
+    docker run -ti --rm \
+      -p 4000:4000 \
+      -v `realpath .`:/src/site \
+      gh-pages bash
+    ```
+
+5. Generate and serve the website
+
+    ```
+    bundle install
+
+    git config --global --add safe.directory /src/site
+
+    config_opts=_config.yml,_config_dev.yml # For slicer.org
+
+    rm -rf /_site/*
+
+    bundle exec jekyll serve \
+        -d /_site --config ${config_opts} \
+        --watch \
+        --force_polling \
+        -H 0.0.0.0 -P 4000 \
+        --incremental
+    ```
+
+6. Open http://localhost:4000 with your favorite browser. Edit the files until your are satisfied with the result.
+
+7. Publish your branch and create a [pull request][pr]
 
 [fork]: https://help.github.com/articles/fork-a-repo/
 [pr]: https://help.github.com/articles/creating-a-pull-request/
@@ -123,9 +164,16 @@ This section described files and directories used by the static site generator.
 
 ### `_config.yml`
 
-The `_config.yml` file contains settings that Jekyll uses as it processes the site.
+The `_config.yml` file contains settings that Jekyll uses as it processes the site and generate the `slicer.org` site.
 
 See [_config.yml](_config.yml) and https://jekyllrb.com/tutorials/convert-site-to-jekyll/#what-is-a-jekyll-website
+
+### `_config_dev.yml`
+
+The `_config_dev.yml` file sets `url` and `slicer_download_url` using `http://localhost:4000`.
+
+It is should only be specified in addition of any other files when developing locally.
+
 
 ### `index.markdown`
 
