@@ -140,6 +140,7 @@ _The following instructions assumes you have docker installed. On Windows, you m
     git config --global --add safe.directory /src/site
 
     config_opts=_config.yml,_config_dev.yml # For slicer.org
+    #config_opts=_config.yml,_config_download.yml,_config_dev.yml # For download.slicer.org
 
     rm -rf /_site/*
 
@@ -173,6 +174,14 @@ See [_config.yml](_config.yml) and https://jekyllrb.com/tutorials/convert-site-t
 The `_config_dev.yml` file sets `url` and `slicer_download_url` using `http://localhost:4000`.
 
 It is should only be specified in addition of any other files when developing locally.
+
+### `_config_download.yml`
+
+The `_config_download.yml` file contains settings used to generate the `download.slicer.org` site.
+
+See [_config_download.yml](_config_download.yml)
+
+It is should be specified in addition of `_config.yml`.
 
 
 ### `index.markdown`
