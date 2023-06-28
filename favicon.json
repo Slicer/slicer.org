@@ -1,6 +1,6 @@
 {
   "masterPicture": "assets/img/3D-Slicer-Mark.svg",
-  "iconsPath": "{{ site.baseurl }}/assets/favicons/",
+  "iconsPath": "{{ \"/assets/favicons/\" | absolute_url }}",
   "design": {
     "ios": {
       "pictureAspect": "backgroundAndMargin",
