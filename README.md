@@ -55,6 +55,8 @@ connect to the server in order to make changes.
 
 This branch is expected to be manually pulled into the download server.
 
+To update the maintenance page, edit [_config_download_maintenance.yml](_config_download_maintenance.yml) and submit a pull-request.
+
 | Branch | Jekyll build configuration |
 |--------|----------------------------|
 | [download-maintenance-slicer-org][branch-download-maintenance-slicer-org] | `--config _config.yml,_config_download.yml,_config_download_maintenance.yml` |
@@ -141,6 +143,7 @@ _The following instructions assumes you have docker installed. On Windows, you m
 
     config_opts=_config.yml,_config_dev.yml # For slicer.org
     #config_opts=_config.yml,_config_download.yml,_config_dev.yml # For download.slicer.org
+    #config_opts=_config.yml,_config_download.yml,_config_download_maintenance.yml,_config_dev.yml  # For download.slicer.org maintenance page
 
     rm -rf /_site/*
 
@@ -183,6 +186,14 @@ See [_config_download.yml](_config_download.yml)
 
 It is should be specified in addition of `_config.yml`.
 
+### `_config_download_maintenance.yml`
+
+The `_config_download_maintenance.yml` file contains settings used to generate the download site with a banner indicating
+that the regular downloads are not available and will be available soon.
+
+See [_config_download_maintenance.yml](_config_download_maintenance.yml)
+
+It is should be specified in addition of `_config.yml` and `_config_download.yml`.
 
 ### `index.markdown`
 
