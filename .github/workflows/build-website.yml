@@ -34,7 +34,7 @@ jobs:
     # See https://github.com/thollander/actions-comment-pull-request
     - name: Add or update Pull Request comment including screenshot [deploy_download_preview]
       if: env.deploy_download_preview == 'true'
-      uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
+      uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
       env:
         MESSAGE: |
           ### download.slicer.org preview [branch: deploy_download_preview]
@@ -47,7 +47,7 @@ jobs:
     # See https://github.com/thollander/actions-comment-pull-request
     - name: Add or update Pull Request comment including screenshot [deploy_download_maintenance_preview]
       if: env.deploy_download_maintenance_preview == 'true'
-      uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
+      uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
       env:
         MESSAGE: |
           ### download.slicer.org preview [branch: deploy_download_maintenance_preview]
@@ -205,7 +205,7 @@ jobs:
     # See https://github.com/thollander/actions-comment-pull-request
     - name: Add or update Pull Request comment including screenshot [deploy_download_preview]
       if: env.deploy_download_preview == 'true'
-      uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
+      uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
       env:
         IMG_URL_0: ${{ steps.capture_deploy_download_preview_release_and_nightly.outputs.imgur_url }}
         IMG_URL_1: ${{ steps.capture_deploy_download_preview_only_release.outputs.imgur_url }}
@@ -237,7 +237,7 @@ jobs:
     # See https://github.com/thollander/actions-comment-pull-request
     - name: Add or update Pull Request comment including screenshot [deploy_download_maintenance_preview]
       if: env.deploy_download_maintenance_preview == 'true'
-      uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f # v2.4.2
+      uses: thollander/actions-comment-pull-request@1d3973dc4b8e1399c0620d3f2b1aa5e795465308 # v2.4.3
       env:
         IMG_URL_0: ${{ steps.capture_deploy_download_maintenance_preview.outputs.imgur_url }}
         MESSAGE: |
