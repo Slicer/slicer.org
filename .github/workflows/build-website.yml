@@ -94,7 +94,7 @@ jobs:
 
     - name: 'Evaluate download template [release_and_nightly]'
       if: env.deploy_download_preview == 'true'
-      uses: cuchi/jinja2-action@3fa06acb38601d3caea4c5ce0416e268a8799d71 # v1.2.1
+      uses: cuchi/jinja2-action@6d31ec73a23fdd391e21e3efce8a91a87762980d # v1.2.2
       with:
         template: _site/download.html
         data_file: _data/template_test_data/download_release_and_nightly.json
@@ -102,7 +102,7 @@ jobs:
 
     - name: 'Evaluate download template [only_release]'
       if: env.deploy_download_preview == 'true'
-      uses: cuchi/jinja2-action@3fa06acb38601d3caea4c5ce0416e268a8799d71 # v1.2.1
+      uses: cuchi/jinja2-action@6d31ec73a23fdd391e21e3efce8a91a87762980d # v1.2.2
       with:
         template: _site/download.html
         data_file: _data/template_test_data/download_only_release.json
@@ -110,7 +110,7 @@ jobs:
 
     - name: 'Evaluate download template [only_nightly]'
       if: env.deploy_download_preview == 'true'
-      uses: cuchi/jinja2-action@3fa06acb38601d3caea4c5ce0416e268a8799d71 # v1.2.1
+      uses: cuchi/jinja2-action@6d31ec73a23fdd391e21e3efce8a91a87762980d # v1.2.2
       with:
         template: _site/download.html
         data_file: _data/template_test_data/download_only_nightly.json
@@ -118,7 +118,7 @@ jobs:
 
     - name: 'Evaluate download template [incomplete_releases]'
       if: env.deploy_download_preview == 'true'
-      uses: cuchi/jinja2-action@3fa06acb38601d3caea4c5ce0416e268a8799d71 # v1.2.1
+      uses: cuchi/jinja2-action@6d31ec73a23fdd391e21e3efce8a91a87762980d # v1.2.2
       with:
         template: _site/download.html
         data_file: _data/template_test_data/download_incomplete_releases.json
