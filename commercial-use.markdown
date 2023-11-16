@@ -47,21 +47,21 @@ Many companies prefer not to disclose what software components they use in their
 
 |  | |
 |--|-|
-| ![][xenoview-icon]{: .commercial-products-logo} | Polarean's XENOVIEW VDP is an FDA-approved software built on 3D Slicer for visualization and evaluation of lung ventilation. See more information on [Kitware blog][xenoview-kitware-blog]. |
 | ![][allen-icon]{: .commercial-products-logo} | Allen Institute for Brain Science is developing Cell Locator, a Desktop application for manually aligning specimens to annotated 3D spaces. See more information on [Kitware blog][allen-kitware-blog]. |
+| ![][xenoview-icon]{: .commercial-products-logo} | Polarean's XENOVIEW VDP is an FDA-approved software built on 3D Slicer for visualization and evaluation of lung ventilation. See more information on [Kitware blog][xenoview-kitware-blog]. |
 | ![][rapid-icon]{: .commercial-products-logo} | Radiopharmaceutical Imaging and Dosimetry, LLC (RAPID) is developing RPTDose, a 3D Slicer-based application that streamlines and integrates quantitative imaging analysis and dose estimation techniques to guide and optimize the use of radiopharmaceutical therapy agents in clinical trials. See more information on [Kitware blog][rapid-kitware-blog]. |
 | ![][sonovol-icon]{: .commercial-products-logo} | SonoVol developed a whole-body ultrasound imaging system for small animals. This start-up company arose from research in the Department of Biomedical Engineering at the University of North Carolina at Chapel Hill. Their team is now part of Revvity, Inc. See more information on [Kitware blog][sonovol-kitware-blog] and on their [product website][sonovol-product-website]. |
 | ![][xoran-icon]{: .commercial-products-logo} | Xoran Technologies, Image-guided Platform for Deep Brain Stimulation Surgery 1. See more information on [Kitware blog][xoran-kitware-blog]. |
 | ![][xstrahl-icon]{: .commercial-products-logo} | Xstrahl is developing a Small Animal Radiation Research Platform (SARRP) that uses 3D Slicer as its front-end application for radiation therapy beam placement and system control. See more information on [Kitware blog][xstrahl-kitware-blog]. |
 {: .hide-table-header}
 
-<!-- https://twitter.com/PolareanImaging/header_photo -->
-[xenoview-icon]: assets/img/logo-polarean.png "Polarean, Inc."
-[xenoview-kitware-blog]: https://www.kitware.com/kitware-supports-development-and-launch-of-fda-cleared-mr-image-processingsoftware-for-lung-ventilation-imaging/
-
 <!-- https://alleninstitute.org/media/filer_public_thumbnails/filer_public/2e/6e/2e6e35a2-a82e-4e1c-af3d-4e95e43d3baf/logo_bs_header.png__220x220_q85_subsampling-2.png -->
 [allen-icon]: assets/img/logo-allen-institute-for-brain-science.png "Allen Institute for Brain Science"
 [allen-kitware-blog]: https://blog.kitware.com/cell-locator-a-3d-slicer-based-desktop-application-that-manually-aligns-specimens-to-annotated-3d-spaces-developed-for-the-allen-institute-for-brain-science/
+
+<!-- https://twitter.com/PolareanImaging/header_photo -->
+[xenoview-icon]: assets/img/logo-polarean.png "Polarean, Inc."
+[xenoview-kitware-blog]: https://www.kitware.com/kitware-supports-development-and-launch-of-fda-cleared-mr-image-processingsoftware-for-lung-ventilation-imaging/
 
 <!-- https://blog.kitware.com/wp-content/uploads/2018/03/xRAPID.png.pagespeed.ic.2MtGQ3iXNo.png -->
 [rapid-icon]: assets/img/logo-rapid.png "Radiopharmaceutical Imaging and Dosimetry, LLC"
