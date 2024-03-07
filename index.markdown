@@ -62,8 +62,8 @@ carousel_images:
     description: 3D Slicer is used in real-time navigation of breast cancer surgery. <a href="https://youtu.be/90l0T1ADe_Y">video > </a> <a href="http://perk.cs.queensu.ca/sites/perkd7.cs.queensu.ca/files/Ungi2015b.pdf"> journal article > </a> <a href="http://www.slicerigt.org/wp/breast-cancer-surgery/"> learn more > </a>
     button_text: learn more
   - image: assets/img/image-carousel/SegmentationNVidiaAIAA.png
-    title: AI-assisted segmentation using NVidia Clara
-    description: Use NVidia AI-assisted annotation tool in Segment Editor to automatically segment anatomical structures using pre-trained models. <a href="https://youtu.be/ucnvE16pkmI?t=23"> video > </a> <a href="https://discourse.slicer.org/t/ai-assisted-segmentation-extension/9536"> learn more > </a>
+    title: AI-assisted segmentation
+    description: Use an array of AI-assisted annotation tools with the Segment Editor to automatically segment anatomical structures using pre-trained models or train new models. <a href="https://youtu.be/KtPE8m0LvcQ"> video > </a> <a href="https://github.com/Project-MONAI/MONAILabel?tab=readme-ov-file#monai-label-tutorials"> learn more > </a>
     button_text: learn more
   - image: assets/img/image-carousel/2014-06-27-SlicerKuka.png
     title: Robot-assisted interventions
