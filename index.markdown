@@ -63,7 +63,7 @@ carousel_images:
     button_text: learn more
   - image: assets/img/image-carousel/SegmentationNVidiaAIAA.png
     title: AI-assisted segmentation
-    description: Use an array of AI-assisted annotation tools with the Segment Editor to automatically segment anatomical structures using pre-trained models or train new models. See <a href="https://youtu.be/KtPE8m0LvcQ"> video > this tutorial video </a> or <a href="https://github.com/Project-MONAI/MONAILabel?tab=readme-ov-file#monai-label-tutorials"> this tutorial material </a> and <a href="https://discourse.slicer.org/tag/ai" track the latest forum posts here. </a>
+    description: AI-assisted annotation tools can automatically segment anatomical structures using pre-trained or custom models. See <a href="https://youtu.be/KtPE8m0LvcQ"> this tutorial video > </a> or <a href="https://github.com/Project-MONAI/MONAILabel?tab=readme-ov-file#monai-label-tutorials"> tutorial material > </a> and <a href="https://discourse.slicer.org/tag/ai" track the latest forum posts > </a>
     button_text: learn more
   - image: assets/img/image-carousel/2014-06-27-SlicerKuka.png
     title: Robot-assisted interventions
