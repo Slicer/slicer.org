@@ -1,8 +1,8 @@
 slicer_download_maintenance:
   enabled: true
-  info_url: https://discourse.slicer.org/t/maintenance-of-download-slicer-org-slicer-kitware-com-and-slicer-packages-kitware-com-planned-for-june-27th-2023-2-00pm-to-4-00pm-et/30250
-  date: June 27th, 2023
-  start_time: 2:00 PM
-  end_time: 4:00 PM
-  duration: two hours
+  info_url: https://discourse.slicer.org/t/maintenance-of-download-slicer-org-slicer-kitware-com-and-slicer-packages-kitware-com-planned-for-march-28th-2024-3-30pm-to-5-00pm-et/35155
+  date: March 28th, 2024
+  start_time: 3:30 PM
+  end_time: 5:00 PM
+  duration: 1.5 hours
   timezone: ET
