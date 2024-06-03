@@ -68,7 +68,7 @@ jobs:
     # See https://github.com/ouzi-dev/commit-status-updater
     - name: Update status check for deploy-download-preview to pending
       if: env.deploy_download_preview == 'true'
-      uses: ouzi-dev/commit-status-updater@219d3f932547cad092e384c7a36bf4d963739c35 # v2.0.1
+      uses: ouzi-dev/commit-status-updater@26588d166ff273fc4c0664517359948f7cdc9bf1 # v2.0.2
       with:
         name: 'netlify/deploy-download-preview'
         status: 'pending'
@@ -78,7 +78,7 @@ jobs:
     # See https://github.com/ouzi-dev/commit-status-updater
     - name: Update status check for deploy-download-maintenance-preview to pending
       if: env.deploy_download_maintenance_preview == 'true'
-      uses: ouzi-dev/commit-status-updater@219d3f932547cad092e384c7a36bf4d963739c35 # v2.0.1
+      uses: ouzi-dev/commit-status-updater@26588d166ff273fc4c0664517359948f7cdc9bf1 # v2.0.2
       with:
         name: 'netlify/deploy-download-maintenance-preview'
         status: 'pending'
@@ -148,7 +148,7 @@ jobs:
     # See https://github.com/ouzi-dev/commit-status-updater
     - name: Update status check for deploy-download-preview
       if: env.deploy_download_preview == 'true'
-      uses: ouzi-dev/commit-status-updater@219d3f932547cad092e384c7a36bf4d963739c35 # v2.0.1
+      uses: ouzi-dev/commit-status-updater@26588d166ff273fc4c0664517359948f7cdc9bf1 # v2.0.2
       with:
         name: 'netlify/deploy-download-preview'
         status: 'success'
@@ -158,7 +158,7 @@ jobs:
     # See https://github.com/ouzi-dev/commit-status-updater
     - name: Update status check for deploy-download-maintenance-preview
       if: env.deploy_download_maintenance_preview == 'true'
-      uses: ouzi-dev/commit-status-updater@219d3f932547cad092e384c7a36bf4d963739c35 # v2.0.1
+      uses: ouzi-dev/commit-status-updater@26588d166ff273fc4c0664517359948f7cdc9bf1 # v2.0.2
       with:
         name: 'netlify/deploy-download-maintenance-preview'
         status: 'success'
