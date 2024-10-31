@@ -59,7 +59,7 @@ Many companies prefer not to disclose what software components they use in their
 [allen-icon]: assets/img/logo-allen-institute-for-brain-science.png "Allen Institute for Brain Science"
 [allen-kitware-blog]: https://blog.kitware.com/cell-locator-a-3d-slicer-based-desktop-application-that-manually-aligns-specimens-to-annotated-3d-spaces-developed-for-the-allen-institute-for-brain-science/
 
-<!-- https://twitter.com/PolareanImaging/header_photo -->
+<!-- https://x.com/PolareanImaging/header_photo -->
 [xenoview-icon]: assets/img/logo-polarean.png "Polarean, Inc."
 [xenoview-kitware-blog]: https://www.kitware.com/kitware-supports-development-and-launch-of-fda-cleared-mr-image-processingsoftware-for-lung-ventilation-imaging/
 
