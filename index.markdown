@@ -33,9 +33,9 @@ hero_buttons:
     icon: fa fa-comments
     color: logo-yellow
 
-  - text: Twitter
-    link: https://twitter.com/3DSlicerApp
-    icon: fab fa-twitter
+  - text: LinkedIn
+    link: https://www.linkedin.com/feed/hashtag/?keywords=3dslicer
+    icon: fab fa-linkedin
     color: logo-brown
 
 # About ======================================================

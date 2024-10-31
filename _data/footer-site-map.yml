@@ -51,9 +51,9 @@ About:
     link: https://www.slicer.org/wiki/Main_Page/SlicerCommunity
   - name: Acknowledgments
     link: https://slicer.readthedocs.io/en/latest/user_guide/about.html#acknowledgments
-  - name: Twitter
-    link: https://twitter.com/3DSlicerApp
-    icon: fab fa-twitter
+  - name: LinkedIn
+    link: https://www.linkedin.com/feed/hashtag/?keywords=3dslicer
+    icon: fab fa-linkedin
   - name: YouTube
     link: https://www.youtube.com/c/3DSlicerChannel
     icon: fab fa-youtube
