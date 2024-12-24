@@ -1,4 +1,8 @@
 
+:root
+  --bulma-link-text: #{$primary}
+  --bulma-navbar-dropdown-arrow: #{$bg-color-light-grey}
+
 // Site Structure ====================================
 .site-wrapper
   min-height: calc(100vh - #{$header-height + $footer-height}) // to keep footer at page bottom.
@@ -11,18 +15,32 @@
   h2
     font-weight: 800
 
+.title, .subtitle
+  margin-bottom: 1.5rem
+
 .description
   margin-bottom: 25px
   a:hover
     text-decoration: underline
     color: $primary
 
+.card
+  --bulma-card-radius: 4px
+
+.buttons
+  gap: 0.5rem
+  margin-bottom: 1.5rem
+
 .button
+  color: white
+  background-color: $primary
+  font-weight: normal
   transition: background .15s ease-in-out, color .15s ease-in-out
+  border-color: $primary
   border-width: 2px
   &:hover
+    color: $primary
     background-color: white
-    border-width: 2px
   &.logo-blue
     background-color: $logo-color-blue
     &:hover
@@ -121,11 +139,24 @@
 
 // nav ================================
 .navbar
-  background-color: rgba(244,247,252,.95) !important
+  background-color: rgba(244,247,252,.95)
   box-shadow: 0 0 10px rgba(0,0,0,0.4)
+  --bulma-navbar-dropdown-arrow: $bg-color-light-grey
 
 .navbar-dropdown
   background-color: #fff !important
+
+.is-active a
+  color: var(--bulma-link-text) !important
+
+.navbar-item
+  &.is-active
+    background-color: #fff
+    color: var(--bulma-link-text)
+
+.navbar-item, .navbar-link
+  &:hover
+    background-color: $bg-color-light-grey
 
 .navbar:before
   background: linear-gradient(to right, $logo-color-blue 0%,$logo-color-blue 20%,$logo-color-green 20%, $logo-color-green 40%, $logo-color-red 40%, $logo-color-red 60%, $logo-color-orange 60%, $logo-color-orange 80%, $logo-color-yellow 80%, $logo-color-yellow 100%)
@@ -167,6 +198,8 @@
 // Hero section ====================================
 .hero
   box-shadow: 0 2px 10px rgba(0, 0, 0, .2)
+  h1
+    margin-bottom: 1.5rem
   @media (max-width: 768px)  // for mobile version
     h1
       font-size: 8.5vw
@@ -188,7 +221,6 @@
       right: 0
       top: 0
 
-
 .hero-logo
   max-width: 220px
 @media (max-width: 768px)  // for mobile version
@@ -197,6 +229,8 @@
 
 .hero-button
   width: 240px
+  border-width: 0px
+  border-radius: 4px
   background-color: $logo-color-orange
 @media (max-width: 768px)  // for mobile version
   .hero-button
@@ -285,6 +319,12 @@
   a#revision
     text-decoration: none
 
+// toc ====================================
+.toc
+  --bulma-shadow: none
+  margin-bottom: 0
+  padding: 0
+
 // classes for default internal pages ====================================
 
 .internal-page
@@ -305,6 +345,7 @@
   .heading
     color: $text-color
     font-weight: 400
+    letter-spacing: 1px
     text-transform: none
 
   .commercial-products-logo
