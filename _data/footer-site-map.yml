@@ -10,7 +10,7 @@ Application:
 Support:
   items:
   - name: Training
-    link: https://www.slicer.org/wiki/Documentation/Nightly/Training
+    link: "{{ site.slicer_training_url }}"
     icon: fa fa-graduation-cap
   - name: Documentation
     link: https://slicer.readthedocs.io

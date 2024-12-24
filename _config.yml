@@ -28,6 +28,7 @@ logo_image: /assets/img/3D-Slicer-Mark.svg
 # favicons are directly specified in _includes/head.html
 slicer_download_url: "https://download.slicer.org"
 slicer_download_stats_url: "https://download.slicer.org/download-stats"
+slicer_training_url: "https://www.slicer.org/wiki/Documentation/Nightly/Training"
 
 # Cause a build to fail if there is a YAML syntax error in a page's front matter.
 # See https://jekyllrb.com/docs/configuration/options/#build-command-options
@@ -88,6 +89,7 @@ exclude:
   # Exclude download page from regular website
   - download.markdown
   - download_40x.markdown
+  - training.markdown
 
 footer_menu: footer-site-map
 
