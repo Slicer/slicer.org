@@ -28,7 +28,7 @@ logo_image: /assets/img/3D-Slicer-Mark.svg
 # favicons are directly specified in _includes/head.html
 slicer_download_url: "https://download.slicer.org"
 slicer_download_stats_url: "https://download.slicer.org/download-stats"
-slicer_training_url: "https://www.slicer.org/wiki/Documentation/Nightly/Training"
+slicer_training_url: "https://training.slicer.org"
 
 # Specify the name of the GitHub repository hosting the sources of the generated site.
 github_repository: Slicer/slicer.org
