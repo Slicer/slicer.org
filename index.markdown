@@ -26,6 +26,7 @@ hero_buttons:
 
   - text: Training
     link: "{{ site.slicer_training_url }}"
+    link_class: force-internal-link
     icon: fa fa-graduation-cap
     color: logo-orange
 
