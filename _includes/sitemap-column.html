@@ -3,11 +3,12 @@
     <h4>{{ title }}</h4>
     {% for item in items %}
     <div>
-        {%- assign item_link_prefix = item.link | liquify | slice: 0, 2 -%}
+        {%- assign item_link = item.link | liquify -%}
+        {%- assign item_link_prefix = item_link | slice: 0, 2 -%}
         {% if item_link_prefix != "{{" %}
-        <a href="{{ item.link | liquify | absolute_url }}" class="sitemap-item">
+        <a href="{{ item_link | absolute_url }}" class="sitemap-item">
         {% else %}
-        <a href="{{ item.link | liquify }}" class="sitemap-item">
+        <a href="{{ item_link }}" class="sitemap-item">
         {% endif %}
             {% if item.icon %}
             <i class="{{ item.icon }}"></i>
