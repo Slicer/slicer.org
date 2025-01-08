@@ -1,4 +1,10 @@
 
+url: "https://download.slicer.org"
+
+# Indicates if the configuration is for the primary site (https://slicer.org).
+# Set to "true" for slicer.org and "false" for auxiliary sites like the download site.
+is_primary_site: false
+
 # Set the jinja2 template intended to be used in https://github.com/Slicer/slicer_download
 slicer_download_stats_url: "{{download_stats_url}}"
 
