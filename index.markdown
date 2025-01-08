@@ -10,6 +10,7 @@ subtitle: 3D Slicer is a <span class="highlight-text"><b>free</b></span>, <span 
 hero_buttons:
   - text: Download
     link: "{{ site.slicer_download_url }}"
+    link_class: force-internal-link
     icon: fa fa-download
     color: logo-blue
 

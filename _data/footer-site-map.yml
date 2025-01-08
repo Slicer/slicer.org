@@ -5,6 +5,7 @@ Application:
     icon: fa fa-rocket
   - name: Download
     link: "{{ site.slicer_download_url }}"
+    link_class: force-internal-link
     icon: fa fa-download
 
 Support:
