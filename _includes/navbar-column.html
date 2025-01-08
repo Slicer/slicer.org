@@ -5,9 +5,19 @@
         {% for item in items %}
 
         {%- assign item_link = item.link | liquify -%}
+
+        {%- assign item_link_firstchar = item_link | slice: 0, 1 -%}
+        {%- assign force_internal_link_class = '' -%}
+        {% unless site.is_primary_site %}
+            {% if item_link_firstchar == "/" %}
+                {%- assign item_link = "https://slicer.org" | append: item_link -%}
+                {%- assign force_internal_link_class = 'force-internal-link' -%}
+            {% endif %}
+        {% endunless %}
+
         {%- assign item_link_prefix = item_link | slice: 0, 2 -%}
         {% if item_link_prefix != "{{" %}
-        <a href="{{ item_link | absolute_url }}" class="navbar-item {% if item_link == page.url %}is-active{% endif %}">
+        <a href="{{ item_link | absolute_url }}" class="navbar-item {{ force_internal_link_class }} {% if item_link == page.url %}is-active{% endif %}">
         {% else %}
         <a href="{{ item_link }}" class="navbar-item" class="navbar-item {% if item_link == page.url %}is-active{% endif %}">
         {% endif %}

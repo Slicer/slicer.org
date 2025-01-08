@@ -4,9 +4,19 @@
     {% for item in items %}
     <div>
         {%- assign item_link = item.link | liquify -%}
+
+        {%- assign item_link_firstchar = item_link | slice: 0, 1 -%}
+        {%- assign force_internal_link_class = '' -%}
+        {% unless site.is_primary_site %}
+            {% if item_link_firstchar == "/" %}
+                {%- assign item_link = "https://slicer.org" | append: item_link -%}
+                {%- assign force_internal_link_class = 'force-internal-link' -%}
+            {% endif %}
+        {% endunless %}
+
         {%- assign item_link_prefix = item_link | slice: 0, 2 -%}
         {% if item_link_prefix != "{{" %}
-        <a href="{{ item_link | absolute_url }}" class="sitemap-item">
+        <a href="{{ item_link | absolute_url }}" class="sitemap-item {{ force_internal_link_class }}">
         {% else %}
         <a href="{{ item_link }}" class="sitemap-item">
         {% endif %}

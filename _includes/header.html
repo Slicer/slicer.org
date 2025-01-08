@@ -7,7 +7,14 @@
     <div class="container">
         <div class="navbar-brand">
             <img src="{{ site.logo_image | absolute_url }}" width="35">
-            <a href="{{ '/' | absolute_url }}" class="navbar-item">
+            {% if site.is_primary_site -%}
+                {%- assign primary_site_url = '/' | absolute_url -%}
+                {%- assign force_internal_link_class = '' -%}
+            {%- else -%}
+                {%- assign primary_site_url = "https://slicer.org/" -%}
+                {%- assign force_internal_link_class = 'force-internal-link' -%}
+            {%- endif -%}
+            <a href="{{ primary_site_url }}" class="navbar-item {{ force_internal_link_class }}">
                 {{ site.title }}
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">

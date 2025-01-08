@@ -30,6 +30,10 @@ slicer_download_url: "https://download.slicer.org"
 slicer_download_stats_url: "https://download.slicer.org/download-stats"
 slicer_training_url: "https://www.slicer.org/wiki/Documentation/Nightly/Training"
 
+# Indicates if the configuration is for the primary site (https://slicer.org).
+# Set to "true" for slicer.org and "false" for auxiliary sites like the download site.
+is_primary_site: true
+
 # Cause a build to fail if there is a YAML syntax error in a page's front matter.
 # See https://jekyllrb.com/docs/configuration/options/#build-command-options
 strict_front_matter: true
@@ -61,6 +65,13 @@ plugins:
 jekyll-spaceship:
   processors:
     - element-processor
+  element-processor:
+    css:
+      - 'a.force-internal-link':
+          props:
+            class: ['^(.*) force\-internal\-link$', '\0']   # force-internal-link
+            target: ''                                      # Replace `target` value to ``
+            rel: ''                                         # Replace `rel` value to ``
 
 # Exclude from processing.
 # The following items will not be processed, by default.
