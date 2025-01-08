@@ -56,6 +56,11 @@ plugins:
   - jekyll-seo-tag
   - jekyll-target-blank
   - jekyll_version_plugin
+  - jekyll-spaceship
+
+jekyll-spaceship:
+  processors:
+    - element-processor
 
 # Exclude from processing.
 # The following items will not be processed, by default.
