@@ -10,6 +10,3 @@ updates:
     commit-message:
       # Prefix all commit messages with "ci: "
       prefix: "ci"
-    ignore:
-      # Ignore "Slicer/jinja2-action" expected to be manually updated
-      - dependency-name: "Slicer/jinja2-action"
