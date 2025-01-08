@@ -11,7 +11,7 @@
                     {% if page.hero_buttons %}
                     <div class="buttons is-left">
                       {% for button in page.hero_buttons %}
-                          <a href="{{ button.link | liquify }}" onclick="this.blur();" class="button hero-button is-medium {{ button.color }}">
+                          <a href="{{ button.link | liquify }}" onclick="this.blur();" class="button hero-button is-medium {{ button.color }} {{ button.link_class }}">
                             <span class="icon is-small">
                                 <i class="{{ button.icon }}"></i>
                             </span>
