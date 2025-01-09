@@ -94,7 +94,7 @@ jobs:
 
     - name: 'Evaluate download template [release_and_nightly]'
       if: env.deploy_download_preview == 'true'
-      uses: Slicer/jinja2-action@d94dd73f31971ae95cb4cfee57236618c65ccb7f # v1.2.3
+      uses: Slicer/jinja2-action@381015f16b1a6c8bad1b4b3eecc0a3688e2e806a # v1.2.4
       with:
         template: _site/download.html
         data_file: _data/template_test_data/download_release_and_nightly.json
@@ -102,7 +102,7 @@ jobs:
 
     - name: 'Evaluate download template [only_release]'
       if: env.deploy_download_preview == 'true'
-      uses: Slicer/jinja2-action@d94dd73f31971ae95cb4cfee57236618c65ccb7f # v1.2.3
+      uses: Slicer/jinja2-action@381015f16b1a6c8bad1b4b3eecc0a3688e2e806a # v1.2.4
       with:
         template: _site/download.html
         data_file: _data/template_test_data/download_only_release.json
@@ -110,7 +110,7 @@ jobs:
 
     - name: 'Evaluate download template [only_nightly]'
       if: env.deploy_download_preview == 'true'
-      uses: Slicer/jinja2-action@d94dd73f31971ae95cb4cfee57236618c65ccb7f # v1.2.3
+      uses: Slicer/jinja2-action@381015f16b1a6c8bad1b4b3eecc0a3688e2e806a # v1.2.4
       with:
         template: _site/download.html
         data_file: _data/template_test_data/download_only_nightly.json
@@ -118,7 +118,7 @@ jobs:
 
     - name: 'Evaluate download template [incomplete_releases]'
       if: env.deploy_download_preview == 'true'
-      uses: Slicer/jinja2-action@d94dd73f31971ae95cb4cfee57236618c65ccb7f # v1.2.3
+      uses: Slicer/jinja2-action@381015f16b1a6c8bad1b4b3eecc0a3688e2e806a # v1.2.4
       with:
         template: _site/download.html
         data_file: _data/template_test_data/download_incomplete_releases.json
