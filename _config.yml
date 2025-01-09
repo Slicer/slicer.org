@@ -30,8 +30,12 @@ slicer_download_url: "https://download.slicer.org"
 slicer_download_stats_url: "https://download.slicer.org/download-stats"
 slicer_training_url: "https://www.slicer.org/wiki/Documentation/Nightly/Training"
 
-# Indicates if the configuration is for the primary site (https://slicer.org).
-# Set to "true" for slicer.org and "false" for auxiliary sites like the download site.
+# Specifies whether the configuration is for the primary site (https://slicer.org).
+# Set to "true" for slicer.org and "false" for auxiliary sites.
+#
+# Auxiliary sites share the primary site's theme and infrastructure but are served
+# from a different subdomain. For example, https://download.slicer.org, where "download"
+# is the subdomain.
 is_primary_site: true
 
 # Cause a build to fail if there is a YAML syntax error in a page's front matter.

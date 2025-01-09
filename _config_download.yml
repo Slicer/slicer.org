@@ -1,8 +1,12 @@
 
 url: "https://download.slicer.org"
 
-# Indicates if the configuration is for the primary site (https://slicer.org).
-# Set to "true" for slicer.org and "false" for auxiliary sites like the download site.
+# Specifies whether the configuration is for the primary site (https://slicer.org).
+# Set to "true" for slicer.org and "false" for auxiliary sites.
+#
+# Auxiliary sites share the primary site's theme and infrastructure but are served
+# from a different subdomain. For example, https://download.slicer.org, where "download"
+# is the subdomain.
 is_primary_site: false
 
 # Set the jinja2 template intended to be used in https://github.com/Slicer/slicer_download
