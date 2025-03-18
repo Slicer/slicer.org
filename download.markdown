@@ -211,6 +211,87 @@ animated_navbar: false
                 </tbody>
             </table>
         </div>
+
+        <div id="access-older-releases">
+            <p class="">Older releases can be obtained by using the offset parameter in the download page. For example, download page from 7 days ago:</p>
+            <pre>http://download.slicer.org/?offset=-7</pre>
+
+            <p class="">To get a direct download link of previous revision on a selected operating system:</p>
+            <pre>http://download.slicer.org/download?os=macosx&stability=any&offset=-1</pre>
+
+            <p>
+            Always include these parameters:
+            </p>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td><code>stability</code></td>
+                    <td>The stability of the version. It can be one of <code>release</code>, <code>nightly</code>, or <code>any</code></td>
+                </tr>
+                <tr>
+                    <td><code>os</code></td>
+                    <td>The operating system. It can be one of <code>linux</code></td>, <code>macosx</code>, or <code>win</code>
+                </tr>
+                </tbody>
+            </table>
+            <p>
+            Additional options:
+            </p>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td><code>date</code></td>
+                    <td>Revision built before or on the date, e.g. <code>date=2015-01-01</code></td>
+                </tr>
+                <tr>
+                    <td><code>checkout-date</code></td>
+                    <td>A checkout date, e.g. <code>checkout-date=2015-02-01</code></td>
+                </tr>
+                <tr>
+                    <td><code>revision</code></td>
+                    <td>The exact revision number, e.g. <code>revision=27000</code></td>
+                </tr>
+                <tr>
+                    <td><code>closest-revision</code></td>
+                    <td>A revision less than of equal, e.g. <code>closest-revision=26000</code></td>
+                </tr>
+                <tr>
+                    <td><code>version</code></td>
+                    <td>The latest revision of a branch, e.g. <code>version=4.3</code></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p class="">Any of these queries can be combined with the offset param, which will step forward or backward a given number of revisions. So, <code>stability=release&version=4.5.0&offset=-1</tr></code> should give the revision just before the first <code>4.5</code> release.</p>
+
+        <div id="languages">
+            <p class=""><strong>Where can I download older release of Slicer?</strong></p>
+            <p class="">Older releases of 3DSlicer are available <a href="https://slicer-packages.kitware.com/#collection/5f4474d0e1d8c75dfc70547e/folder/5f4474d0e1d8c75dfc705482">here</a>.</p>
+
+            <p class="">Extensions can be downloaded for old Slicer releases manually from the </i>Extensions Catalog</i> at the URL <code>https://extensions.slicer.org/catalog/All/ &lt;revision_number&gt;/&lt;operating_system&gt</code>.
+            <p>
+            where:
+            </p>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td><code>revision_number</code></td>
+                    <td>The revision number available in the Slicer <i>Help / About</i> menu</td>
+                </tr>
+                <tr>
+                    <td><code>operating_system</code></td>
+                    <td>The operating system. It can be one of <code>linux</code></td>, <code>macosx</code>, or <code>win</code>
+                </tr>
+                </tbody>
+            </table>
+
+            <p class="">For example, for <code>Slicer-4.8.0</code> on Windows, extensions are available at <a href="https://extensions.slicer.org/catalog/All/26489/win>https://extensions.slicer.org/catalog/All/26489/win</a>.</p>
+        </div>
+
+        <div id="languages">
+            <p class=""><strong>Does Slicer work for non-English computing?</strong></p>
+            <p class="">Not yet: Slicer uses US English conventions. Specifically this means that directory paths should use ASCII characters only. However, there is some <a href="https://discourse.slicer.org/t/slicer-internationalization/579>discussion</a>and <a href="https://github.com/Slicer/Slicer/wiki/I18N>planning</a> about internationalization that can be useful in order to allow this in Slicer.</p>
+        </div>
     </div>
 {% endif %}
 </div>
