@@ -390,6 +390,11 @@
         height: 75px
     th, td
       border: none
+    td
+      div.cell-download
+        border: 1px solid #e1e1e1
+        padding: 0.85em 1em
+        font-size: 0.8rem
     .button-download
       display: inline-block
       text-align: center
@@ -401,7 +406,7 @@
       border: 1px solid transparent
       border-radius: 0
       padding: 0.85em 1em
-      margin: 0 1rem 1rem 0
+      margin: 0 0.5rem 0.5rem 0
       font-size: 0.8rem
       background: $stable-download-color
       color: #fff
@@ -438,5 +443,15 @@
         font-size: 1.1rem
         line-height: 1.2
         font-weight: 600
+    .browse-extension
+      color: $stable-download-color
+      transition: all 0.25s ease-out
+      &:hover, &:focus
+        color: $stable-download-hover-color
+        text-decoration: none
+      &.warning
+        color: $preview-download-color
+        &:hover, &:focus
+          color: $preview-download-hover-color
   .tabs
     scroll-margin-top: $header-height

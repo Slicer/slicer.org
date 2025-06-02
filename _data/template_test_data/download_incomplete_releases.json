@@ -4,6 +4,7 @@
     "linux": {
       "release": {
         "download_url": "javascript: alert('download linux release package');",
+        "extensions_browse_url": "javascript: alert('browse linux release extensions');",
         "version": "5.2.0",
         "revision": "31322",
         "build_date_ymd": "2022-11-22",
@@ -13,6 +14,7 @@
     "win": {
       "nightly": {
         "download_url": "javascript: alert('download win nightly package');",
+        "extensions_browse_url": "javascript: alert('browse win nightly extensions');",
         "version": "5.3.0",
         "revision": "31719",
         "build_date_ymd": "2023-04-19",
