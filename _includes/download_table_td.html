@@ -6,6 +6,7 @@
   {%- capture build_date_ymd %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.build_date_ymd{% raw %}}}{% endraw %}{% endcapture -%}
 
   {%- capture download_url %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.download_url{% raw %}}}{% endraw %}{% endcapture -%}
+  {%- capture extensions_browse_url %}{% raw %}{{{% endraw %}R.{{ operating_system }}.{{ release_type }}.extensions_browse_url{% raw %}}}{% endraw %}{% endcapture -%}
 
 {%- if release_type == "nightly" -%}
   {%- assign css_class = "warning" -%}
@@ -16,12 +17,15 @@
 <!-- _includes/download_table_td.html -->
 <td>
 {% raw %}{% if {% endraw %}{{ operating_system_obj }} and {{ release_type_obj }}{% raw %} %}{% endraw %}
+  <div class="cell-download">
     <a href="{{ download_url }}" class="button-download expanded hollow {{ css_class }}">
         <span class="header">{{ version }}</span>
         <br/>revision {{ revision }}
         <br/>built {{ build_date_ymd }}
         <br/><i class="fas fa-download"></i>
     </a>
+    <a class="table-subheader browse-extension {{ css_class }}" href="{{ extensions_browse_url }}">browse extensions</a>
+  </div>
 {% raw %}{% else %}{% endraw %}
     <i>Not available</i>
 {% raw %}{% endif %}{% endraw %}

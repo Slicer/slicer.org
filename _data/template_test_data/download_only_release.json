@@ -4,6 +4,7 @@
     "linux": {
       "release": {
         "download_url": "javascript: alert('download linux release package');",
+        "extensions_browse_url": "javascript: alert('browse linux release extensions');",
         "version": "5.2.0",
         "revision": "31314",
         "build_date_ymd": "2022-11-22",
@@ -13,6 +14,7 @@
     "macosx": {
       "release": {
         "download_url": "javascript: alert('download macosx release package');",
+        "extensions_browse_url": "javascript: alert('browse macosx release extensions');",
         "version": "5.2.0",
         "revision": "31314",
         "build_date_ymd": "2022-11-23",
@@ -22,6 +24,7 @@
     "win": {
       "release": {
         "download_url": "javascript: alert('download win release package');",
+        "extensions_browse_url": "javascript: alert('browse win release extensions');",
         "version": "5.2.0",
         "revision": "31314",
         "build_date_ymd": "2022-11-24",
