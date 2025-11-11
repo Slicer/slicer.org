@@ -35,6 +35,21 @@ animated_navbar: false
       </div>
     </div>
 {% else %}
+ <!-- TEMPORARY BANNER to be removed when 5.10 is more completely stable extension-wise. -->
+    <div class="columns is-mobile is-centered has-text-centered">
+
+      <div class="column is-12">
+        <div class="notification is-warning">
+            <p class="title is-4">
+            Access to previous stable release
+            </p>
+            <p class="content">
+            Slicer 5.10 is the new stable release. Some extensions are still being updated and may be missing. If you need access to the previous stable release Slicer 5.8, see <a href="https://download.slicer.org/?revision=33241">this download page</a>.
+            </p>
+        </div>
+      </div>
+    </div>
+ <!-- End TEMPORARY BANNER -->
     <!-- This section contains jinja2 templates intended to be used in https://github.com/Slicer/slicer_download -->
     <div class="columns is-mobile is-centered">
         <table class="installers column is-three-quarters">
