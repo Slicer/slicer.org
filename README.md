@@ -114,29 +114,22 @@ _The following instructions assumes you have docker installed. On Windows, you m
 
 3. Update files in the directory `slicer.org` with you proposed changes.
 
-4. Prepare the build environment creating the `gh-pages` docker image
-
-    ```
-    git clone git@github.com:github/pages-gem.git
-    cd pages-gem
-    make image
-    ```
-
-    _For more details, see https://github.com/github/pages-gem#docker_
-
-5. "Run" the build environment by shelling into the the `gh-pages` docker image.
+4. "Run" the build environment by shelling into a Ruby docker container.
 
     ```
     cd /path/to/slicer.org
     docker run -ti --rm \
       -p 4000:4000 \
       -v `realpath .`:/src/site \
-      gh-pages bash
+      -w /src/site \
+      ruby:3.1 bash
     ```
 
 5. Generate and serve the website
 
     ```
+    apt-get update && apt-get install -y build-essential
+
     bundle install
 
     git config --global --add safe.directory /src/site
