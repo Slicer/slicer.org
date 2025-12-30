@@ -57,7 +57,7 @@ animated_navbar: false
             </thead>
             <tbody>
                 <tr>
-                    <th>Stable Release<br /><span class="table-subheader"><a href="https://www.slicer.org/wiki/Documentation/Nightly/FAQ/General#Where_can_I_download_Slicer.3F">access older releases</a></span></th>
+                    <th>Stable Release<br /><span class="table-subheader"><a href="#access-older-releases">access older releases</a></span></th>
 
                     {%- assign release_type = "release" -%}
 
@@ -102,6 +102,12 @@ animated_navbar: false
                 <a>
                     <span class="icon is-small"><i class="far fa-file-alt" aria-hidden="true"></i></span>
                     <span>Package Naming Convention</span>
+                </a>
+            </li>
+            <li data-target="tab-access-older-releases" id="access-older-releases">
+                <a>
+                    <span class="icon is-small"><i class="fas fa-history" aria-hidden="true"></i></span>
+                    <span>Access Older Releases</span>
                 </a>
             </li>
         </ul>
@@ -210,6 +216,35 @@ animated_navbar: false
                 </tr>
                 </tbody>
             </table>
+        </div>
+        <div id="tab-access-older-releases"  class="is-hidden">
+            <p class=""><strong>Get older Slicer Stable Releases:</strong></p>
+
+            <p class="">You can add <code>version</code> parameter to the download page address. For example, use this link to get latest Slicer-5.8 release (i.e., Slicer-5.8.1): <a href="http://download.slicer.org/?version=5.8">http://download.slicer.org/?version=5.8</a>.</p>
+
+            <p class="">To get a direct download URL, set <code>version</code> to the desired version (such as <code>5.8</code>), <code>os</code> (<code>win</code>, <code>macosx</code>, or <code>linux</code>), and <code>stability=release</code>. For example: <a href="https://download.slicer.org/download?version=5.8&os=win&stability=release">https://download.slicer.org/download?version=5.8&os=win&stability=release</a></p>
+
+            <p class=""><strong>Get older Slicer Preview Releases:</strong></p>
+
+            <p class="">Older Slicer Preview Releases can be accessed by adding the <code>offset</code> parameter to the download page URL. For example, to get Slicer Preview Release from 7 days ago: <a href="http://download.slicer.org/?offset=-7">http://download.slicer.org/?offset=-7</a>.</p>
+
+            <p class="">All available options:</p>
+            <ul>
+              <li><code>stability</code>: can be <code>release</code>, <code>nightly</code>, or <code>any</code></li>
+              <li><code>os</code>: can be <code>win</code>, <code>macosx</code>, or <code>linux</code></li>
+              <li><code>date</code>: revision built before or on the date, for example <code>date=2015-01-01</code></li>
+              <li><code>checkout-date</code>: revision checked out before or on the date, for example <code>checkout-date=2015-01-01</code></li>
+              <li><code>revision</code>: exact revision, for example <code>revision=27000</code></li>
+              <li><code>closest-revision</code>: revision less than or equal, for example <code>closest-revision=26000</code></li>
+              <li><code>version</code>: latest revision of branch, can include patch as well, for example <code>version=4.3</code> offers download of Slicer-4.3.1</li>
+              <li><code>offset</code>: can be combined with <code>date</code>, <code>checkout-date</code>, <code>revision</code>, <code>closest-revision</code>, <code>version</code> to get version days, revisions, or versions before or after the specified, for example <a href="https://download.slicer.org/?version=5.6.2&offset=-1">https://download.slicer.org/?version=5.6.2&offset=-1</a> provides version 5.6.1, one version before the specified 5.6.2 release.</li>
+            </ul>
+
+            <p class=""><strong>Get older Slicer Extensions:</strong></p>
+
+            <p class="">Extensions can be downloaded for old Slicer releases manually from the Extensions Catalog at the URL: <code>https://extensions.slicer.org/catalog/All/(revision_number)/(operating_system)</code>.
+            Revision number is available on this download page or in an installed Slicer application in menu: Help / About Slicer. Operating system can be: <code>win</code>, <code>macosx</code>, or <code>linux</code>.
+            For example, for Slicer-4.8.0 on Windows extensions are available at: <a href="https://extensions.slicer.org/catalog/All/26489/win">https://extensions.slicer.org/catalog/All/26489/win</a>.</p>
         </div>
     </div>
 {% endif %}
