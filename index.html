@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://slicer.org/assets/css/app.css?v=1771548524">
+
+    <!-- [favicon] -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://slicer.org/assets/favicons/apple-touch-icon.png?v=Gv63MLlwnz">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://slicer.org/assets/favicons/favicon-32x32.png?v=Gv63MLlwnz">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://slicer.org/assets/favicons/favicon-16x16.png?v=Gv63MLlwnz">
+    <link rel="manifest" href="https://slicer.org/assets/favicons/site.webmanifest?v=Gv63MLlwnz">
+    <link rel="mask-icon" href="https://slicer.org/assets/favicons/safari-pinned-tab.svg?v=Gv63MLlwnz" color="#1f65b0">
+    <link rel="shortcut icon" href="https://slicer.org/assets/favicons/favicon.ico?v=Gv63MLlwnz">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-TileImage" content="https://slicer.org/assets/favicons/mstile-144x144.png?v=Gv63MLlwnz">
+    <meta name="msapplication-config" content="https://slicer.org/assets/favicons/browserconfig.xml?v=Gv63MLlwnz">
+    <meta name="theme-color" content="#1f65b0">
+    <!-- [/favicon] -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.24/dist/css/bulma-carousel.min.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>3D Slicer image computing platform | 3D Slicer</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="3D Slicer image computing platform">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="3D Slicer is a free, open source software for visualization, processing, segmentation, registration, and analysis of medical, biomedical, and other 3D images and meshes; and planning and navigating image-guided procedures.">
+<meta property="og:description" content="3D Slicer is a free, open source software for visualization, processing, segmentation, registration, and analysis of medical, biomedical, and other 3D images and meshes; and planning and navigating image-guided procedures.">
+<link rel="canonical" href="https://slicer.org/">
+<meta property="og:url" content="https://slicer.org/">
+<meta property="og:site_name" content="3D Slicer">
+<meta property="og:image" content="https://slicer.org/assets/img/3d-slicer-128x128.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:image" content="https://slicer.org/assets/img/3d-slicer-128x128.png">
+<meta property="twitter:title" content="3D Slicer image computing platform">
+<meta name="twitter:site" content="@3DSlicerApp">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"3D Slicer is a free, open source software for visualization, processing, segmentation, registration, and analysis of medical, biomedical, and other 3D images and meshes; and planning and navigating image-guided procedures.","headline":"3D Slicer image computing platform","image":"https://slicer.org/assets/img/3d-slicer-128x128.png","name":"3D Slicer","url":"https://slicer.org/"}</script>
+<!-- End Jekyll SEO tag -->
+<script>
+    // Define dataLayer and the gtag function.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Set default consent to 'denied' as a placeholder unless already accepted
+    var cookiesAccepted = Cookies.get('cookiesAccepted');
+    if (cookiesAccepted === 'true') {
+        gtag('consent', 'default', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted',
+        });
+    } else {
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+        });
+    }
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97117718-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-97117718-1');
+</script>
+
+<script>
+    function consentGrantedAdStorage() {
+        gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted',
+        });
+    }
+</script>
+<!-- head scripts -->
+</head>
+
+<body>
+
+    <!-- _includes/header.html -->
+
+<nav class="navbar is-fixed-top" id="animated-header">
+
+    <div class="container">
+        <div class="navbar-brand">
+            <img src="https://slicer.org/assets/img/3D-Slicer-Mark.svg" width="35">
+            <a href="https://slicer.org/" class="navbar-item ">
+                3D Slicer
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navMenu">
+            <div class="navbar-end">
+<!-- _includes/navbar-column.html -->
+<div class="navbar-item has-dropdown is-hoverable">
+    <a href="" class="navbar-link ">Application</a>
+    <div class="navbar-dropdown">
+        
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fa fa-rocket"></i> 
+            
+            Getting Started
+        </a>
+        
+        <a href="https://download.slicer.org" class="navbar-item force-internal-link " target="" rel="">
+        
+            
+            <i class="fa fa-download"></i> 
+            
+            Download
+        </a>
+        
+    </div>
+</div>
+<!-- _includes/navbar-column.html -->
+<div class="navbar-item has-dropdown is-hoverable">
+    <a href="" class="navbar-link ">Support</a>
+    <div class="navbar-dropdown">
+        
+        <a href="https://training.slicer.org" class="navbar-item force-internal-link " target="" rel="">
+        
+            
+            <i class="fa fa-graduation-cap"></i> 
+            
+            Training
+        </a>
+        
+        <a href="https://slicer.readthedocs.io" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fa fa-book"></i> 
+            
+            Documentation
+        </a>
+        
+        <a href="https://discourse.slicer.org/" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fa fa-comment"></i> 
+            
+            Forum
+        </a>
+        
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/get_help.html" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Get Help
+        </a>
+        
+    </div>
+</div>
+<!-- _includes/navbar-column.html -->
+<div class="navbar-item has-dropdown is-hoverable">
+    <a href="" class="navbar-link ">Solutions</a>
+    <div class="navbar-dropdown">
+        
+        <a href="https://slicerigt.org" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerIGT
+        </a>
+        
+        <a href="https://chestimagingplatform.org" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Chest Imaging Platform
+        </a>
+        
+        <a href="https://dmri.slicer.org" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerDMRI
+        </a>
+        
+        <a href="https://slicerrt.org" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerRT
+        </a>
+        
+        <a href="https://salt.slicer.org" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerSalt
+        </a>
+        
+        <a href="https://slicermorph.github.io" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerMorph
+        </a>
+        
+        <a href="https://github.com/Punzo/SlicerAstro/wiki" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerAstro
+        </a>
+        
+        <a href="https://cmf.slicer.org" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerCMF
+        </a>
+        
+        <a href="https://www.radiomics.io" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerRadiomics
+        </a>
+        
+    </div>
+</div>
+<!-- _includes/navbar-column.html -->
+<div class="navbar-item has-dropdown is-hoverable">
+    <a href="" class="navbar-link ">Developers</a>
+    <div class="navbar-dropdown">
+        
+        <a href="https://github.com/Slicer/Slicer" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fab fa-github"></i> 
+            
+            Github
+        </a>
+        
+        <a href="https://slicer.readthedocs.io/en/latest/developer_guide/index.html" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Developer Guide
+        </a>
+        
+        <a href="http://slicer.cdash.org/viewProjects.php" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Quality Dashboard
+        </a>
+        
+        <a href="https://download.slicer.org/download-stats" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Download Statistics
+        </a>
+        
+        <a href="https://slicer.readthedocs.io/en/latest/developer_guide/extensions.html" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Extensions
+        </a>
+        
+        <a href="https://slicer.readthedocs.io/en/latest/developer_guide/contributing.html" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Contribute
+        </a>
+        
+    </div>
+</div>
+<!-- _includes/navbar-column.html -->
+<div class="navbar-item has-dropdown is-hoverable">
+    <a href="" class="navbar-link ">About</a>
+    <div class="navbar-dropdown">
+        
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#contact-us" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Contact
+        </a>
+        
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#license" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            License
+        </a>
+        
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#how-to-cite" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Citing
+        </a>
+        
+        <a href="https://slicer.org/commercial-use.html" class="navbar-item  ">
+        
+            
+            Commercial Use
+        </a>
+        
+        <a href="https://www.slicer.org/wiki/Main_Page/SlicerCommunity" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            3D Slicer Enabled Research
+        </a>
+        
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#acknowledgments" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            Acknowledgments
+        </a>
+        
+        <a href="https://www.linkedin.com/feed/hashtag/?keywords=3dslicer" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fab fa-linkedin"></i> 
+            
+            LinkedIn
+        </a>
+        
+        <a href="https://www.youtube.com/c/3DSlicerChannel" class="navbar-item  " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fab fa-youtube"></i> 
+            
+            YouTube
+        </a>
+        
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(window).scroll(function() {
+       var scroll = $(window).scrollTop();
+       if (scroll > 500) {
+         $("#animated-header").addClass("active");
+       }
+       else {
+         $("#animated-header").removeClass("active");
+       }
+});
+</script>
+
+
+
+<div class="site-wrapper">
+  <!-- _includes/hero-main.html -->
+<section class="hero main-page is-medium is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered is-centered">
+                <div class="column is-one-third has-text-centered">
+                    <img class="hero-logo" src="/assets/img/3D-Slicer-Mark.svg">
+                </div>
+                <div class="column">
+                    <h1 class="title">
+<b> 3D Slicer </b> image computing platform</h1>
+                    
+                    <div class="buttons is-left">
+                      
+                          <a href="https://download.slicer.org" onclick="this.blur();" class="button hero-button is-medium logo-blue force-internal-link" target="" rel="">
+                            <span class="icon is-small">
+                                <i class="fa fa-download"></i>
+                            </span>
+                            <span>Download</span>
+                          </a>
+                      
+                          <a href="https://slicer.readthedocs.io" onclick="this.blur();" class="button hero-button is-medium logo-green " target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                                <i class="fas fa-book"></i>
+                            </span>
+                            <span>Documentation</span>
+                          </a>
+                      
+                          <a href="https://github.com/Slicer/Slicer" onclick="this.blur();" class="button hero-button is-medium logo-red " target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Developers</span>
+                          </a>
+                      
+                          <a href="https://training.slicer.org" onclick="this.blur();" class="button hero-button is-medium logo-orange force-internal-link" target="" rel="">
+                            <span class="icon is-small">
+                                <i class="fa fa-graduation-cap"></i>
+                            </span>
+                            <span>Training</span>
+                          </a>
+                      
+                          <a href="https://discourse.slicer.org" onclick="this.blur();" class="button hero-button is-medium logo-yellow " target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                                <i class="fa fa-comments"></i>
+                            </span>
+                            <span>Forum</span>
+                          </a>
+                      
+                          <a href="https://www.linkedin.com/feed/hashtag/?keywords=3dslicer" onclick="this.blur();" class="button hero-button is-medium logo-brown " target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                                <i class="fab fa-linkedin"></i>
+                            </span>
+                            <span>LinkedIn</span>
+                          </a>
+                      
+                    </div>
+                    
+                    <hr>
+                    <p class="subtitle is-5">3D Slicer is a <span class="highlight-text"><b>free</b></span>, <span class="highlight-text"><b>open source</b></span> software for visualization, processing, segmentation, registration, and analysis of medical, biomedical, and other 3D images and meshes; and planning and navigating image-guided procedures.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section class="section about" id="About-Section">
+    <div class="container is-fluid">
+      <div class="content">
+        <!-- _includes/about.html -->
+<div>
+  <div class="row has-text-centered">
+    <div class="title is-2 anchored" id="what-is-3d-slicer">What is <b>3D Slicer</b> ?</div>
+    <div class="description is-size-5">
+<b>Desktop software</b> to solve advanced image computing challenges with a focus on clinical and biomedical applications.<br>
+<b>Development platform</b> to quickly build and deploy custom solutions for research and commercial products, using free, open source software.<br>
+<b>Community</b> of knowledgeable users and developers working together to improve medical computing.
+</div>
+  </div>
+  <div class="subtitle is-4 has-text-centered anchored">See 3D Slicer in action</div>
+  <div id="about_image_carousel" class="carousel has-text-centered">
+    
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/SegmentEditor.png" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">Image segmentation</div>
+            <div class="description">Create surgical plans, create high-quality atlases, or training data sets for deep learning using the Segment Editor module. <a href="https://slicer.readthedocs.io/en/latest/user_guide/image_segmentation.html" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/LungCTAnalyzer.jpg" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">Lung CT analysis for COVID-19</div>
+            <div class="description">LungCTAnalyzer extension offers automated lung segmentation and quantative analysis for COVID-19 cases.<a href="https://youtu.be/fpLxm7uAvZQ" target="_blank" rel="noopener noreferrer"> video &gt; </a> <a href="https://discourse.slicer.org/t/15006" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/2016-SlicerBlog_Lumpectomy.png" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">Surgical navigation</div>
+            <div class="description">3D Slicer is used in real-time navigation of breast cancer surgery. <a href="https://youtu.be/90l0T1ADe_Y" target="_blank" rel="noopener noreferrer">video &gt; </a> <a href="http://perk.cs.queensu.ca/sites/perkd7.cs.queensu.ca/files/Ungi2015b.pdf" target="_blank" rel="noopener noreferrer"> journal article &gt; </a> <a href="http://www.slicerigt.org/wp/breast-cancer-surgery/" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/SegmentationNVidiaAIAA.png" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">AI-assisted segmentation</div>
+            <div class="description">AI-assisted annotation tools can automatically segment anatomical structures using pre-trained or custom models. See <a href="https://youtu.be/KtPE8m0LvcQ" target="_blank" rel="noopener noreferrer"> this tutorial video &gt; </a> or <a href="https://github.com/Project-MONAI/MONAILabel?tab=readme-ov-file#monai-label-tutorials" target="_blank" rel="noopener noreferrer"> tutorial material &gt; </a> and <a href="https://discourse.slicer.org/tag/ai" track the latest forum posts target="_blank" rel="noopener noreferrer"> </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/2014-06-27-SlicerKuka.png" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">Robot-assisted interventions</div>
+            <div class="description">Slicer is connected to a KUKA robot for visualization of 3D models of the robot, the anatomy, and the workspace. Demo at CARS 2014 in Fukuoka, Japan.The system is originally developed at NA-MIC Summer Project Week. <a href="https://www.na-mic.org/wiki/2013_Summer_Project_Week:kukarobot" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/UKFTractography_CC.jpg" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">Tractography</div>
+            <div class="description">UKFTractography is a module for computing tractography of DWI images using an unscented Kalman filter. Because of its 2-tensor algorithm, it is able to model fiber crossings and capture many more fibers than a single tensor algorithm. <a href="https://www.slicer.org/wiki/Documentation/Nightly/Modules/UKFTractography" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/Example_Nephrostomy-1.png" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">Tracked ultrasound for needle guidance</div>
+            <div class="description">Tracked ultrasound snapshots enhance needle guidance for percutaneous renal access. <a href="https://youtu.be/BZ2OsMOnXlk" target="_blank" rel="noopener noreferrer"> video &gt; </a> <a href="http://www.slicerigt.org/wp/tracked-ultrasound-snapshots-enhance-needle-guidance-for-percutaneous-renal-access/" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/1920px-SlicerRt_Montage.jpg" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">Adaptive radiation therapy</div>
+            <div class="description">SlicerRT extension is a radiation therapy toolkit for 3D Slicer, containing DICOM RT import/export, visualization, and analysis. <a href="http://slicerrt.github.io/" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/UsVolumeReconstruction.png" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">Real-time 3D ultrasound reconstruction</div>
+            <div class="description">3D volume is reconstructed from real-time tracked ultrasound using SlicerIGT and SlicerIGSIO extensions <a href="https://youtu.be/2vXeJxYFou4?t=131" target="_blank" rel="noopener noreferrer"> video &gt; </a> <a href="https://www.slicerigt.org" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/VirtualReality.png" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">Virtual reality</div>
+            <div class="description">Everything that is shown in the 3D view (volume rendering, real-time surgical navigation, tractography, etc.) can be displayed and interacted with in virtual reality using SlicerVR extension. <a href="https://youtu.be/F_UBoE4FaoY" target="_blank" rel="noopener noreferrer"> video &gt; </a> <a href="https://www.slicervr.org" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/FreeSurferImport.png" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">FreeSurfer support</div>
+            <div class="description">Import volumes, segmentations, surfaces from FreeSurfer then edit and analyze them. <a href="https://youtu.be/v0rGbno4h2M?t=27" target="_blank" rel="noopener noreferrer"> video &gt; </a> <a href="https://discourse.slicer.org/t/12751" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+      <div class="carousel-item">
+          <figure class="image is-16by9 is-covered">
+            <img src="assets/img/image-carousel/SlicerDownloads.png" alt="">
+          </figure>
+          <div>
+            <div class="subtitle is-5" style="margin-bottom:0px;">2 million downloads</div>
+            <div class="description">3D Slicer application installers have been downloaded over 2 million times in the past 14 years. <a href="https://www.slicer.org/wiki/Main_Page/SlicerCommunity" target="_blank" rel="noopener noreferrer"> learn more &gt; </a>
+</div>
+          </div>
+      </div>
+      
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.24/dist/js/bulma-carousel.min.js"></script>
+<script>
+  bulmaCarousel.attach('#about_image_carousel', {
+    slidesToScroll: 1,
+    slidesToShow: 3,
+    navigation: true,
+    navigationSwipe: true,
+    loop: true,
+    autoplay: true,
+    autoplaySpeed: 3000, //Time (ms) between each transition when autoplay is true
+    duration: 600 //Transition animation duration (in ms)
+  });
+</script>
+
+      </div>
+    </div>
+  </section>
+  <section class="section features section-shadow">
+    <div class="container">
+      <div class="content">
+        <!-- _includes/features.html -->
+<div class="is-vcentered is-centered">
+  <div class="row has-text-centered">
+    <div class="subtitle is-2 anchored" id="features">Features</div>
+    <div class="description is-size-5">The development of 3D Slicer—including its numerous modules, extensions, datasets, pull requests, patches, issues reports, suggestions—is made possible by users, developers, contributors and commercial partners around the world. The National Institutes of Health(NIH) of the USA has been a major contributor through a variety of competitive grants and contracts. See more information about funding sources <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#funding-sources" target="_blank" rel="noopener noreferrer">here</a>.</div>
+  </div>
+  <div class="container">
+    <div class="row cards-row">
+      <div class="card-columns columns-2-desktop columns-2-tablet columns-1-mobile">
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>DICOM standard interoperability</b>
+              <br>
+              <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/dicom.html" target="_blank" rel="noopener noreferrer">DICOM import and export, DICOMweb and classic DIMSE networking.</a> Support of a wide range of DICOM information objects, such as 2D, 3D, 4D images, segmentation objects, registration objects, structured reports, parametric maps, RT structure sets, RT plans, RT images, RT dose maps.
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>Artificial Intelligence</b>
+              <br>
+              <a href="https://discourse.slicer.org/t/ai-assisted-segmentation-extension/9536" target="_blank" rel="noopener noreferrer">NVidia Clara AI-based automatic segmentation</a>, <a href="https://slicer.readthedocs.io/en/latest/user_guide/image_segmentation.html" target="_blank" rel="noopener noreferrer">segmentation tools</a> for ground truth training data generation, <a href="https://www.slicer.org/wiki/Documentation/Nightly/Modules/DeepInfer" target="_blank" rel="noopener noreferrer">DeepInfer extension</a> for Deep Learning, Tensorflow and MONAI compatibility.
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>Image segmentation</b>
+              <br>
+              Capabilities for 2D/3D/4D image supporting hundreds of segments per image using <a href="https://slicer.readthedocs.io/en/latest/user_guide/image_segmentation.html" target="_blank" rel="noopener noreferrer">Segment Editor</a>.
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>Spatial registration</b>
+              <br>
+              Many <a href="https://slicer.readthedocs.io/en/latest/user_guide/registration.html" target="_blank" rel="noopener noreferrer">tools for manual and automatic registration</a> for images, image sequences, and models.
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>3D markups</b>
+              <br>
+              Define point sets, lines, curves, angles, planes, region of interests and use them for measurements or as inputs in various software modules using <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/markups.html" target="_blank" rel="noopener noreferrer">Markups module</a>.
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>Cloud-based computing</b>
+              <br>
+              <a href="https://discourse.slicer.org/t/how-to-run-slicer-on-the-cloud-and-access-in-a-web-browser/16401" target="_blank" rel="noopener noreferrer">3D Slicer in web browser</a>, <a href="https://github.com/Slicer/SlicerDocker" target="_blank" rel="noopener noreferrer">Docker container</a>, or <a href="https://discourse.slicer.org/t/run-slicer-in-your-web-browser-as-a-jupyter-notebook-or-as-a-full-application/11569" target="_blank" rel="noopener noreferrer">Jupyter notebook kernel</a>. <b><a href="https://mybinder.org/v2/gh/Slicer/SlicerNotebooks/master?filepath=SlicerWeb.ipynb" target="_blank" rel="noopener noreferrer">Click here to run Slicer in your web browser now</a></b> (using free Binder service, may take 1-2 minutes to start).
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>Extensions</b>
+              <br>
+              Over 150 extensions that can be installed and used with the application using the <a href="https://slicer.readthedocs.io/en/latest/user_guide/extensions.html" target="_blank" rel="noopener noreferrer">3D Slicer App Store</a>.
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>Python scripting</b>
+              <br>
+              Live introspection, interface scripting, any Python 3 packages can be installed. <a href="https://www.slicer.org/wiki/Documentation/Nightly/Training#PerkLab.27s_Slicer_bootcamp_training_materials" target="_blank" rel="noopener noreferrer">Tutorials.</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>3D printing friendly</b>
+              <br>
+              <a href="https://slicer.readthedocs.io/en/latest/user_guide/modules/segmentations.html#export-segmentation-to-model-surface-mesh-file" target="_blank" rel="noopener noreferrer">3D-printable mesh export</a>, <a href="https://github.com/SlicerFab/SlicerFab" target="_blank" rel="noopener noreferrer">voxel printing support</a>.
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>4D data support</b>
+              <br>
+              Time sequence visualization and analysis of any data types (volumes, models, segmentations, markups, etc.).
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>Virtual Reality and Augmented Reality</b>
+              <br>
+              <a href="https://www.slicervr.org" target="_blank" rel="noopener noreferrer">Interact with scenes in HTC, Oculus, Windows Mixed Reality systems</a>. Export data to HoloLens.
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <img src="assets/img/features-bullets.svg" width="12px">
+              <b>Surgical planning and guidance</b>
+              <br>
+              <a href="https://www.slicerigt.org" target="_blank" rel="noopener noreferrer">Real-time data recording, analysis and replay from surgical navigation systems, ultrasound scanners cameras and trackers, OpenIGTLink connection with trackers, scanners</a>.
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </section>
+  <section class="section solutions-section section-shadow">
+    <div class="container">
+      <div class="content">
+        <!-- _includes/solutions.html -->
+<div>
+    <div class="row has-text-centered">
+        <div class="subtitle is-2 anchored" id="solutions">Solutions</div>
+        <div class="description is-size-5">Each solution represents an application area of 3D Slicer, which may include collection of extensions, tutorials, forum sub-communities, and even custom software distributions tailored to the needs of a specific community. Custom distributions can provide self-contained, end-to-end implementation of specific workflows with simplified user interface.</div>
+    </div>
+    <div>
+        <div class="card-columns columns-3-desktop columns-2-tablet columns-1-mobile">
+            <div class="slicer-solution card">
+                <div class="columns">
+                    <div class="column is-one-third has-text-right has-text-centered-mobile">
+                        <img src="assets/img/slicer-solutions/slicer-igt.png">
+                    </div>
+                    <div class="column">
+                        <div class="subtitle is-4" style="margin-bottom:0">SlicerIGT</div>
+                        <hr>
+                        <div class="description">A software kit for rapid development of <b>Image-Guided Therapy (IGT)</b> applications based on 3D Slicer.</div>
+                        <a href="https://slicerigt.org" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                               <i class="fa fa-link"></i>
+                            </span>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slicer-solution card">
+                <div class="columns">
+                    <div class="column is-one-third has-text-right has-text-centered-mobile">
+                        <img src="assets/img/slicer-solutions/slicer-rt.png">
+                    </div>
+                    <div class="column">
+                        <div class="subtitle is-4" style="margin-bottom:0">SlicerRT</div>
+                        <hr>
+                        <div class="description">A <b>Radiation Therapy (RT)</b> research toolkit for 3D Slicer, containing RT features for import/export, analysis &amp; visualization.</div>
+                        <a href="https://slicerrt.org" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                               <i class="fa fa-link"></i>
+                            </span>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slicer-solution card">
+                <div class="columns">
+                    <div class="column is-one-third has-text-right has-text-centered-mobile">
+                        <img src="assets/img/slicer-solutions/slicer-astro.png">
+                    </div>
+                    <div class="column">
+                        <div class="subtitle is-4" style="margin-bottom:0">SlicerAstro</div>
+                        <hr>
+                        <div class="description">An <b>Astronomy</b> extension for 3D Slicer providing interactive 3D visual analytics tool for HI (neutral Hydrogen) data.</div>
+                        <a href="https://github.com/Punzo/SlicerAstro/wiki" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                               <i class="fa fa-link"></i>
+                            </span>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <div class="slicer-solution card">
+                <div class="columns">
+                    <div class="column is-one-third has-text-right has-text-centered-mobile">
+                        <img src="assets/img/slicer-solutions/slicer-cip.png">
+                    </div>
+                    <div class="column">
+                        <div class="subtitle is-4" style="margin-bottom:0">Chest Imaging Platform</div>
+                        <hr>
+                        <div class="description">A 3D Slicer extension for the development and translation of known and novel <b>quantitative phenotypes in lung diseases</b>.</div>
+                        <a href="https://chestimagingplatform.org" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                               <i class="fa fa-link"></i>
+                            </span>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slicer-solution card">
+                <div class="columns">
+                    <div class="column is-one-third has-text-right has-text-centered-mobile">
+                        <img src="assets/img/slicer-solutions/slicer-salt.png">
+                    </div>
+                    <div class="column">
+                        <div class="subtitle is-4" style="margin-bottom:0">SlicerSalt</div>
+                        <hr>
+                        <div class="description">A dissemination vehicle providing <b>shape analysis</b> methodology based on 3D Slicer.</div>
+                        <a href="https://salt.slicer.org" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                               <i class="fa fa-link"></i>
+                            </span>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slicer-solution card">
+                <div class="columns">
+                    <div class="column is-one-third has-text-right has-text-centered-mobile">
+                        <img src="assets/img/slicer-solutions/slicer-cmf.png">
+                    </div>
+                    <div class="column">
+                        <div class="subtitle is-4" style="margin-bottom:0">SlicerCMF</div>
+                        <hr>
+                        <div class="description">A 3D Slicer extension providing registration, segmentation and quantification modules for <b>dental images analysis</b>.</div>
+                        <a href="https://cmf.slicer.org" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                               <i class="fa fa-link"></i>
+                            </span>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <div class="slicer-solution card">
+                <div class="columns">
+                    <div class="column is-one-third has-text-right has-text-centered-mobile">
+                        <img src="assets/img/slicer-solutions/slicer-dmri.png">
+                    </div>
+                    <div class="column">
+                        <div class="subtitle is-4" style="margin-bottom:0">SlicerDMRI</div>
+                        <hr>
+                        <div class="description">A 3D Slicer extension enabling <b>Diffusion Magnetic Resonance Imaging (DMRI)</b>.</div>
+                        <a href="https://dmri.slicer.org" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                               <i class="fa fa-link"></i>
+                            </span>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slicer-solution card">
+                <div class="columns">
+                    <div class="column is-one-third has-text-right has-text-centered-mobile">
+                        <img src="assets/img/slicer-solutions/slicer-morph.png">
+                    </div>
+                    <div class="column">
+                        <div class="subtitle is-4" style="margin-bottom:0">SlicerMorph</div>
+                        <hr>
+                        <div class="description">A 3D Slicer extension enabling biologists to retrieve, visualize, measure, segment, conduct <b>landmark-based geometric morphometric analyses</b> and <b>animate 3D biological specimens</b> from digital collections of volumetric and surface scans.</div>
+                        <a href="https://slicermorph.github.io" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                               <i class="fa fa-link"></i>
+                            </span>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slicer-solution card">
+                <div class="columns">
+                    <div class="column is-one-third has-text-right has-text-centered-mobile">
+                        <img src="assets/img/slicer-solutions/slicer-radiomics.png">
+                    </div>
+                    <div class="column">
+                        <div class="subtitle is-4" style="margin-bottom:0">SlicerRadiomics</div>
+                        <hr>
+                        <div class="description">A 3D Slicer extension enabling <b>quantitative characterization of imaging phenotype</b>.</div>
+                        <a href="https://www.radiomics.io" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+                            <span class="icon is-small">
+                               <i class="fa fa-link"></i>
+                            </span>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        
+        </div>
+    </div>
+</div>
+
+      </div>
+    </div>
+  </section>
+  <section class="section commercial-use-section section-shadow">
+    <div class="container">
+      <div class="content">
+        <!-- _includes/commercial-use-section.html -->
+<div class="columns is-vcentered is-centered">
+    <div class="column has-text-centered">
+        <div class="subtitle is-2 anchored" id="commercial-use">Commercial Use</div>
+        <div class="description is-size-5">We invite commercial entities to use 3D Slicer. 3D Slicer is a Free Open Source Software distributed under a BSD style license.<br> The license does not impose restrictions on the use of the software. For details, please see the <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#license" target="_blank" rel="noopener noreferrer">3D Slicer Software License Agreement</a>.<br> Learn more about our commercial partners and 3D Slicer based products and product prototypes.</div>
+        <a href="/commercial-use.html" class="button is-small">
+            <span>Learn More</span>
+            <span class="icon is-small">
+               <i class="fas fa-angle-right"></i>
+            </span>
+        </a>
+    </div>
+</div>
+
+      </div>
+    </div>
+  </section>
+  <section class="section community-section section-shadow">
+    <div class="container">
+      <div class="content">
+        <!-- _includes/community.html -->
+<div class="columns is-vcentered is-centered">
+    <div class="column has-text-centered">
+        <div class="subtitle is-2 anchored" id="community">Community</div>
+        <div class="description is-size-5">3D Slicer is supported by a growing international user and developer community. <br> Visit the <a href="https://discourse.slicer.org" target="_blank" rel="noopener noreferrer">3D Slicer Forum</a> to connect with community members.<br> To acknowledge 3D Slicer as a platform, please see <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#how-to-cite" target="_blank" rel="noopener noreferrer">Citing Slicer</a>.</div>
+        <a href="https://www.slicer.org/wiki/Main_Page/SlicerCommunity" onclick="this.blur();" class="button is-small" target="_blank" rel="noopener noreferrer">
+            <span>Learn more about 3D Slicer Community</span>
+            <!--<span class="icon is-small">
+               <i class="fas fa-angle-right"></i>
+            </span>-->
+        </a>
+    </div>
+</div>
+
+      </div>
+    </div>
+  </section>
+  <section class="section sitemap section-shadow">
+      <!-- _includes/sitemap.html -->
+<div class="container">
+    
+    <div class="columns is-multiline">
+<!-- _includes/sitemap-column.html -->
+<div class="column">
+    <h4>Application</h4>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fa fa-rocket"></i>
+            
+            Getting Started
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://download.slicer.org" class="sitemap-item force-internal-link" target="" rel="">
+        
+            
+            <i class="fa fa-download"></i>
+            
+            Download
+        </a>
+    </div>
+    
+</div>
+<!-- _includes/sitemap-column.html -->
+<div class="column">
+    <h4>Support</h4>
+    
+    <div>
+        <a href="https://training.slicer.org" class="sitemap-item force-internal-link" target="" rel="">
+        
+            
+            <i class="fa fa-graduation-cap"></i>
+            
+            Training
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fa fa-book"></i>
+            
+            Documentation
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://discourse.slicer.org/" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fa fa-comment"></i>
+            
+            Forum
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/get_help.html" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Get Help
+        </a>
+    </div>
+    
+</div>
+<!-- _includes/sitemap-column.html -->
+<div class="column">
+    <h4>Solutions</h4>
+    
+    <div>
+        <a href="https://slicerigt.org" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerIGT
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://chestimagingplatform.org" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Chest Imaging Platform
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://dmri.slicer.org" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerDMRI
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicerrt.org" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerRT
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://salt.slicer.org" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerSalt
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicermorph.github.io" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerMorph
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://github.com/Punzo/SlicerAstro/wiki" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerAstro
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://cmf.slicer.org" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerCMF
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://www.radiomics.io" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            SlicerRadiomics
+        </a>
+    </div>
+    
+</div>
+<!-- _includes/sitemap-column.html -->
+<div class="column">
+    <h4>Developers</h4>
+    
+    <div>
+        <a href="https://github.com/Slicer/Slicer" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fab fa-github"></i>
+            
+            Github
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io/en/latest/developer_guide/index.html" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Developer Guide
+        </a>
+    </div>
+    
+    <div>
+        <a href="http://slicer.cdash.org/viewProjects.php" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Quality Dashboard
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://download.slicer.org/download-stats" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Download Statistics
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io/en/latest/developer_guide/extensions.html" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Extensions
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io/en/latest/developer_guide/contributing.html" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Contribute
+        </a>
+    </div>
+    
+</div>
+<!-- _includes/sitemap-column.html -->
+<div class="column">
+    <h4>About</h4>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#contact-us" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Contact
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#license" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            License
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#how-to-cite" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Citing
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicer.org/commercial-use.html" class="sitemap-item ">
+        
+            
+            Commercial Use
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://www.slicer.org/wiki/Main_Page/SlicerCommunity" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            3D Slicer Enabled Research
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://slicer.readthedocs.io/en/latest/user_guide/about.html#acknowledgments" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            Acknowledgments
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://www.linkedin.com/feed/hashtag/?keywords=3dslicer" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fab fa-linkedin"></i>
+            
+            LinkedIn
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://www.youtube.com/c/3DSlicerChannel" class="sitemap-item " target="_blank" rel="noopener noreferrer">
+        
+            
+            <i class="fab fa-youtube"></i>
+            
+            YouTube
+        </a>
+    </div>
+    
+</div>
+
+    </div>
+    
+</div>
+
+  </section>
+  <!-- _includes/footer.html -->
+<footer class="footer">
+  <div class="container">
+      <div class="content is-small has-text-centered">
+          Content of this site is Copyright 2026 BWH and 3D Slicer contributors, unless otherwise noted.
+          <br>For questions about the use of this site's content, please see <a href="https://www.slicer.org/wiki/Contact" target="_blank" rel="noopener noreferrer">Contact</a>.<br>Last update 2026-02-20. Revision <a id="revision" href="https://github.com/Slicer/slicer.org/commit/912bdfb" target="_blank" rel="noopener noreferrer">912bdfb</a>.
+      </div>
+  </div>
+</footer>
+
+</div>
+  <script src="https://slicer.org/assets/js/app.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  <script>anchors.add('.anchored');</script>
+</body>
+
+</html>
