@@ -220,6 +220,10 @@ animated_navbar: false
         <div id="tab-access-older-releases"  class="is-hidden">
             <p class=""><strong>Get older Slicer Stable Releases:</strong></p>
 
+            <p class="">A list of older releases is available here:<a href="https://github.com/Slicer/Slicer/wiki/Release-Details">https://github.com/Slicer/Slicer/wiki/Release-Details</a>.</p>
+
+            <p class="">The installable binaries can be <a href="https://slicer-packages.kitware.com/#collection/5f4474d0e1d8c75dfc70547e/folder/5f4474d0e1d8c75dfc705482">found here</a>.</p>
+             
             <p class="">You can add <code>version</code> parameter to the download page address. For example, use this link to get latest Slicer-5.8 release (i.e., Slicer-5.8.1): <a href="http://download.slicer.org/?version=5.8">http://download.slicer.org/?version=5.8</a>.</p>
 
             <p class="">To get a direct download URL, set <code>version</code> to the desired version (such as <code>5.8</code>), <code>os</code> (<code>win</code>, <code>macosx</code>, or <code>linux</code>), and <code>stability=release</code>. For example: <a href="https://download.slicer.org/download?version=5.8&os=win&stability=release">https://download.slicer.org/download?version=5.8&os=win&stability=release</a></p>
