@@ -64,6 +64,71 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   });
 
+  // Older stable release picker (on the download page)
+  const releaseVersionSelect = document.getElementById('older-release-version');
+  if (releaseVersionSelect) {
+    const releaseOsSelect = document.getElementById('older-release-os');
+    const releaseDownloadButton = document.getElementById('older-release-download');
+
+    // Pre-select the operating system based on the visitor's platform
+    const platform = (navigator.userAgent + ' ' + (navigator.platform || '')).toLowerCase();
+    if (platform.indexOf('win') !== -1) {
+      releaseOsSelect.value = 'win';
+    } else if (platform.indexOf('mac') !== -1) {
+      releaseOsSelect.value = 'macosx';
+    } else {
+      releaseOsSelect.value = 'linux';
+    }
+
+    // Compare two version strings (e.g. "5.12.0", "4.11.20210226") numerically, descending
+    const compareVersionsDesc = (a, b) => {
+      const pa = a.split(/[.-]/).map(Number);
+      const pb = b.split(/[.-]/).map(Number);
+      for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+        const na = pa[i] || 0;
+        const nb = pb[i] || 0;
+        if (na !== nb) {
+          return nb - na;
+        }
+      }
+      return 0;
+    };
+
+    // Populate the version combobox from the Slicer packages API
+    fetch('https://slicer-packages.kitware.com/api/v1/app/5f4474d0e1d8c75dfc705482/release')
+      .then(response => response.json())
+      .then(releases => {
+        const versions = releases
+          .map(release => release.name)
+          .filter(name => name)
+          .sort(compareVersionsDesc)
+          // Drop the latest stable release; it is already offered in the table above
+          .slice(1);
+        releaseVersionSelect.innerHTML = '';
+        versions.forEach(version => {
+          const option = document.createElement('option');
+          option.value = version;
+          option.textContent = 'Slicer ' + version;
+          releaseVersionSelect.appendChild(option);
+        });
+      })
+      .catch(() => {
+        releaseVersionSelect.innerHTML = '<option value="">Could not load versions</option>';
+      });
+
+    // Navigate to the direct download URL for the selected version and OS
+    releaseDownloadButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      const version = releaseVersionSelect.value;
+      const os = releaseOsSelect.value;
+      if (!version) {
+        return;
+      }
+      window.location.href = 'https://download.slicer.org/download?version=' +
+        encodeURIComponent(version) + '&os=' + encodeURIComponent(os) + '&stability=release';
+    });
+  }
+
   // Select tab with an ID matching the current URL's fragment
   $('div.tabs li:target').click();
 

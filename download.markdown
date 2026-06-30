@@ -218,11 +218,32 @@ animated_navbar: false
             </table>
         </div>
         <div id="tab-access-older-releases"  class="is-hidden">
-            <p class=""><strong>Get older Slicer Stable Releases:</strong></p>
+            <p class=""><strong>Download an older Slicer Stable Release:</strong></p>
 
-            <p class="">You can add <code>version</code> parameter to the download page address. For example, use this link to get latest Slicer-5.8 release (i.e., Slicer-5.8.1): <a href="http://download.slicer.org/?version=5.8">http://download.slicer.org/?version=5.8</a>.</p>
-
-            <p class="">To get a direct download URL, set <code>version</code> to the desired version (such as <code>5.8</code>), <code>os</code> (<code>win</code>, <code>macosx</code>, or <code>linux</code>), and <code>stability=release</code>. For example: <a href="https://download.slicer.org/download?version=5.8&os=win&stability=release">https://download.slicer.org/download?version=5.8&os=win&stability=release</a></p>
+            <div class="field is-grouped older-release-picker mb-5">
+                <div class="control">
+                    <div class="select is-small">
+                        <select id="older-release-version" aria-label="Slicer version">
+                            <option value="">Loading versions…</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="select is-small">
+                        <select id="older-release-os" aria-label="Operating system">
+                            <option value="win">Windows</option>
+                            <option value="macosx">macOS</option>
+                            <option value="linux">Linux</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control">
+                    <a id="older-release-download" class="button is-small" href="#">
+                        <span class="icon is-small"><i class="fas fa-download"></i></span>
+                        <span>Download</span>
+                    </a>
+                </div>
+            </div>
 
             <p class=""><strong>Get older Slicer Preview Releases:</strong></p>
 
