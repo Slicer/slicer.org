@@ -94,27 +94,46 @@ document.addEventListener('DOMContentLoaded', () => {
       return 0;
     };
 
-    // Populate the version combobox from the Slicer packages API
-    fetch('https://slicer-packages.kitware.com/api/v1/app/5f4474d0e1d8c75dfc705482/release')
-      .then(response => response.json())
-      .then(releases => {
-        const versions = releases
-          .map(release => release.name)
-          .filter(name => name)
-          .sort(compareVersionsDesc)
-          // Drop the latest stable release; it is already offered in the table above
-          .slice(1);
-        releaseVersionSelect.innerHTML = '';
-        versions.forEach(version => {
-          const option = document.createElement('option');
-          option.value = version;
-          option.textContent = 'Slicer ' + version;
-          releaseVersionSelect.appendChild(option);
+    // Populate the version combobox from the Slicer packages API.
+    // Deferred until the "Access Older Releases" tab is first opened, so the
+    // request is not made on every visit to the download page.
+    let versionsRequested = false;
+    const populateReleaseVersions = () => {
+      if (versionsRequested) {
+        return;
+      }
+      versionsRequested = true;
+      fetch('https://slicer-packages.kitware.com/api/v1/app/5f4474d0e1d8c75dfc705482/release')
+        .then(response => response.json())
+        .then(releases => {
+          const versions = releases
+            .map(release => release.name)
+            .filter(name => name)
+            .sort(compareVersionsDesc)
+            // Drop the latest stable release; it is already offered in the table above
+            .slice(1);
+          releaseVersionSelect.innerHTML = '';
+          versions.forEach(version => {
+            const option = document.createElement('option');
+            option.value = version;
+            option.textContent = 'Slicer ' + version;
+            releaseVersionSelect.appendChild(option);
+          });
+        })
+        .catch(() => {
+          // Allow a later tab visit to retry the request
+          versionsRequested = false;
+          releaseVersionSelect.innerHTML = '<option value="">Could not load versions</option>';
         });
-      })
-      .catch(() => {
-        releaseVersionSelect.innerHTML = '<option value="">Could not load versions</option>';
-      });
+    };
+
+    // Fetch the versions the first time the older-releases tab is opened.
+    // Clicking the tab fires this listener, including when the page auto-selects
+    // the tab from the URL fragment (#access-older-releases) further below.
+    const olderReleasesTab = document.getElementById('access-older-releases');
+    if (olderReleasesTab) {
+      olderReleasesTab.addEventListener('click', populateReleaseVersions);
+    }
 
     // Navigate to the direct download URL for the selected version and OS
     releaseDownloadButton.addEventListener('click', (event) => {
