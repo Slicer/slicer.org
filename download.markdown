@@ -218,7 +218,7 @@ animated_navbar: false
             </table>
         </div>
         <div id="tab-access-older-releases"  class="is-hidden">
-            <p class=""><strong>Download an older Slicer Stable Release:</strong></p>
+            <p class=""><strong>Download an older and unsupported Slicer Stable Release:</strong></p>
 
             <div class="field is-grouped older-release-picker mb-5">
                 <div class="control">
