@@ -80,60 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
       releaseOsSelect.value = 'linux';
     }
 
-    // Compare two version strings (e.g. "5.12.0", "4.11.20210226") numerically, descending
-    const compareVersionsDesc = (a, b) => {
-      const pa = a.split(/[.-]/).map(Number);
-      const pb = b.split(/[.-]/).map(Number);
-      for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
-        const na = pa[i] || 0;
-        const nb = pb[i] || 0;
-        if (na !== nb) {
-          return nb - na;
-        }
-      }
-      return 0;
-    };
-
-    // Populate the version combobox from the Slicer packages API.
-    // Deferred until the "Access Older Releases" tab is first opened, so the
-    // request is not made on every visit to the download page.
-    let versionsRequested = false;
-    const populateReleaseVersions = () => {
-      if (versionsRequested) {
-        return;
-      }
-      versionsRequested = true;
-      fetch('https://slicer-packages.kitware.com/api/v1/app/5f4474d0e1d8c75dfc705482/release')
-        .then(response => response.json())
-        .then(releases => {
-          const versions = releases
-            .map(release => release.name)
-            .filter(name => name)
-            .sort(compareVersionsDesc)
-            // Drop the latest stable release; it is already offered in the table above
-            .slice(1);
-          releaseVersionSelect.innerHTML = '';
-          versions.forEach(version => {
-            const option = document.createElement('option');
-            option.value = version;
-            option.textContent = 'Slicer ' + version;
-            releaseVersionSelect.appendChild(option);
-          });
-        })
-        .catch(() => {
-          // Allow a later tab visit to retry the request
-          versionsRequested = false;
-          releaseVersionSelect.innerHTML = '<option value="">Could not load versions</option>';
-        });
-    };
-
-    // Fetch the versions the first time the older-releases tab is opened.
-    // Clicking the tab fires this listener, including when the page auto-selects
-    // the tab from the URL fragment (#access-older-releases) further below.
-    const olderReleasesTab = document.getElementById('access-older-releases');
-    if (olderReleasesTab) {
-      olderReleasesTab.addEventListener('click', populateReleaseVersions);
-    }
+    // The list of versions is generated at build time and rendered directly
+    // into the <select> above (see download.markdown and the
+    // slicer_stable_releases Jekyll plugin), so no request to the Slicer
+    // packages API is made from the visitor's browser.
 
     // Navigate to the direct download URL for the selected version and OS
     releaseDownloadButton.addEventListener('click', (event) => {

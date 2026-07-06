@@ -224,7 +224,11 @@ animated_navbar: false
                 <div class="control">
                     <div class="select is-small">
                         <select id="older-release-version" aria-label="Slicer version">
-                            <option value="">Loading versions…</option>
+                        {%- for version in site.data.slicer_stable_releases -%}
+                            <option value="{{ version }}">Slicer {{ version }}</option>
+                        {%- else -%}
+                            <option value="">Could not load versions</option>
+                        {%- endfor -%}
                         </select>
                     </div>
                 </div>
