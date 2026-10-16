@@ -42,3 +42,8 @@
   description: A 3D Slicer extension enabling <b>quantitative characterization of imaging phenotype</b>.
   link: https://www.radiomics.io
   image: assets/img/slicer-solutions/slicer-radiomics.png
+
+- name: SlicerAutoscoperM
+  description: A 3D Slicer extension enabling <b>accurate, markerless skeletal motion tracking</b> from biplane videoradiography, with a standardized pre-processing workflow for reproducible, multi-center musculoskeletal research.
+  link: https://autoscoperm.slicer.org
+  image: assets/img/slicer-solutions/slicer-autoscoperm.png
