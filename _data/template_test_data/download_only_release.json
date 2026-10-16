@@ -30,6 +30,16 @@
         "build_date_ymd": "2022-11-24",
         "sha512": "429bed7f03fb65addebe817d0a6cd03535a0a134391b870c79d4e940c1ba0cdfb03110c9bc698f70930dcc8a3198dded7ccc9a07a9351e3a4f06dcfcf7d72f7c"
       },
+    },
+    "macosx_arm64": {
+      "release": {
+        "download_url": "javascript: alert('download macosx arm64 release package');",
+        "extensions_browse_url": "javascript: alert('browse macosx arm64 release extensions');",
+        "version": "5.2.0",
+        "revision": "31325",
+        "build_date_ymd": "2022-11-23",
+        "sha512": "3b1f0c6d2a9e8f7b4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e7f8091a2b3c4"
+      }
     }
   }
 }
