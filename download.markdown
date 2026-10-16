@@ -37,19 +37,23 @@ animated_navbar: false
 {% else %}
     <!-- This section contains jinja2 templates intended to be used in https://github.com/Slicer/slicer_download -->
     <div class="columns is-mobile is-centered">
-        <table class="installers column is-three-quarters">
+        <table class="installers column is-10">
             <thead>
                 <tr>
                     <th width="200"></th>
-                    <th width="225">
+                    <th width="200">
                         <img src="assets/img/platforms/windows-logo.svg" alt="Windows">
                         <p>Windows</p>
                     </th>
-                    <th width="225">
+                    <th width="200">
                         <img src="assets/img/platforms/apple-logo.svg" alt="macOS">
-                        <p>macOS</p>
+                        <p>macOS<br><span class="table-subheader">Apple Silicon (arm64)</span></p>
                     </th>
-                    <th width="225">
+                    <th width="200">
+                        <img src="assets/img/platforms/apple-logo.svg" alt="macOS">
+                        <p>macOS<br><span class="table-subheader">Intel (amd64)</span></p>
+                    </th>
+                    <th width="200">
                         <img src="assets/img/platforms/linux-logo.svg" alt="Linux">
                         <p>Linux<br><span class="table-subheader"><a href="https://slicer.readthedocs.io/en/latest/user_guide/getting_started.html#linux" target="_blank" rel="noopener noreferrer">prerequisites</a></span></p>
                     </th>
@@ -62,6 +66,9 @@ animated_navbar: false
                     {%- assign release_type = "release" -%}
 
                     {%- assign operating_system = "win" -%}
+                    {% include download_table_td.html %}
+
+                    {%- assign operating_system = "macosx_arm64" -%}
                     {% include download_table_td.html %}
 
                     {%- assign operating_system = "macosx" -%}
@@ -77,6 +84,9 @@ animated_navbar: false
                     {%- assign release_type = "nightly" -%}
 
                     {%- assign operating_system = "win" -%}
+                    {% include download_table_td.html %}
+
+                    {%- assign operating_system = "macosx_arm64" -%}
                     {% include download_table_td.html %}
 
                     {%- assign operating_system = "macosx" -%}
@@ -131,7 +141,11 @@ animated_navbar: false
                     {%- assign operating_system = "win" -%}
                     {% include download_checksum_table_tr.html %}
 
-                    {%- assign package = "macOS" -%}
+                    {%- assign package = "macOS Apple Silicon" -%}
+                    {%- assign operating_system = "macosx_arm64" -%}
+                    {% include download_checksum_table_tr.html %}
+
+                    {%- assign package = "macOS Intel" -%}
                     {%- assign operating_system = "macosx" -%}
                     {% include download_checksum_table_tr.html %}
 
@@ -145,7 +159,11 @@ animated_navbar: false
                     {%- assign operating_system = "win" -%}
                     {% include download_checksum_table_tr.html %}
 
-                    {%- assign package = "macOS (preview)" -%}
+                    {%- assign package = "macOS Apple Silicon (preview)" -%}
+                    {%- assign operating_system = "macosx_arm64" -%}
+                    {% include download_checksum_table_tr.html %}
+
+                    {%- assign package = "macOS Intel (preview)" -%}
                     {%- assign operating_system = "macosx" -%}
                     {% include download_checksum_table_tr.html %}
 

@@ -30,6 +30,16 @@
         "build_date_ymd": "2023-04-19",
         "sha512": "f687ca8178891b7fe997499441fc6154639d41c49dd62925918c827bbdcbd068d30e58232743893b1c86bdc692c596d1334571b0ab5313f4e60ee72aeb5b0311"
       }
+    },
+    "macosx_arm64": {
+      "nightly": {
+        "download_url": "javascript: alert('download macosx arm64 nightly package');",
+        "extensions_browse_url": "javascript: alert('browse macosx arm64 nightly extensions');",
+        "version": "5.3.0",
+        "revision": "31720",
+        "build_date_ymd": "2023-04-18",
+        "sha512": "9a8b7c6d5e4f30211f2e3d4c5b6a79880f1e2d3c4b5a69788f9e0d1c2b3a49586f7e8d9c0b1a29384f5e6d7c8b9a09182f3e4d5c6b7a89706f1e2d3c4b5a6978"
+      }
     }
   }
 }
