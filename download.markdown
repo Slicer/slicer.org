@@ -48,6 +48,7 @@ animated_navbar: false
                     <th width="200">
                         <img src="assets/img/platforms/apple-logo.svg" alt="macOS">
                         <p>macOS<br><span class="table-subheader">Apple Silicon (arm64)</span></p>
+                        <p class="experimental-notice"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Newly added and may not be fully functional</p>
                     </th>
                     <th width="200">
                         <img src="assets/img/platforms/apple-logo.svg" alt="macOS">
