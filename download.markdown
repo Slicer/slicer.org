@@ -244,7 +244,7 @@ animated_navbar: false
                     <div class="select is-small">
                         <select id="older-release-version" aria-label="Slicer version">
                         {%- for version in site.data.slicer_stable_releases -%}
-                            <option value="{{ version }}">Slicer {{ version }}</option>
+                            <option value="{{ version }}"{% if site.data.slicer_stable_releases_macos_arm64 contains version %} data-macos-arm64{% endif %}>Slicer {{ version }}</option>
                         {%- else -%}
                             <option value="">Could not load versions</option>
                         {%- endfor -%}
@@ -255,7 +255,8 @@ animated_navbar: false
                     <div class="select is-small">
                         <select id="older-release-os" aria-label="Operating system">
                             <option value="win">Windows</option>
-                            <option value="macosx">macOS</option>
+                            <option value="macosx-arm64" data-os="macosx" data-arch="arm64">macOS Apple Silicon (arm64)</option>
+                            <option value="macosx" data-os="macosx" data-arch="amd64">macOS Intel (amd64)</option>
                             <option value="linux">Linux</option>
                         </select>
                     </div>
@@ -276,6 +277,7 @@ animated_navbar: false
             <ul>
               <li><code>stability</code>: can be <code>release</code>, <code>nightly</code>, or <code>any</code></li>
               <li><code>os</code>: can be <code>win</code>, <code>macosx</code>, or <code>linux</code></li>
+              <li><code>arch</code>: can be <code>amd64</code> (default) or <code>arm64</code>, for example <code>os=macosx&amp;arch=arm64</code> selects a macOS Apple Silicon package</li>
               <li><code>date</code>: revision built before or on the date, for example <code>date=2015-01-01</code></li>
               <li><code>checkout-date</code>: revision checked out before or on the date, for example <code>checkout-date=2015-01-01</code></li>
               <li><code>revision</code>: exact revision, for example <code>revision=27000</code></li>
@@ -286,8 +288,8 @@ animated_navbar: false
 
             <p class=""><strong>Get older Slicer Extensions:</strong></p>
 
-            <p class="">Extensions can be downloaded for old Slicer releases manually from the Extensions Catalog at the URL: <code>https://extensions.slicer.org/catalog/All/(revision_number)/(operating_system)</code>.
-            Revision number is available on this download page or in an installed Slicer application in menu: Help / About Slicer. Operating system can be: <code>win</code>, <code>macosx</code>, or <code>linux</code>.
+            <p class="">Extensions can be downloaded for old Slicer releases manually from the Extensions Catalog at the URL: <code>https://extensions.slicer.org/catalog/All/(revision_number)/(operating_system)/(architecture)</code>.
+            Revision number is available on this download page or in an installed Slicer application in menu: Help / About Slicer. Operating system can be: <code>win</code>, <code>macosx</code>, or <code>linux</code>. Architecture is optional and can be <code>amd64</code> (default) or <code>arm64</code>.
             For example, for Slicer-4.8.0 on Windows extensions are available at: <a href="https://extensions.slicer.org/catalog/All/26489/win">https://extensions.slicer.org/catalog/All/26489/win</a>.</p>
         </div>
     </div>

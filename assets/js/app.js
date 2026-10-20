@@ -80,6 +80,23 @@ document.addEventListener('DOMContentLoaded', () => {
       releaseOsSelect.value = 'linux';
     }
 
+    // Only enable the Apple Silicon option for versions with a macOS arm64
+    // package (see the "data-macos-arm64" attribute set in download.markdown).
+    // The browser cannot reliably tell Apple Silicon from Intel Macs, so
+    // macOS visitors are pre-selected the Intel package above.
+    const arm64Option = releaseOsSelect.querySelector('option[data-arch="arm64"]');
+    const updateArm64Option = () => {
+      const selectedVersion = releaseVersionSelect.selectedOptions[0];
+      const available = !!selectedVersion && selectedVersion.hasAttribute('data-macos-arm64');
+      arm64Option.disabled = !available;
+      arm64Option.title = available ? '' : 'No Apple Silicon package is available for this version';
+      if (!available && arm64Option.selected) {
+        releaseOsSelect.value = 'macosx';
+      }
+    };
+    releaseVersionSelect.addEventListener('change', updateArm64Option);
+    updateArm64Option();
+
     // The list of versions is generated at build time and rendered directly
     // into the <select> above (see download.markdown and the
     // slicer_stable_releases Jekyll plugin), so no request to the Slicer
@@ -89,12 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
     releaseDownloadButton.addEventListener('click', (event) => {
       event.preventDefault();
       const version = releaseVersionSelect.value;
-      const os = releaseOsSelect.value;
+      const osOption = releaseOsSelect.selectedOptions[0];
+      const os = osOption.dataset.os || osOption.value;
+      const arch = osOption.dataset.arch;
       if (!version) {
         return;
       }
       window.location.href = 'https://download.slicer.org/download?version=' +
-        encodeURIComponent(version) + '&os=' + encodeURIComponent(os) + '&stability=release';
+        encodeURIComponent(version) + '&os=' + encodeURIComponent(os) +
+        (arch ? '&arch=' + encodeURIComponent(arch) : '') + '&stability=release';
     });
   }
 
