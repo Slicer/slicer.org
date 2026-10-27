@@ -345,6 +345,23 @@
   .container
     padding: 2%
 
+  // Thin banner, set with "hero_compact: true" in the page front matter
+  &.is-compact
+    .container
+      padding: 0
+    .hero
+      padding-top: $header-height
+      .hero-body
+        padding: 0.75rem 1.5rem
+      .column
+        padding: 0
+      h1
+        margin-bottom: 0
+        font-size: 2rem
+        font-weight: 500
+      .subtitle:empty
+        display: none
+
   .heading
     color: $text-color
     font-weight: 400
@@ -461,49 +478,64 @@
           color: $preview-download-hover-color
   .tabs
     scroll-margin-top: $header-height
-  .install-command
-    max-width: 42rem
-    margin: 1.5rem 0
-    .install-command-header
+  .command-line-install
+    max-width: 48rem
+    margin: 0 auto 3rem
+    scroll-margin-top: $header-height
+    .command-line-install-title
       display: flex
-      flex-wrap: wrap
       align-items: center
-      justify-content: space-between
-      gap: 0.75rem
-      margin-bottom: 1.25rem
-    .install-command-title
-      margin: 0
+      justify-content: center
+      gap: 0.5rem
+      margin-bottom: 0.75rem
       font-size: 1.25rem
       font-weight: 500
+  .install-command
+    margin: 1.5rem 0
+    .install-command-body
+      display: flex
+      gap: 0.75rem
     .install-command-os
       display: flex
+      flex: none
+      flex-direction: column
       gap: 2px
       padding: 2px
-      border-radius: 9999px
+      border-radius: 0.75rem
       background: rgba(0, 0, 0, 0.04)
       button
-        padding: 5px 12px
+        padding: 0.375rem 1rem
         border: none
-        border-radius: 9999px
+        border-radius: 0.625rem
         background: transparent
         color: rgba(0, 0, 0, 0.6)
         font: inherit
-        font-size: 0.8125rem
+        font-size: 0.875rem
         font-weight: 500
         line-height: 1.25rem
+        text-align: left
         cursor: pointer
         &:hover
           color: #000
         &[aria-selected="true"]
           background: #fff
           color: #000
+    @media (max-width: 768px)  // for mobile version
+      .install-command-body
+        flex-direction: column
+      .install-command-os
+        flex-direction: row
+        align-self: center
     .install-command-box
+      flex: 1
+      min-width: 0
       display: flex
       align-items: center
       gap: 0.5rem
-      padding: 0.75rem 0.75rem 0.75rem 1.25rem
+      padding: 1rem 1rem 1rem 1.5rem
       border-radius: 0.75rem
-      background: rgba(0, 0, 0, 0.04)
+      background: $dark
+      color: #fff
       code
         flex: 1
         min-width: 0
@@ -512,8 +544,8 @@
         padding: 0
         background: none
         color: inherit
-        font-size: 0.875rem
-        line-height: 1.375rem
+        font-size: 1rem
+        line-height: 1.5rem
     .install-command-copy
       display: flex
       flex: none
@@ -524,12 +556,12 @@
       border: none
       border-radius: 0.5rem
       background: transparent
-      color: rgba(0, 0, 0, 0.6)
+      color: rgba(255, 255, 255, 0.7)
       font-size: 1rem
       cursor: pointer
       &:hover
-        background: rgba(0, 0, 0, 0.08)
-        color: #000
+        background: rgba(255, 255, 255, 0.12)
+        color: #fff
       .check-icon
         display: none
       &.is-copied
