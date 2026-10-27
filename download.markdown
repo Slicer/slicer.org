@@ -121,6 +121,12 @@ animated_navbar: false
                     <span>Access Older Releases</span>
                 </a>
             </li>
+            <li data-target="tab-command-line-install" id="command-line-install">
+                <a>
+                    <span class="icon is-small"><i class="fas fa-terminal" aria-hidden="true"></i></span>
+                    <span>Command Line Install</span>
+                </a>
+            </li>
         </ul>
     </div>
     <div id="tab-content" class="is-size-7">
@@ -291,6 +297,56 @@ animated_navbar: false
             <p class="">Extensions can be downloaded for old Slicer releases manually from the Extensions Catalog at the URL: <code>https://extensions.slicer.org/catalog/All/(revision_number)/(operating_system)/(architecture)</code>.
             Revision number is available on this download page or in an installed Slicer application in menu: Help / About Slicer. Operating system can be: <code>win</code>, <code>macosx</code>, or <code>linux</code>. Architecture is optional and can be <code>amd64</code> (default) or <code>arm64</code>.
             For example, for Slicer-4.8.0 on Windows extensions are available at: <a href="https://extensions.slicer.org/catalog/All/26489/win">https://extensions.slicer.org/catalog/All/26489/win</a>.</p>
+        </div>
+        <div id="tab-command-line-install" class="is-hidden">
+            <p>3D Slicer can also be installed with a single command. It downloads the latest Stable Release, verifies its SHA512 checksum, and installs it for the current user, without administrator rights.</p>
+
+            <div class="install-command">
+                <div class="install-command-header">
+                    <p class="install-command-title">Install</p>
+                    <div class="install-command-os" role="tablist" aria-label="Operating system">
+                        <button type="button" role="tab" data-install-os="win" aria-selected="true">Windows</button>
+                        <button type="button" role="tab" data-install-os="macosx" aria-selected="false">macOS</button>
+                        <button type="button" role="tab" data-install-os="linux" aria-selected="false">Linux</button>
+                    </div>
+                </div>
+                <div class="install-command-box" data-install-os-panel="win">
+                    <code class="command">powershell -c "irm https://download.slicer.org/install.ps1 | iex"</code>
+                    <button type="button" class="install-command-copy" aria-label="Copy command">
+                        <span class="icon copy-icon"><i class="far fa-copy" aria-hidden="true"></i></span>
+                        <span class="icon check-icon"><i class="fas fa-check" aria-hidden="true"></i></span>
+                    </button>
+                </div>
+                <div class="install-command-box is-hidden" data-install-os-panel="macosx">
+                    <code class="command">curl -fsSL https://download.slicer.org/install.sh | sh</code>
+                    <button type="button" class="install-command-copy" aria-label="Copy command">
+                        <span class="icon copy-icon"><i class="far fa-copy" aria-hidden="true"></i></span>
+                        <span class="icon check-icon"><i class="fas fa-check" aria-hidden="true"></i></span>
+                    </button>
+                </div>
+                <div class="install-command-box is-hidden" data-install-os-panel="linux">
+                    <code class="command">curl -fsSL https://download.slicer.org/install.sh | sh</code>
+                    <button type="button" class="install-command-copy" aria-label="Copy command">
+                        <span class="icon copy-icon"><i class="far fa-copy" aria-hidden="true"></i></span>
+                        <span class="icon check-icon"><i class="fas fa-check" aria-hidden="true"></i></span>
+                    </button>
+                </div>
+                <p class="install-command-note" data-install-os-panel="win">In PowerShell or the command prompt</p>
+                <p class="install-command-note is-hidden" data-install-os-panel="macosx">In a terminal</p>
+                <p class="install-command-note is-hidden" data-install-os-panel="linux">In a terminal</p>
+            </div>
+
+            <p>Installing Slicer is all that command does. When it finishes, it prints the <code>bin</code> directory inside the installation that holds these optional helper scripts:</p>
+
+            <ul>
+                <li><code>slicer-deps --install</code> (Linux): installs the system libraries Slicer needs, using <code>sudo</code>. Run it if Slicer does not start.</li>
+                <li><code>slicer-language list</code>, then for example <code>slicer-language es-419</code>: installs an interface language and switches Slicer to it.</li>
+                <li><code>slicer-shortcuts</code>: adds a desktop icon and pins Slicer to the dock. On Windows it adds a desktop shortcut; pinning to the taskbar is left to you, since Windows does not let programs pin themselves.</li>
+            </ul>
+
+            <p>On Windows the helpers are PowerShell scripts, <code>slicer-language.ps1</code> and <code>slicer-shortcuts.ps1</code>. Run them with <code>powershell -ExecutionPolicy Bypass -File "&lt;Slicer folder&gt;\bin\slicer-shortcuts.ps1"</code>, because Windows blocks running a <code>.ps1</code> file by name by default.</p>
+
+            <p>Environment variables select a preview release, a specific version or revision, the install directory, and non-interactive use; they are documented at the top of <a href="https://github.com/Slicer/Slicer/blob/main/Utilities/Scripts/SlicerInstallers/install.sh" target="_blank" rel="noopener noreferrer">install.sh</a> and <a href="https://github.com/Slicer/Slicer/blob/main/Utilities/Scripts/SlicerInstallers/install.ps1" target="_blank" rel="noopener noreferrer">install.ps1</a>.</p>
         </div>
     </div>
 {% endif %}

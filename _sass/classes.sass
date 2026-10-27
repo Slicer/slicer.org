@@ -461,3 +461,84 @@
           color: $preview-download-hover-color
   .tabs
     scroll-margin-top: $header-height
+  .install-command
+    max-width: 42rem
+    margin: 1.5rem 0
+    .install-command-header
+      display: flex
+      flex-wrap: wrap
+      align-items: center
+      justify-content: space-between
+      gap: 0.75rem
+      margin-bottom: 1.25rem
+    .install-command-title
+      margin: 0
+      font-size: 1.25rem
+      font-weight: 500
+    .install-command-os
+      display: flex
+      gap: 2px
+      padding: 2px
+      border-radius: 9999px
+      background: rgba(0, 0, 0, 0.04)
+      button
+        padding: 5px 12px
+        border: none
+        border-radius: 9999px
+        background: transparent
+        color: rgba(0, 0, 0, 0.6)
+        font: inherit
+        font-size: 0.8125rem
+        font-weight: 500
+        line-height: 1.25rem
+        cursor: pointer
+        &:hover
+          color: #000
+        &[aria-selected="true"]
+          background: #fff
+          color: #000
+    .install-command-box
+      display: flex
+      align-items: center
+      gap: 0.5rem
+      padding: 0.75rem 0.75rem 0.75rem 1.25rem
+      border-radius: 0.75rem
+      background: rgba(0, 0, 0, 0.04)
+      code
+        flex: 1
+        min-width: 0
+        overflow-x: auto
+        white-space: nowrap
+        padding: 0
+        background: none
+        color: inherit
+        font-size: 0.875rem
+        line-height: 1.375rem
+    .install-command-copy
+      display: flex
+      flex: none
+      align-items: center
+      justify-content: center
+      width: 2rem
+      height: 2rem
+      border: none
+      border-radius: 0.5rem
+      background: transparent
+      color: rgba(0, 0, 0, 0.6)
+      font-size: 1rem
+      cursor: pointer
+      &:hover
+        background: rgba(0, 0, 0, 0.08)
+        color: #000
+      .check-icon
+        display: none
+      &.is-copied
+        .copy-icon
+          display: none
+        .check-icon
+          display: inline-flex
+    .install-command-note
+      margin-top: 0.75rem
+      text-align: right
+      font-size: 0.8125rem
+      color: rgba(0, 0, 0, 0.6)
