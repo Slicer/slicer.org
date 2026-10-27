@@ -18,6 +18,8 @@ jobs:
       matrix:
         branch: [slicer-org, download-slicer-org, download-maintenance-slicer-org, deploy-download-preview, deploy-download-maintenance-preview]
         include:
+          - branch: slicer-org
+            cname: slicer.org
           - branch: download-slicer-org
             custom_opts: '--config _config.yml,_config_download.yml'
           - branch: download-maintenance-slicer-org
@@ -142,6 +144,7 @@ jobs:
         github_token: ${{ secrets.SLICERBOT_GITHUB_TOKEN }}
         publish_dir: ./_site
         publish_branch: ${{ matrix.branch }}
+        cname: ${{ matrix.cname }}
         user_name: 'Slicer Bot'
         user_email: 'slicerbot@users.noreply.github.com'
 
