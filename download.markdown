@@ -353,7 +353,7 @@ hero_compact: true
 
             <p>On Windows the helpers are PowerShell scripts, <code>slicer-language.ps1</code> and <code>slicer-shortcuts.ps1</code>. Run them with <code>powershell -ExecutionPolicy Bypass -File "&lt;Slicer folder&gt;\bin\slicer-shortcuts.ps1"</code>, because Windows blocks running a <code>.ps1</code> file by name by default.</p>
 
-            <p>Environment variables select a preview release, a specific version or revision, the install directory, and non-interactive use; they are documented at the top of <a href="https://github.com/Slicer/Slicer/blob/main/Utilities/Scripts/SlicerInstallers/install.sh" target="_blank" rel="noopener noreferrer">install.sh</a> and <a href="https://github.com/Slicer/Slicer/blob/main/Utilities/Scripts/SlicerInstallers/install.ps1" target="_blank" rel="noopener noreferrer">install.ps1</a>.</p>
+            <p>Environment variables select a preview release, a specific version or revision, the install directory, what to do with an existing installation, and quiet or non-interactive use. On Linux and macOS they go right before <code>sh</code>, for example <code>curl -fsSL https://download.slicer.org/install.sh | SLICER_RELEASE_TYPE=preview sh</code>. The <a href="https://github.com/Slicer/Slicer/blob/main/Utilities/Scripts/SlicerInstallers/ENVIRONMENT.md" target="_blank" rel="noopener noreferrer">environment variable reference</a> describes each of them, with examples for every platform.</p>
         </div>
     </div>
 {% endif %}
