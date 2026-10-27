@@ -64,6 +64,40 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   });
 
+  // Operating system of the visitor, named as on the download page
+  const platform = (navigator.userAgent + ' ' + (navigator.platform || '')).toLowerCase();
+  let visitorOs = 'linux';
+  if (platform.indexOf('win') !== -1) {
+    visitorOs = 'win';
+  } else if (platform.indexOf('mac') !== -1) {
+    visitorOs = 'macosx';
+  }
+
+  // Command line install picker (on the download page)
+  const installOsTabs = document.querySelectorAll('[data-install-os]');
+  if (installOsTabs.length > 0) {
+    const installOsPanels = document.querySelectorAll('[data-install-os-panel]');
+    const selectInstallOs = (os) => {
+      installOsTabs.forEach(tab => tab.setAttribute('aria-selected', tab.dataset.installOs === os));
+      installOsPanels.forEach(panel => panel.classList.toggle('is-hidden', panel.dataset.installOsPanel !== os));
+    };
+    installOsTabs.forEach(tab => {
+      tab.addEventListener('click', () => selectInstallOs(tab.dataset.installOs));
+    });
+    selectInstallOs(visitorOs);
+
+    // Copy the command next to the clicked button, then briefly show a check mark
+    document.querySelectorAll('.install-command-copy').forEach(button => {
+      button.addEventListener('click', () => {
+        const command = button.parentElement.querySelector('.command').textContent.trim();
+        navigator.clipboard.writeText(command).then(() => {
+          button.classList.add('is-copied');
+          setTimeout(() => button.classList.remove('is-copied'), 2000);
+        });
+      });
+    });
+  }
+
   // Older stable release picker (on the download page)
   const releaseVersionSelect = document.getElementById('older-release-version');
   if (releaseVersionSelect) {
@@ -71,14 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const releaseDownloadButton = document.getElementById('older-release-download');
 
     // Pre-select the operating system based on the visitor's platform
-    const platform = (navigator.userAgent + ' ' + (navigator.platform || '')).toLowerCase();
-    if (platform.indexOf('win') !== -1) {
-      releaseOsSelect.value = 'win';
-    } else if (platform.indexOf('mac') !== -1) {
-      releaseOsSelect.value = 'macosx';
-    } else {
-      releaseOsSelect.value = 'linux';
-    }
+    releaseOsSelect.value = visitorOs;
 
     // Only enable the Apple Silicon option for versions with a macOS arm64
     // package (see the "data-macos-arm64" attribute set in download.markdown).
