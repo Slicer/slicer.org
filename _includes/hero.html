@@ -1,9 +1,9 @@
 <!-- _includes/hero.html -->
-<div class="container is-fluid internal-page"
+<div class="container is-fluid internal-page{% if page.hero_compact %} is-compact{% endif %}"
 {% if page.hero_image %}
 style="background: url('{{ page.hero_image | prepend: site.baseurl }}') no-repeat center center; background-size: cover;"
 {% endif %}>
-    <section class="hero is-small is-bold" style="padding-top: 4%;">
+    <section class="hero is-small is-bold"{% unless page.hero_compact %} style="padding-top: 4%;"{% endunless %}>
         <div class="hero-body">
             <div class="container">
                 <div class="column is-vcentered is-centered has-text-centered">
